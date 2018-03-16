@@ -41,9 +41,11 @@ text.bigger {
 
 .teacher .title {
   height: 30px;
-  padding: 15px;
+  padding: 10px;
   font-size: 28;
-  background: #ece;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EDEDED;
 }
 .teacher .item {
   display: flex;
@@ -73,20 +75,63 @@ text.bigger {
 .description {
   margin-top: 15px;
   width: 100%;
+  background: #fff;
 }
 .description .title {
   height: 30px;
-  padding: 15px;
+  padding: 10px;
   font-size: 28;
-  background: #ece;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EDEDED;
+}
+.description .content {
+  background: #fff;
+  text-indent: 2em;
+  padding: 10px;
+}
+
+/*------教学大纲--------*/
+
+/*---历史班级--*/
+.historygrade {
+  margin-top: 15px;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.historygrade .title {
+  height: 30px;
+  padding: 10px;
+  font-size: 28;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EDEDED;
+}
+.historygrade .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 30px;
+}
+.historygrade .lookmore {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #EDEDED;
+  border-top-width: 50%;
 }
 
 /*---报名----*/
 .enroll {
   height: 50px;
   width: 100%;
-  background: #ece;
+  background: #1296db;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 15px;
 }

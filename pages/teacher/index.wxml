@@ -1,0 +1,6 @@
+<!--pages/teacher/index.wxml-->
+<view class='container'>
+  <view class='head'>
+    <image src='/images/default_head.jpg'></image>
+  </view>
+</view>
