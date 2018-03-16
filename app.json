@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/profile/index",
+    "pages/logs/logs",
+    "pages/classes/classes",
+    "pages/find/index",
+    "pages/trends/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#1296db",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "学在杏坛",
+    "navigationBarTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/home_unselect_64.png",
+        "selectedIconPath": "images/tabbar/home_selected_64.png"
+      },
+      {
+        "pagePath": "pages/find/index",
+        "text": "发现",
+        "iconPath": "images/tabbar/find_unselect_64.png",
+        "selectedIconPath": "images/tabbar/find_selected_64.png"
+      },
+      {
+        "pagePath": "pages/trends/index",
+        "text": "动态",
+        "iconPath": "images/tabbar/profile_unselect_64.png",
+        "selectedIconPath": "images/tabbar/profile_selected_64.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "images/tabbar/profile_unselect_64.png",
+        "selectedIconPath": "images/tabbar/profile_selected_64.png"
+      }
+    ]
+  },
+  "workers": "workers",
+  "debug": "true"
+}
