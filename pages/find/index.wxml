@@ -13,11 +13,11 @@
           </block>    
   </swiper>
 
-  <!--精品课程-->
+  <!--最新上架-->
   <view class='course-area'>
     <view class='title'>
-      <text>精品课程</text>
-      <image src='/images/more_16.png'></image>
+      <text>最新上架</text>
+      <image src='/images/more_16_.png'></image>
     </view>
     <view class='body'>
       <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
@@ -25,13 +25,42 @@
           <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
           <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
           <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
       </scroll-view>
     </view>
   </view>
   <!--为你推荐-->
-
+  <view class='course-area'>
+    <view class='title'>
+      <text>为你推荐</text>
+      <image src='/images/more_16_.png'></image>
+    </view>
+    <view class='body'>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+          <view style="background: red; width: 200px; height: 100px; display: inline-block" ></view>
+          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+      </scroll-view>
+    </view>
+  </view>
   <!--大家都在上-->
-
+  <view class='course-area'>
+    <view class='title'>
+      <text>同学也都在上</text>
+      <image src='/images/more_16_.png'></image>
+    </view>
+    <view class='body'>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+          <view style="background: red; width: 200px; height: 100px; display: inline-block" ></view>
+          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+      </scroll-view>
+    </view>
+  </view>
 </view> 
 
 <!--活动--> 
