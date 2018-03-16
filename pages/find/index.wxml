@@ -4,16 +4,65 @@
 </view>
 
 <!--课程--> 
-<view hidden="{{currentTab!==0}}"> 
-课程 
+<view hidden="{{currentTab!==0}}" class='tabpage'> 
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+          <block wx:for="{{movies}}" wx:for-index="index">    
+            <swiper-item>    
+              <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+            </swiper-item>    
+          </block>    
+  </swiper>
+
+  <!--精品课程-->
+  <view class='course-area'>
+    <view class='title'>
+      <text>精品课程</text>
+      <image src='/images/more_16.png'></image>
+    </view>
+    <view class='body'>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+          <view style="background: red; width: 200px; height: 100px; display: inline-block" ></view>
+          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+      </scroll-view>
+    </view>
+  </view>
+  <!--为你推荐-->
+
+  <!--大家都在上-->
+
 </view> 
 
 <!--活动--> 
 <view hidden="{{currentTab!==1}}"> 
- 活动 
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+          <block wx:for="{{movies}}" wx:for-index="index">    
+            <swiper-item>    
+              <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+            </swiper-item>    
+          </block>    
+  </swiper> 
 </view> 
 
 <!--赛事--> 
 <view hidden="{{currentTab!==2}}"> 
- 赛事 
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+          <block wx:for="{{movies}}" wx:for-index="index">    
+            <swiper-item>    
+              <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+            </swiper-item>    
+          </block>    
+  </swiper> 
 </view> 
+
+<!--商城--> 
+<view hidden="{{currentTab!==3}}"> 
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+          <block wx:for="{{movies}}" wx:for-index="index">    
+            <swiper-item>    
+              <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+            </swiper-item>    
+          </block>    
+  </swiper> 
+</view>

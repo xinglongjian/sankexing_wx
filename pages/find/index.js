@@ -5,8 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navbar: ['课程', '活动','赛事'],
-    currentTab: 0
+    navbar: ['课程', '训练','赛事','商城'],
+    currentTab: 0,
+    movies: [
+      { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
+      { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },
+      { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
+      { url: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg' }
+    ] 
   },
 
   navbarTap: function (e) {
