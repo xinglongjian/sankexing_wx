@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/classes/index",
     "pages/find/index",
     "pages/index/index",
     "pages/profile/index",
     "pages/logs/logs",
-    "pages/classes/classes",
     "pages/trends/index",
     "pages/trends/hot/index",
     "pages/trends/follow/index"

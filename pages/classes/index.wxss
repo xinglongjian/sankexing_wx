@@ -1,0 +1,92 @@
+/* pages/classes/index.wxss */
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+/*-----基本信息------*/
+.baseinfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: #fff;
+  padding-top: 5px;
+}
+
+.baseinfo .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.baseinfo .item text {
+  margin-top: 5px;
+}
+text.bigger {
+  font-size: 32px;
+}
+
+/*------教师------*/
+.teacher {
+  margin-top: 15px;
+  background: #fff;
+  width: 100%;
+}
+
+.teacher .title {
+  height: 30px;
+  padding: 15px;
+  font-size: 28;
+  background: #ece;
+}
+.teacher .item {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+}
+
+.teacher .item image {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top:20px;
+  margin-left: 20px; 
+}
+
+.teacher .info{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 20px;
+} 
+.teacher .info text {
+  margin-bottom: 10px;
+}
+
+/*----课程描述----*/
+.description {
+  margin-top: 15px;
+  width: 100%;
+}
+.description .title {
+  height: 30px;
+  padding: 15px;
+  font-size: 28;
+  background: #ece;
+}
+
+/*---报名----*/
+.enroll {
+  height: 50px;
+  width: 100%;
+  background: #ece;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,61 @@
+<!--pages/classes/index.wxml-->
+<view class='container'>
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+        <block wx:for="{{movies}}" wx:for-index="index">    
+          <swiper-item>    
+            <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+          </swiper-item>    
+        </block>    
+  </swiper>
+  <!--基本信息-->
+  <view class='baseinfo'>
+    <view class='item'>
+      <text>课次</text>
+      <text class='bigger'>16</text>
+    </view>
+    <view class='item'>
+      <text>课时(分钟)</text>
+      <text class='bigger'>45</text>
+    </view>
+    <view class='item'>
+      <text>人数</text>
+      <text class='bigger'>10</text>
+    </view>
+    <view class='item'>
+      <text>难度</text>
+      <text class='bigger'>3</text>
+    </view>
+  </view>
+
+  <!--教师-->
+  <view class='teacher'>
+    <view class='title'>教师</view>
+    <view class='item'>
+       <image src='/images/default_head.jpg'></image>
+       <view class='info'>
+          <text>张老师</text>
+          <text>名牌大学毕业，获取3次xxx奖</text>
+       </view>
+    </view>
+    <view class='item'>
+       <image src='/images/default_head.jpg'></image>
+       <view class='info'>
+          <text>李老师</text>
+          <text>名牌大学毕业，获取3次xxx奖</text>
+       </view>
+    </view>
+  </view>
+
+  <!--课程描述-->
+  <view class='description'>
+    <view class='title'>课程简介</view>
+    <view class='content'>
+      选择对公打款的用户，完成汇款验证后，可以补充小程序名称信息，上传小程序头像，填写小程序介绍并选择服务范围。
+    </view>
+  </view>
+
+  <!--报名入口-->
+  <view class='enroll'>
+  afa
+  </view>
+</view>
