@@ -72,3 +72,66 @@ page{
   flex-direction: row;
   height: 100rpt;
 }
+/*训练*/
+.train-list {
+  margin-top: 15px;
+  border: 1px;
+  width: 100%;
+  height: 200rpt;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.train-list .title{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between; 
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.train-list .title text {
+  width: 50%;
+}
+.train-list .title image {
+  width: 16px;
+  height: 16px;
+}
+.train-list .lookmore {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.train-area {
+  margin-top: 15px;
+  border: 1px;
+  width: 100%;
+  height: 200rpt;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.train-area .title{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between; 
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.train-area .title text {
+  width: 50%;
+}
+.train-area .title image {
+  width: 16px;
+  height: 16px;
+}
+.train-area .body{
+  display: flex;
+  flex-direction: row;
+  height: 100rpt;
+}
