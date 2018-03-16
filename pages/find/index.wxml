@@ -3,12 +3,17 @@
  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
 </view>
 
-<!--搜索--> 
+<!--课程--> 
 <view hidden="{{currentTab!==0}}"> 
- tab_01 
+课程 
 </view> 
 
-<!--搜索--> 
+<!--活动--> 
 <view hidden="{{currentTab!==1}}"> 
- tab_02 
+ 活动 
+</view> 
+
+<!--赛事--> 
+<view hidden="{{currentTab!==2}}"> 
+ 赛事 
 </view> 

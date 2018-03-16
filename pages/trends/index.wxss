@@ -13,10 +13,10 @@ page{
  position: relative; 
  flex: auto; 
  text-align: center; 
- line-height: 80rpx; 
+ line-height: 100rpx; 
 } 
 .navbar .item.active{ 
- color: #FFCC00; 
+ color: #000; 
 } 
 .navbar .item.active:after{ 
  content: ""; 
@@ -25,6 +25,15 @@ page{
  bottom: 0; 
  left: 0; 
  right: 0; 
- height: 4rpx; 
- background: #FFCC00; 
+ height: 5rpx; 
+ background: #1296db; 
 } 
+
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
