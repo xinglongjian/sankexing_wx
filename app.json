@@ -1,17 +1,19 @@
 {
   "pages": [
+    "pages/find/index",
     "pages/index/index",
     "pages/profile/index",
     "pages/logs/logs",
     "pages/classes/classes",
-    "pages/find/index",
-    "pages/trends/index"
+    "pages/trends/index",
+    "pages/trends/hot/index",
+    "pages/trends/follow/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "backgroundColor": "#1296db",
     "navigationBarBackgroundColor": "#1296db",
-    "navigationBarTitleText": "学在杏坛",
+    "navigationBarTitleText": "三棵杏",
     "navigationBarTextStyle": "light",
     "enablePullDownRefresh": true
   },
@@ -32,8 +34,8 @@
       {
         "pagePath": "pages/trends/index",
         "text": "动态",
-        "iconPath": "images/tabbar/profile_unselect_64.png",
-        "selectedIconPath": "images/tabbar/profile_selected_64.png"
+        "iconPath": "images/tabbar/dongtai_unselect_64.png",
+        "selectedIconPath": "images/tabbar/dongtai_selected_64.png"
       },
       {
         "pagePath": "pages/profile/index",
@@ -43,6 +45,5 @@
       }
     ]
   },
-  "workers": "workers",
   "debug": "true"
 }

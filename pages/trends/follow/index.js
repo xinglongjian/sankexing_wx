@@ -1,25 +1,12 @@
-// pages/trends/index.js
+// pages/trends/follow/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navbar: ['首页', '搜索'],
-    currentTab: 0,
-    movies: [
-      { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
-      { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },
-      { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
-      { url: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg' }
-    ] 
+  
   },
-
-  navbarTap: function (e) {
-    this.setData({
-      currentTab: e.currentTarget.dataset.idx
-    })
-  }, 
 
   /**
    * 生命周期函数--监听页面加载
