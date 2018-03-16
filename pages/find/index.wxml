@@ -113,6 +113,36 @@
             </swiper-item>    
           </block>    
   </swiper> 
+  <!--当前赛事-->
+  <view class='contest-list'>
+    <view class='title'>
+      <text>当前赛事</text>
+      <image src='/images/more_16_.png'></image>
+    </view>
+    <view class='body'>
+      <view style="background: red; width: 100%; height: 150px;" ></view>
+      <view style="background: green; width: 100%; height: 150px;"></view>
+      <view style="background: blue; width: 100%; height: 150px;"></view>
+      <view style="background: yellow; width: 100%; height: 150px;"></view>
+    </view>
+    <view class='lookmore'>查看更多...</view>
+  </view>
+  <!--训-->
+  <view class='contest-area'>
+    <view class='title'>
+      <text>最新上架</text>
+      <image src='/images/more_16_.png'></image>
+    </view>
+    <view class='body'>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+          <view style="background: red; width: 200px; height: 100px; display: inline-block" ></view>
+          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+      </scroll-view>
+    </view>
+  </view>
 </view> 
 
 <!--商城--> 
@@ -124,4 +154,40 @@
             </swiper-item>    
           </block>    
   </swiper> 
+
+  <!--商品类目-->
+  <view class='goods-class'>
+      <view class='item'>
+          <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
+          <text>兑换券</text>
+      </view>
+      <view class='item'>
+          <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
+          <text>衣服</text>
+      </view>
+      <view class='item'>
+          <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
+          <text>文具</text>
+      </view>
+      <view class='item'>
+          <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
+          <text>玩具</text>
+      </view>
+  </view>
+
+  <!--热门兑换-->
+  <view class='goods-area'>
+    <view class='title'>
+      <text>热门兑换</text>
+      <image src='/images/more_16_.png'></image>
+    </view>
+    <view class='body'>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+          <view style="background: red; width: 200px; height: 100px; display: inline-block" ></view>
+          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+      </scroll-view>
+    </view>
+  </view>
 </view>
