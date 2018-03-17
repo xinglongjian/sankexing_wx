@@ -1,6 +1,9 @@
 <!--pages/teacher/index.wxml-->
 <view class='container'>
   <view class='head'>
-    <image src='/images/default_head.jpg'></image>
+    <image src='http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' class='backimage'></image>
+    <view class='headimage'>
+      <image src='/images/default_head.jpg'></image>
+    </view>
   </view>
 </view>

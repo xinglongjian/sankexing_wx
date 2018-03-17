@@ -1,14 +1,21 @@
 /* pages/teacher/index.wxss */
 .head {
   width: 100%;
+  height: 200px;
+}
+.head .backimage {
+  width: 100%;
+  height: 200px;
+} 
+.head .headimage {
+  position: relative;
+  top: -50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+.head .headimage image {
+  width: 100px;
   height: 100px;
-  background: #1296db;
+  border-radius: 50%;
 }
-.head image {
-  width: 60px;
-  height: 60px;
-  border-radius:50%;
-  margin-top: 20px;
-  margin-left: 20px; 
-}
-
