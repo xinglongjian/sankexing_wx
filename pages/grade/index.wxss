@@ -7,7 +7,7 @@
   height: 100%;
   width: 100%;
 }
-
+/*--------------基本信息------------*/
 .baseinfo{
   background: #fff;
   display: flex;
@@ -25,6 +25,7 @@
   justify-content: space-between; 
   padding-left: 10px;
   padding-right: 10px;
+  border-bottom: 1px solid #EDEDED; 
 }
 .baseinfo .title text {
   width: 50%;
@@ -33,6 +34,116 @@
   width: 16px;
   height: 16px;
 }
+
+.baseinfo .body{
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0px 15px; 
+  justify-content: flex-start;
+}
+
+.baseinfo .body .item{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.baseinfo .body .item view {
+  margin-top: 10px;
+}
+
+
+/*------教师------*/
+.teacher {
+  margin-top: 15px;
+  background: #fff;
+  width: 100%;
+}
+
+.teacher .title {
+  height: 30px;
+  padding: 10px;
+  font-size: 28;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.teacher .body{
+  display: flex;
+  flex-direction: row;
+  height: 120px;
+  justify-content: space-around;
+}
+.teacher .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacher .item image {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top:15px;
+}
+
+.teacher .info {
+  margin-top: 10px;
+}
+
+/*--------------历史课堂------------*/
+.historyclass{
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200rpt;
+  margin-top: 15px;
+}
+
+.historyclass .title{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between; 
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid #EDEDED; 
+}
+.historyclass .title text {
+  width: 50%;
+}
+.historyclass image {
+  width: 16px;
+  height: 16px;
+}
+
+.historyclass .body{
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0px 15px; 
+  justify-content: flex-start;
+}
+
+.historyclass .body .item{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .historyclass .body .item view {
+  margin-top: 10px;
+}
+
+.historyclass .body .item image {
+  margin-top: 10px;
+} */
+
 
 /*操作按钮*/
 .operation {
