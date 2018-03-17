@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/grade/index",
     "pages/teacher/index",
     "pages/classes/index",
     "pages/find/index",
@@ -9,7 +10,8 @@
     "pages/trends/index",
     "pages/trends/hot/index",
     "pages/trends/follow/index",
-    "pages/student/index"
+    "pages/student/index",
+    "pages/teacher/space/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

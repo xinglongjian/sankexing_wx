@@ -4,6 +4,46 @@
     <image src='http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' class='backimage'></image>
     <view class='headimage'>
       <image src='/images/default_head.jpg'></image>
+      <view class='info'>
+        <text>张老师|5年教龄|5次获奖</text>
+      </view>
     </view>
+  </view>
+
+  <!--当前班级-->
+  <view class='currgrades'>
+      <view class='title'>
+        <text>当前班级</text>
+        <image src='/images/more_16_.png'></image>
+      </view>
+  </view>
+
+  <!--获奖情况-->
+  <view class='certificate'>
+    <view class='title'>
+        <text>获奖情况</text>
+        <image src='/images/more_16_.png'></image>
+    </view>
+  </view>
+
+  <!--履历情况-->
+  <view class='resume'>
+      <view class='title'>
+        <text>履历情况</text>
+        <image src='/images/more_16_.png'></image>
+      </view>
+  </view>
+
+  <!--个人空间-->
+  <view class='resume'>
+      <view class='title'>
+        <text>个人空间</text>
+        <image src='/images/more_16_.png'></image>
+      </view>
+  </view>
+
+  <!--加好友-->
+  <view class='joinfriends'>
+  加好友
   </view>
 </view>
