@@ -42,6 +42,8 @@
       </view>
   </view>
 
+  <!--动态-->
+
   <!--加好友-->
   <view class='joinfriends'>
   加好友

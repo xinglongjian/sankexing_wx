@@ -30,7 +30,7 @@
   <!--教师-->
   <view class='teacher'>
     <view class='title'>任课教师</view>
-    <view class='item'>
+    <view class='item' bindtap='navToTeacher'>
        <image src='/images/default_head.jpg'></image>
        <view class='info'>
           <text>张老师</text>
@@ -69,7 +69,7 @@
       <view>开课时间</view>
       <view>班级状态</view>
     </view>
-    <view class='item'>
+    <view class='item' bindtap='navToGrade'>
       <view>E100</view>
       <view>2018-01-01</view>
       <view>开课中</view>

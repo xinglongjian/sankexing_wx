@@ -13,6 +13,18 @@ Page({
     ] 
   },
 
+  navToGrade: function(e) {
+    wx.navigateTo({
+      url: '../grade/index',
+    })
+  },
+  
+  navToTeacher: function(e) {
+    wx.navigateTo({
+      url: '../teacher/index',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

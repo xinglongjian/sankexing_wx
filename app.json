@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/grade/index",
     "pages/teacher/index",
     "pages/classes/index",
     "pages/find/index",
-    "pages/index/index",
     "pages/profile/index",
     "pages/logs/logs",
     "pages/trends/index",
@@ -17,7 +17,7 @@
     "backgroundTextStyle": "light",
     "backgroundColor": "#1296db",
     "navigationBarBackgroundColor": "#1296db",
-    "navigationBarTitleText": "三棵杏",
+    "navigationBarTitleText": "三客行",
     "navigationBarTextStyle": "light",
     "enablePullDownRefresh": true
   },
