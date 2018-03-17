@@ -59,26 +59,92 @@
     </view>
   </view>
 
-  <!--历史课堂-->
-  <view class='historyclass'>
-    <view class='title'>
-      <text>历史课堂</text>
-      <image src='/images/more_16_.png'></image>
-    </view>
+  <!--其他项目-->
+  <view class='otheritem'>
     <view class='body'>
       <view class='item'>
-        <view>序号:2</view>
-        <view>时间:{{grade.openDate}}</view>
-        <image src='/images/more_16_.png'></image>
+        <view class='bigger'>22</view>
+        <view>相册</view>
       </view>
       <view class='item'>
-        <view>序号:1</view>
-        <view>时间:{{grade.openDate}}</view>
-        <image src='/images/more_16_.png'></image>
+        <view class='bigger'>5</view>
+        <view>作业</view>
       </view>
     </view>
   </view>
 
   <!--最新动态-->
-  
+  <view class='newmessage'>
+    <view class='item'>
+      <view class='owner'>
+        <image src='/images/default_head.jpg'></image>
+        <view class='info'>
+          <view>张老师</view>
+          <view>2018-01-01 12:32:21</view>
+        </view>
+      </view>
+      <!--message-->
+      <view class='content'>
+         <view class='message'>
+         我李IU作用了
+         </view>
+         <view class='photo'>
+           <image src='/images/default_head.jpg'></image>
+           <image src='/images/default_head.jpg'></image>
+           <image src='/images/default_head.jpg'></image>
+           <image src='/images/default_head.jpg'></image>
+           <image src='/images/default_head.jpg'></image>
+           <image src='/images/default_head.jpg'></image>
+         </view>
+      </view>
+      <!--评论按钮-->
+      <view class='button'>
+        <view class='item'>
+          <image src='/images/comment_32.png'></image>
+          <view>评论</view>
+          <view>1</view>
+        </view>
+        <view class='item'>
+          <image src='/images/dianzan_32.png'></image>
+          <view>赞</view>
+          <view>1</view>
+        </view>
+        
+      </view>
+      <!--点赞-->
+      <view class='zan'>
+        <image src='/images/dianzan_32.png' class='icon'></image>
+        <view class='headimage'>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+        </view>
+      </view>
+      <!--评论-->
+      <view class='comment'>
+        <image src='/images/comment_32.png' class='icon'></image>
+        <view class='body'>
+          <view class='item'>
+            <text class='name'>张三:</text>
+            <text>非常棒</text>
+          </view>
+          <view class='item'>
+            <text class='name'>李四</text>
+            <text>回复</text>
+            <text class='name'>张三:</text>
+            <text>非常棒</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

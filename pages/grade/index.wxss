@@ -93,8 +93,8 @@
   margin-top: 10px;
 }
 
-/*--------------历史课堂------------*/
-.historyclass{
+/*--------------其他项目------------*/
+.otheritem{
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -103,46 +103,25 @@
   margin-top: 15px;
 }
 
-.historyclass .title{
+.otheritem .body{
   display: flex;
   flex-direction: row;
-  height: 50px;
-  align-items: center;
-  justify-content: space-between; 
-  padding-left: 10px;
-  padding-right: 10px;
-  border-bottom: 1px solid #EDEDED; 
-}
-.historyclass .title text {
-  width: 50%;
-}
-.historyclass image {
-  width: 16px;
-  height: 16px;
+  padding: 5px 0px 5px; 
+  justify-content: space-around;
 }
 
-.historyclass .body{
+.otheritem .body .item{
   display: flex;
   flex-direction: column;
-  padding: 5px 0px 15px; 
-  justify-content: flex-start;
-}
-
-.historyclass .body .item{
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
   align-items: center;
   justify-content: space-between;
 }
-
-/* .historyclass .body .item view {
-  margin-top: 10px;
+.otheritem .body .item view {
+  margin-bottom: 5px;
 }
-
-.historyclass .body .item image {
-  margin-top: 10px;
-} */
+.otheritem .body .item .bigger {
+  font-size: 26px;
+}
 
 
 /*操作按钮*/
@@ -162,4 +141,113 @@
   height: 25px;
   width: 1px;
   background: #fff;
+}
+
+/*------最新动态-----------*/
+.newmessage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin-top: 10px;
+
+}
+
+.owner {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 15px 5px;
+}
+
+.owner .info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  justify-content: flex-start;
+}
+
+.owner image {
+  width: 60px;
+  height: 60px;
+  border-radius:50%; 
+}
+.newmessage .content {
+  padding: 10px 15px 5px;
+}
+
+.newmessage .content image{
+  width: 80px;
+  height: 80px;
+  margin-right: 3px;
+  /* border: 1px solid #EDEDED; */
+}
+.newmessage .button {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #EDEDED;
+}
+.newmessage .button .item {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  color: #8a8a8a;
+}
+.newmessage .button .item view {
+  margin-left: 3px;
+  margin-top: 1px;
+}
+.newmessage .button image {
+  width: 24px;
+  height: 24px;
+}
+
+.newmessage .zan{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.newmessage .zan .icon {
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+}
+
+.newmessage .zan .headimage image {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.newmessage .comment {
+  border-top: 1px solid #EDEDED;
+  display: flex;
+  flex-direction: row;
+}
+
+.newmessage .comment .icon {
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+}
+
+.newmessage .comment .item {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+.newmessage .comment .item .name {
+  color: #1296db;
+}
+
+.newmessage .comment .body {
+  display: flex;
+  flex-direction: column;
 }
