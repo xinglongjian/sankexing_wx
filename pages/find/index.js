@@ -6,7 +6,7 @@ Page({
    */
   data: {
     navbar: ['课程', '训练','赛事','商城'],
-    currentTab: 0,
+    currentTab: 1,
     movies: [
       { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
       { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },

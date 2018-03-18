@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/find/index",
     "pages/index/index",
     "pages/grade/index",
     "pages/teacher/index",
     "pages/classes/index",
-    "pages/find/index",
     "pages/profile/index",
     "pages/logs/logs",
     "pages/trends/index",
