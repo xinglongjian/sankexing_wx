@@ -1,4 +1,7 @@
 // pages/find/index.js
+var requests = require('../../request/accounts.js')
+var utils = require('../../utils/util.js')
+
 Page({
 
   /**
