@@ -1,13 +1,13 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var requests = require('../../request/accounts.js')
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    // canIUse: wx.canIUse('button.open-type.getUserInfo'),
     gradeValue: 'XI10',
     myClasses:[{
       id:'31',
@@ -65,16 +65,40 @@ Page({
             userInfo: res.userInfo,
             hasUserInfo: true
           })
+        },
+        fail:res =>{
+          wx.showModal({
+            title: '警告',
+            content: 'sdf',
+            cancelText:'不授权',
+            confirmText:'授权',
+            success:function(res){
+              if(res.confirm) {
+                app.globalData.userInfo = res.userInfo
+                this.setData({
+                  userInfo: res.userInfo,
+                  hasUserInfo: true
+                })
+              } else if(res.cancel) {
+
+              }
+            }
+          })
         }
       })
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
+    console.log("dd:");
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  // 存储到数据库
+  saveTo:function(userInfo) {
+    console.debug("ddd");
   }
+  
 })

@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/find/index",
     "pages/index/index",
+    "pages/find/index",
     "pages/grade/index",
     "pages/teacher/index",
     "pages/classes/index",

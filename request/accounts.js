@@ -1,36 +1,16 @@
-var api = require('./api.js');
+var api = require('./base.js');
 var utils = require('../utils/util.js')
 
-/**
- * 网路请求
- */
-function request(url, data, successCb, errorCb, completeCb) {
-  wx.request({
-    url: url,
-    method: 'GET',
-    data: data,
-    success: function (res) {
-      if (res.statusCode == 200) {
-        utils.isFunction(successCb) && successCb(res.data);
-      } else
-        console.log('请求异常', res);
-    },
-    error: function () {
-      utils.isFunction(errorCb) && errorCb();
-    },
-    complete: function () {
-      utils.isFunction(completeCb) && completeCb();
-    }
-  });
-}
+var USER_API = api.API_BASE + "/api/user"
+var USER_ADD_URL = USER_API + "/add" //添加用户
 
 /**
- * 搜索图书
+ * 添加用户
  */
-function requestSearchBook(data, successCb, errorCb, completeCb) {
-  request(api.API_BOOK_SEARCH, data, successCb, errorCb, completeCb);
+function userAdd(data, successCb, errorCb, completeCb) {
+  api.request(USER_ADD_URL, 'POST', data, successCb, errorCb, completeCb);
 }
 
 module.exports = {
-  requestSearchBook: requestSearchBook
+  userAdd: userAdd
 }
