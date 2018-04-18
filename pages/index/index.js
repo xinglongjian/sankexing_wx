@@ -99,6 +99,7 @@ Page({
   // 存储到数据库
   saveTo:function(userInfo) {
     console.debug("ddd");
+    
   }
   
 })
