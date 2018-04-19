@@ -1,8 +1,8 @@
 var api = require('./base.js');
-var utils = require('../utils/util.js')
+// var utils = require('../utils/util.js')
 
 var USER_API = api.API_BASE + "/api/user"
-var USER_ADD_URL = USER_API + "/add" //添加用户
+var USER_ADD_URL = USER_API + "/addByWeixin" //添加用户
 
 /**
  * 添加用户

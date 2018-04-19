@@ -37,6 +37,16 @@ Page({
       url: '../logs/logs'
     })
   },
+  // 存储到数据库
+  saveTo: function(userInfo) {
+    console.debug("ddd");
+    requests.userAdd(userInfo, function () {
+      console.debug("add user success");
+    }, function () {
+      console.debug("add user fail");
+    });
+
+  },
   onLoad: function () {
     console.debug('index onLoad');
     if (app.globalData.userInfo) {
@@ -64,7 +74,12 @@ Page({
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
-          })
+          });
+          requests.userAdd(res.userInfo, function () {
+            console.debug("add user success");
+          }, function () {
+            console.debug("add user fail");
+          });
         },
         fail:res =>{
           wx.showModal({
@@ -95,11 +110,5 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  },
-  // 存储到数据库
-  saveTo:function(userInfo) {
-    console.debug("ddd");
-    
   }
-  
 })

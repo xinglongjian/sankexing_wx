@@ -1,8 +1,10 @@
-const API_BASE = "/xingtan";
+const API_BASE = "https://www.sankexing.net.cn/xingtan";
+var utils = require('../utils/util.js')
 /**
  * 网路请求
  */
 function request(url, method, data, successCb, errorCb, completeCb) {
+  console.debug(url)
   wx.request({
     url: url,
     method: method,
