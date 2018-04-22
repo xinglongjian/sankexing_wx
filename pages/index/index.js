@@ -75,11 +75,11 @@ Page({
             userInfo: res.userInfo,
             hasUserInfo: true
           });
-          requests.userAdd(res.userInfo, function () {
-            console.debug("add user success");
-          }, function () {
-            console.debug("add user fail");
-          });
+          // requests.userAdd(res.userInfo, function () {
+          //   console.debug("add user success");
+          // }, function () {
+          //   console.debug("add user fail");
+          // });
         },
         fail:res =>{
           wx.showModal({
