@@ -1,5 +1,5 @@
 //app.js
-var requests = require('./request/accounts.js')
+var requests = require('./request/login.js')
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -12,9 +12,7 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.debug('code:'+res.code);
         if(res.code) {
-          wx.request({
-            url: 'http://',
-          })
+          
         }
       }
     })
