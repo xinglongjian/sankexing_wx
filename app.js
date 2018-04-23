@@ -19,28 +19,34 @@ App({
             data: {'code':res.code},
             success: function (res) {
               console.info(res);
-              if (res.statusCode == 200) {
-                if (res.data.openId) {
-                  wx.setStorageSync("LoginSessionKey", res.data.openId + res.data.sessionKey);
+              if (res.statusCode == 200 && res.data.status == 'OK') {
+                
+                if (res.data.data.openid) {
+                  wx.setStorageSync("LoginSessionKey", res.data.data.openid +"--"+ res.data.data.sessionKey);
                   // 获取用户
                   wx.getSetting({
                     success: res => {
                       console.debug("setting");
                       console.debug("auth:" + res.authSetting['scope.userInfo']);
+                      var openId = res.data.data.openid;
+                      var unionId = res.data.data.unionid;
                       if (res.authSetting['scope.userInfo']) {
                         // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
                         wx.getUserInfo({
                           success: res => {
                             // 可以将 res 发送给后台解码出 unionId
                             this.globalData.userInfo = res.userInfo
-                            if(res.data.userId) {
-                              wx.setStorageSync("UserId", res.data.userId);
+                            if(res.data.data.userId) {
+                              wx.setStorageSync("UserId", res.data.data.userId);
                             } else {
+                              var userInfo = res.userInfo;
+                              userInfo.openId = openId;
+                              userInfo.unionId = unionId;
                               //存储到DB
                               wx.request({
-                                url: 'https://www.sankexing.net.cn/xingtan/api/login/loginByWx',
+                                url: 'https://www.sankexing.net.cn/xingtan/api/user/addByWx',
                                 method: 'POST',
-                                data:res.userInfo,
+                                data: userInfo,
                                 success:function(res){
                                   console.log(res);
                                   wx.setStorageSync("UserId", res.data.id);
