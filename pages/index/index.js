@@ -38,16 +38,25 @@ Page({
     })
   },
   // 存储到数据库
-  saveTo: function(userInfo) {
-    console.debug("ddd");
-    requests.userAdd(userInfo, function () {
-      console.debug("add user success");
+  saveTo: function(res) {
+    app.globalData.userInfo = res.userInfo
+    this.setData({
+      userInfo: res.userInfo,
+      hasUserInfo: true
+    });
+    var userInfo = res.userInfo;
+    userInfo.openId = app.globalData.openId;
+    userInfo.unionId = app.globalData.unionId;
+    requests.userAdd(userInfo, function (res) {
+      console.log(res)
+      wx.setStorageSync("UserId", res.data.id);
     }, function () {
       console.debug("add user fail");
     });
 
   },
   onLoad: function () {
+    var that = this;
     console.debug('index onLoad');
     if (app.globalData.userInfo) {
       console.debug('app.globalData.userInfo')
@@ -68,35 +77,35 @@ Page({
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       console.debug('getuserinfo in index')
+      var that = this;
       wx.getUserInfo({
         success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          });
-          // requests.userAdd(res.userInfo, function () {
-          //   console.debug("add user success");
-          // }, function () {
-          //   console.debug("add user fail");
-          // });
+          this.saveTo(res)
         },
         fail:res =>{
           wx.showModal({
-            title: '警告',
-            content: 'sdf',
-            cancelText:'不授权',
+            title: '提示',
+            content: '为了更好的使用小程序，还希望您同意授权',
+            showCancel:false,
             confirmText:'授权',
             success:function(res){
-              if(res.confirm) {
-                app.globalData.userInfo = res.userInfo
-                this.setData({
-                  userInfo: res.userInfo,
-                  hasUserInfo: true
-                })
-              } else if(res.cancel) {
-
-              }
+              console.log(res)
+              wx.openSetting({
+                success:function(data){
+                    if(data) {
+                      if(data.authSetting['scope.userInfo']==true) {
+                        wx.getUserInfo({
+                          success: res => {
+                            console.log(res)
+                            that.saveTo(res)
+                          }
+                        })
+                      }
+                    }
+                }
+              })  
+                
+              
             }
           })
         }
