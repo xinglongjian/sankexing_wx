@@ -3,7 +3,14 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
-    if(wx.getStorageSync('LoginSessionKey')) return;
+    if(wx.getStorageSync('LoginSessionKey')) {
+      console.log(typeof (wx.getStorageInfoSync('LoginSessionKey')));
+      this.globalData.openId = wx.getStorageInfoSync('LoginSessionKey').toString().split('--')[0]
+      this.globalData.userId = wx.getStorageInfoSync('UserId');
+      this.globalData.userInfo = wx.getStorageInfoSync('UserInfo');
+      return;
+    }
+    
     var that = this;
     // 登录
     wx.login({
@@ -34,6 +41,7 @@ App({
                           success: res => {
                             // 可以将 res 发送给后台解码出 unionId
                             that.globalData.userInfo = res.userInfo
+                            wx.setStorageSync("UserInfo", res.userInfo)
                             if (that.globalData.userId) {
                               wx.setStorageSync("UserId", userId);
                             } else {

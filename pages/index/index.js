@@ -40,6 +40,7 @@ Page({
   // 存储到数据库
   saveTo: function(res) {
     app.globalData.userInfo = res.userInfo
+    wx.setStorageSync("UserInfo", res.userInfo)
     this.setData({
       userInfo: res.userInfo,
       hasUserInfo: true

@@ -76,7 +76,7 @@
 .list-item {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items:flex-start;
   height: 80rpx;
 }
 .item-image {
