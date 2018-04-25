@@ -11,7 +11,9 @@
     "pages/trends/hot/index",
     "pages/trends/follow/index",
     "pages/student/index",
-    "pages/teacher/space/index"
+    "pages/teacher/space/index",
+    "pages/profile/childs/list",
+    "pages/profile/childs/addchild"
   ],
   "window": {
     "backgroundTextStyle": "light",

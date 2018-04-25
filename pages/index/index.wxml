@@ -9,4 +9,8 @@
     <view class='usermotto'>
       <text class='user-motto'>{{motto}}</text>
     </view>
+
+    <view>
+    <button bindtap='navToChilds'>我的孩子</button>
+    </view>
 </view>

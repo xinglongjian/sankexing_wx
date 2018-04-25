@@ -4,10 +4,9 @@ App({
   onLaunch: function () {
     // 展示本地存储能力
     if(wx.getStorageSync('LoginSessionKey')) {
-      console.log(typeof (wx.getStorageInfoSync('LoginSessionKey')));
-      this.globalData.openId = wx.getStorageInfoSync('LoginSessionKey').toString().split('--')[0]
-      this.globalData.userId = wx.getStorageInfoSync('UserId');
-      this.globalData.userInfo = wx.getStorageInfoSync('UserInfo');
+      this.globalData.openId = wx.getStorageSync('LoginSessionKey').toString().split('--')[0]
+      this.globalData.userId = wx.getStorageSync('UserId');
+      this.globalData.userInfo = wx.getStorageSync('UserInfo');
       return;
     }
     

@@ -31,6 +31,11 @@ Page({
       classroom: '第四教师啊沙发上地方'
     }]
   },
+  navToChilds:function(){
+    wx.navigateTo({
+      url: '/pages/profile/childs/list',
+    })
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -61,6 +66,7 @@ Page({
     console.debug('index onLoad');
     if (app.globalData.userInfo) {
       console.debug('app.globalData.userInfo')
+      console.info(app.globalData.userInfo)
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
