@@ -1,0 +1,16 @@
+<!--pages/profile/childs/index.wxml-->
+<view class='header'>
+<view>头像</view>
+<view>名称</view>
+<view>性别</view>
+<view>年龄</view>
+</view>
+<view class='body' wx:for="{{childs}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+<view><image class='headimage' src='{{item.headImage}}'></image></view>
+<view>{{item.name}}</view>
+<view>{{item.sex}}</view>
+<view>{{item.age}}</view>
+</view>
+<view class='footer'>
+<button bindtap='navToAddChild'>添加孩子</button>
+</view>

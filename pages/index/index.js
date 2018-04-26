@@ -33,7 +33,7 @@ Page({
   },
   navToChilds:function(){
     wx.navigateTo({
-      url: '/pages/profile/childs/list',
+      url: '/pages/profile/childs/listchild/list',
     })
   },
   //事件处理函数

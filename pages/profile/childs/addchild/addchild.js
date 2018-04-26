@@ -1,5 +1,5 @@
 // pages/profile/childs/addchild.js
-var util = require('../../../utils/util.js')
+var util = require('../../../../utils/util.js')
 var app = getApp();
 Page({
   data: {
@@ -63,7 +63,13 @@ Page({
     })
   },
   onLoad: function (options) {
-    // 页面初始化 options为页面跳转所带来的参数  
+    // 页面初始化 options为页面跳转所带来的参数
+    let { avatar } = options
+    if (avatar) {
+      this.setData({
+        headImageSrc: avatar
+      })
+    }  
   },
   onReady: function () {
     // 页面渲染完成  
@@ -85,11 +91,13 @@ Page({
     var that = this;
     wx.chooseImage({
       count:1,
-      sizeType:['compressed'],
+      sizeType: ['original','compressed'],
       sourceType:['album','camera'],
       success: function(res) {
-        that.setData({
-          headImageSrc:res.tempFilePaths
+        const src = res.tempFilePaths[0]
+        console.log('src:'+src)
+        wx.redirectTo({
+          url: '../upload/upload?src='+src,
         })
       }
     })
