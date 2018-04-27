@@ -1,4 +1,5 @@
 // pages/profile/childs/index.js
+
 Page({
 
   /**

@@ -20,16 +20,16 @@ Page({
       }
     }
   },
-  touchStart(e) {
+  touchStart:function(e) {
     this.wecropper.touchStart(e)
   },
-  touchMove(e) {
+  touchMove:function(e) {
     this.wecropper.touchMove(e)
   },
-  touchEnd(e) {
+  touchEnd:function(e) {
     this.wecropper.touchEnd(e)
   },
-  getCropperImage() {
+  getCropperImage:function() {
     this.wecropper.getCropperImage((avatar) => {
       if (avatar) {
         //  获取到裁剪后的图片
@@ -41,7 +41,7 @@ Page({
       }
     })
   },
-  uploadTap() {
+  uploadTap:function() {
     const self = this
 
     wx.chooseImage({

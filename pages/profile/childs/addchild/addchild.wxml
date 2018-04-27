@@ -35,13 +35,6 @@
                 </radio-group>  
             </view>      
         </view>  
-          
-        <view class="section section_gap">  
-            <view class="section__title">是否显示:</view>  
-            <view class='form-group'>  
-                 <switch name="isshow"/>  
-            </view>  
-        </view>  
         <view class="section btn-area">  
             <button formType="submit">提交</button>  
             <button formType="reset">清空</button>  
