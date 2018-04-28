@@ -1,5 +1,6 @@
 // pages/profile/childs/addchild.js
 var util = require('../../../../utils/util.js')
+var account = require('../../../../request/accounts.js')
 var app = getApp();
 Page({
   data: {
@@ -105,17 +106,11 @@ Page({
   formSubmit: function (e) {
     var that = this;
     var formData = e.detail.value;
-    wx.request({
-      url: 'http://test.com:8080/test/socket.php?msg=2',
-      data: formData,
-      header: {
-        'Content-Type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res.data)
-        that.modalTap();
-      }
-    })
+    formData.createdUserId = app.globalData.userId;
+    console.log(formData)
+    account.childAdd(that.data.headImageSrc, 'imgFile', formData, function(e){
+      console.log("success")
+    });
   },
   formReset: function () {
     console.log('form发生了reset事件');

@@ -12,10 +12,11 @@ function userAdd(data, successCb, errorCb, completeCb) {
   api.request(USER_ADD_URL, 'POST', data, successCb, errorCb, completeCb);
 }
 
-function childAdd(data, tempFilePaths, name, formdata,successCb, errorCb, completeCb) {
+function childAdd(tempFilePaths, name, formdata,successCb, errorCb, completeCb) {
   api.uploadFile(CHILD_ADD_URL, tempFilePaths, name, formdata, successCb, errorCb, completeCb);
 }
 
 module.exports = {
-  userAdd: userAdd
+  userAdd: userAdd,
+  childAdd: childAdd
 }

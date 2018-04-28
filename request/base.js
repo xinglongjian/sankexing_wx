@@ -31,7 +31,7 @@ function uploadFile(url, tempFilePaths, name, formdata, successCb, errorCb, comp
     filePath: tempFilePaths,
     name: name,
     header:{
-      'content-type':'multipart/form-data'
+      'content-type':'application/x-www-form-urlencoded'
     },
     formData:formdata, //http请求的其他额外data
     success: function (res) {
@@ -52,5 +52,6 @@ function uploadFile(url, tempFilePaths, name, formdata, successCb, errorCb, comp
 
 module.exports = {
     request: request,
+    uploadFile: uploadFile,
     API_BASE : API_BASE
 }

@@ -29,7 +29,7 @@
         <view class="section section_gap">  
             <view class="section__title">性别:</view>  
             <view class='form-group'>  
-                <radio-group name="gender">  
+                <radio-group name="sex">  
                   <label><radio value="1"/>男</label>  
                   <label><radio value="0"/>女</label>  
                 </radio-group>  
