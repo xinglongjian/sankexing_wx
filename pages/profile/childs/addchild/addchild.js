@@ -9,9 +9,40 @@ Page({
     modalHidden: true,
     modalHidden2: true,
     notice_str: '',
-    index: 0,
     date:null,
-    headImageSrc:'/images/default_head.jpg'
+    headImageSrc:'/images/default_head.jpg',
+    relationArray: [
+      {
+        code: 'BABA',
+        name: '爸爸'
+      },
+      {
+        code: 'MAMA',
+        name: '妈妈'
+      },
+      {
+        code: 'YEYE',
+        name: '爷爷'
+      },
+      {
+        code: 'NAINAI',
+        name: '奶奶'
+      },
+      {
+        code: 'LAOLAO',
+        name: '姥姥'
+      },
+      {
+        code: 'LAOYE',
+        name: '姥爷'
+      },
+      {
+        code: 'OTHER',
+        name: '其他'
+      }
+    ],
+    index: 0,
+    relationName: ''
   },
   /**
    * 监听日期picker选择器
@@ -58,9 +89,9 @@ Page({
     })
   },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
+      index: e.detail.value,
+      relationName: this.data.relationArray[e.detail.value].name
     })
   },
   onLoad: function (options) {
@@ -70,7 +101,10 @@ Page({
       this.setData({
         headImageSrc: avatar
       })
-    }  
+    }
+    this.setData({
+      relationName: this.data.relationArray[this.data.index].name
+    })
   },
   onReady: function () {
     // 页面渲染完成  

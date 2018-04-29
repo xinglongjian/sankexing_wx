@@ -44,10 +44,19 @@
             <view class='form-group'>  
                 <radio-group name="sex">  
                   <label><radio value="1"/>男</label>  
-                  <label><radio value="0"/>女</label>  
+                  <label><radio value="2"/>女</label>  
                 </radio-group>  
             </view>      
-        </view>  
+        </view> 
+        <view class="section section_gap">  
+            <view class="section__title">我是:</view>  
+            <view class='form-group'>  
+                <picker value="{{index}}"  bindchange="bindPickerChange" range="{{relationArray}}" range-key='name'>
+                  <input hidden="true" name="relation" value="{{relationArray[index].code}}" />
+                  <view>{{relationName}}</view>
+                </picker>  
+            </view>      
+        </view> 
         <view class="section btn-area">  
             <button formType="submit">提交</button>  
             <button formType="reset">清空</button>  
