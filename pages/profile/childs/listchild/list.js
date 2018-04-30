@@ -1,24 +1,13 @@
 // pages/profile/childs/index.js
-
+var account = require('../../../../request/accounts.js')
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    childs:[{
-      id:1,
-      name:'彤彤',
-      sex:'女',
-      headImage:'/images/default_head.jpg',
-      age:4
-    }, {
-      id: 2,
-      name: '映夕',
-      sex: '女',
-      headImage: '/images/default_head.jpg',
-      age:5
-    }]
+    childs:null
   },
   //切换到添加孩子页面
   navToAddChild:function() {
@@ -27,25 +16,47 @@ Page({
       })
   },
 
+  getChild:function() {
+    var userId = app.globalData.userId;
+    account.childGet(userId,function(e){
+      console.log(e)
+      this.setData({
+        childs:e.data
+      })
+    },function(){
+
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    // 获取孩子
+    var that =this;
+    var userId = app.globalData.userId;
+    account.childGet(userId, function (res) {
+      console.log(res)
+      that.setData({
+        childs: res.data
+      })
+    }, function (e) {
+
+    },function(res){});
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    
   },
 
   /**

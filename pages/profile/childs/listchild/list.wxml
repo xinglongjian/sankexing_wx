@@ -3,13 +3,15 @@
 <view>头像</view>
 <view>名称</view>
 <view>性别</view>
-<view>年龄</view>
+<view>生日</view>
 </view>
 <view class='body' wx:for="{{childs}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-<view><image class='headimage' src='{{item.headImage}}'></image></view>
-<view>{{item.name}}</view>
-<view>{{item.sex}}</view>
-<view>{{item.age}}</view>
+<view><image class='headimage' src='https://www.sankexing.net.cn/xingtan/api/user/getHeadImage/{{item.id}}'></image></view>
+<view>{{item.realName}}</view>
+<view wx:if="{{item.sex==1}}">男</view>
+<view wx:elif="{{item.sex==2}}">女</view>
+<view wx:else>未知</view>
+<view>{{item.birthday}}</view>
 </view>
 <view class='footer'>
 <button bindtap='navToAddChild'>添加孩子</button>
