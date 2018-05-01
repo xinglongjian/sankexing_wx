@@ -4,22 +4,13 @@
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
-<!-- 
-  <view class="navs">
-    <block wx:for-items="{{orderItems}}" wx:key="name">
-      <view class="nav-item" catchtap="toOrder" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
-        <image src="{{item.imageurl}}" class="nav-image" />
-        <text>{{item.name}}</text>
-      </view>
-    </block>
-  </view> -->
 
   <view class="separate"></view>
   
   <view class="person-list">
     <view class="list-item">
       <image class="item-image" src="/images/default_head.jpg"></image>
-      <text class="item-text">我的孩子</text>
+      <text class="item-text" bindtap='navToChilds'>我的孩子</text>
     </view>
     <view class="person-line"></view>
     <view class="list-item">

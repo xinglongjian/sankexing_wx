@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/find/index",
     "pages/grade/index",
@@ -15,7 +14,10 @@
     "pages/teacher/space/index",
     "pages/profile/childs/listchild/list",
     "pages/profile/childs/addchild/addchild",
-    "pages/profile/childs/upload/upload"
+    "pages/profile/childs/upload/upload",
+    "pages/habits/listhabits",
+    "pages/habits/addhabit/addhabit",
+    "pages/habits/addhabittype/addhabittype"
   ],
   "window": {
     "backgroundTextStyle": "light",

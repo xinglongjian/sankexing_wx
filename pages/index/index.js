@@ -31,9 +31,9 @@ Page({
       classroom: '第四教师啊沙发上地方'
     }]
   },
-  navToChilds:function(){
+  navToHabits:function(){
     wx.navigateTo({
-      url: '/pages/profile/childs/listchild/list',
+      url: '/pages/habits/listhabits'
     })
   },
   //事件处理函数

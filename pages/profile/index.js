@@ -39,6 +39,11 @@ Page({
       }
     ],
   },
+  navToChilds: function () {
+    wx.navigateTo({
+      url: '/pages/profile/childs/listchild/list',
+    })
+  },
   // 定义事件
   toOrder: function () {
     wx.navigateTo({

@@ -18,6 +18,7 @@ Page({
 
   getChild:function() {
     var userId = app.globalData.userId;
+    console.log(userId)
     account.childGet(userId,function(e){
       console.log(e)
       this.setData({
@@ -39,9 +40,17 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     // 获取孩子
-    var that =this;
+    var that = this;
     var userId = app.globalData.userId;
+    console.log("userId:"+userId);
     account.childGet(userId, function (res) {
       console.log(res)
       that.setData({
@@ -49,14 +58,7 @@ Page({
       })
     }, function (e) {
 
-    },function(res){});
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
+    }, function (res) { });
   },
 
   /**

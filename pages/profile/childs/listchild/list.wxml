@@ -6,7 +6,7 @@
 <view>生日</view>
 </view>
 <view class='body' wx:for="{{childs}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-<view><image class='headimage' src='https://www.sankexing.net.cn/xingtan/api/user/getHeadImage/{{item.id}}'></image></view>
+<view><image class='headimage' src='https://www.sankexing.net.cn/xingtan/api/user/getHeadImage/{{item.id}}/100'></image></view>
 <view>{{item.realName}}</view>
 <view wx:if="{{item.sex==1}}">男</view>
 <view wx:elif="{{item.sex==2}}">女</view>

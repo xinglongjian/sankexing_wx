@@ -143,7 +143,7 @@ Page({
     formData.createdUserId = app.globalData.userId;
     console.log(formData)
     account.childAdd(that.data.headImageSrc, 'imgFile', formData, function(e){
-      console.log("success")
+      wx.navigateBack();
     });
   },
   formReset: function () {

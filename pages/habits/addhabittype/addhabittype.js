@@ -1,4 +1,6 @@
-// pages/profilechilds/index.js
+// pages/habits/addhabittype/addhabittype.js
+var habit = require('../../../request/habit.js')
+var app = getApp();
 Page({
 
   /**
@@ -7,7 +9,17 @@ Page({
   data: {
   
   },
-
+  formSubmit: function (e) {
+    var that = this;
+    var formData = e.detail.value;
+    console.log(formData);
+    formData.status = formData.status == true ? 1 :0;
+    console.log(formData)
+    habit.habitTypeAdd(formData, function (e) {
+      console.log(e)
+      wx.navigateBack();
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
