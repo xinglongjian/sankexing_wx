@@ -16,6 +16,15 @@ Page({
       {
         typeId: 0,
         name: '待付款',
+
+
+
+
+
+
+
+
+        
         url: 'bill',
         imageurl: '../../images/person/personal_pay.png',
       },

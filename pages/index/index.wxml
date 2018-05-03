@@ -1,16 +1,87 @@
 <view class="container">
-    <view class='userinfo'>
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo">获取头像昵称</button>
-      <block wx:else>
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-        <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
-      </block>
-    </view>
-    <view class='usermotto'>
-      <text class='user-motto'>{{motto}}</text>
-    </view>
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{movies}}" wx:for-index="index" wx:key="url">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
 
-    <view>
-    <button bindtap='navToHabits'>所有习惯</button>
+  <view class='notification'>
+    <text>此处为通知</text>
+  </view>
+  <!--显示孩子-->
+  <view wx:if="childs" class='mychilds'>
+    <block wx:for="{{childs}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+      <view>
+        <image class='headimage' src='https://www.sankexing.net.cn/xingtan/api/user/getHeadImage/{{item.id}}/100'></image>
+      </view>
+      <view>{{item.realName}}</view>
+    </block>
+  </view>
+  <view wx:else>
+    <button>添加小孩</button>
+  </view>
+  <!--最新的活动-->
+  <view class='course-area'>
+    <view class='title'>
+      <text>最新活动</text>
+      <image src='/images/more_16_.png'></image>
     </view>
+    <view class='body'>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+          <view style="background: red; width: 200px; height: 100px; display: inline-block" bindtap='navToClasses'></view>
+          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!--最新的活动-->
+  <view class='course-area'>
+    <view class='title'>
+      <text>最新上架</text>
+      <image src='/images/more_16_.png'></image>
+    </view>
+    <view class='body'>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+          <view style="background: red; width: 200px; height: 100px; display: inline-block" bindtap='navToClasses'></view>
+          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!--最新的活动-->
+  <view class='course-area'>
+    <view class='title'>
+      <text>好友推荐</text>
+      <image src='/images/more_16_.png'></image>
+    </view>
+    <view class='body'>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+          <view style="background: red; width: 200px; height: 100px; display: inline-block" bindtap='navToClasses'></view>
+          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class='userinfo'>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo">获取头像昵称</button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view>
+    <button bindtap='navToHabits'>所有习惯</button>
+  </view>
 </view>

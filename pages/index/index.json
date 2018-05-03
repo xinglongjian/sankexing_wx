@@ -1,1 +1,8 @@
-{}
+{
+  "usingComponents": {
+    "zan-noticebar": "/third/zanui/dist/noticebar/index",
+    "zan-icon": "/third/zanui/dist/icon/index",
+    "zan-row": "/third/zanui/dist/row/index",
+    "zan-col": "/third/zanui/dist/col/index"
+  }
+}

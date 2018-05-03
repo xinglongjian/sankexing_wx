@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-var requests = require('../../request/accounts.js')
+var account = require('../../request/accounts.js')
 Page({
   data: {
     motto: 'Hello World',
@@ -29,7 +29,15 @@ Page({
       finished: '3',
       left: '10',
       classroom: '第四教师啊沙发上地方'
-    }]
+    }],
+    childs:[],
+    movies: [
+      { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
+      { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },
+      { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
+      { url: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg' }
+    ],
+    text:'恭喜..........恭喜.................'
   },
   navToHabits:function(){
     wx.navigateTo({
@@ -53,9 +61,10 @@ Page({
     var userInfo = res.userInfo;
     userInfo.openId = app.globalData.openId;
     userInfo.unionId = app.globalData.unionId;
-    requests.userAdd(userInfo, function (res) {
+    account.userAdd(userInfo, function (res) {
       console.log(res)
       wx.setStorageSync("UserId", res.data.id);
+      app.globalData.userId = res.data.id;
     }, function () {
       console.debug("add user fail");
     });
@@ -117,6 +126,21 @@ Page({
           })
         }
       })
+    }
+  },
+  onShow: function() {
+    if (app.globalData.userId) {
+      var that = this;
+      var userId = app.globalData.userId;
+      console.log("userId:" + userId);
+      account.childGet(userId, function (res) {
+        console.log(res)
+        that.setData({
+          childs: res.data
+        })
+      }, function (e) {
+
+      }, function (res) { });
     }
   },
   getUserInfo: function(e) {
