@@ -1,0 +1,2 @@
+/* pages/school/search_school/search_school.wxss */
+@import "../../../third/wxSearchView/wxSearchView.wxss";

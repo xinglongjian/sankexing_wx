@@ -1,0 +1,6 @@
+<!--pages/childs/myschool/index.wxml-->
+
+
+<view class='footer'>
+<button bindtap='navToSearchSchool'>添加学校</button>
+</view>

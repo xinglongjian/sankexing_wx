@@ -1,0 +1,4 @@
+<!--pages/school/search_school/search_school.wxml-->
+<view class='container'>
+  <include src="../../../third/wxSearchView/wxSearchView.wxml" />
+</view>

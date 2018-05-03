@@ -1,0 +1,11 @@
+/* pages/childs/myschool/index.wxss */
+.footer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+}
+
+.footer button{
+  background-color: #1296db;
+}

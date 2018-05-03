@@ -18,7 +18,12 @@
     "pages/profile/childs/upload/upload",
     "pages/habits/listhabits",
     "pages/habits/addhabit/addhabit",
-    "pages/habits/addhabittype/addhabittype"
+    "pages/habits/addhabittype/addhabittype",
+    "pages/admin/index",
+    "pages/childs/myschool/index",
+    "pages/childs/mygrade/index",
+    "pages/school/index",
+    "pages/school/search_school/search_school"
   ],
   "window": {
     "backgroundTextStyle": "light",
