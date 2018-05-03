@@ -1,2 +1,23 @@
 <!--pages/childs/index.wxml-->
-<text>pages/childs/index.wxml</text>
+<view class='container'>
+  <view class='header'>
+    <image src='/images/default_head.jpg'></image>
+    <view class='name'>
+      <view>郑梓烨</view>
+      <view>Anji</view>
+    </view>
+    <view class='score'>
+      <view>3000</view>
+      <view>aasdf</view>
+    </view>
+  </view>
+
+  <!--config-->
+  <view class='configItem'>
+    <view class='item'>
+      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
+      <view class='title'>我的习惯</view>
+       <image class='more' src='/images/more_16.png'></image> 
+    </view>
+  </view>
+</view>

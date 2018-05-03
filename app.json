@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/childs/index",
     "pages/index/index",
     "pages/find/index",
     "pages/grade/index",

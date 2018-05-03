@@ -11,42 +11,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     motto: 'Hello World',
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    orderItems: [
-      {
-        typeId: 0,
-        name: '待付款',
-
-
-
-
-
-
-
-
-        
-        url: 'bill',
-        imageurl: '../../images/person/personal_pay.png',
-      },
-      {
-        typeId: 1,
-        name: '待发货',
-        url: 'bill',
-        imageurl: '../../images/person/personal_shipped.png',
-      },
-      {
-        typeId: 2,
-        name: '待收货',
-        url: 'bill',
-        imageurl: '../../images/person/personal_receipt.png'
-      },
-      {
-        typeId: 3,
-        name: '待评价',
-        url: 'bill',
-        imageurl: '../../images/person/personal_comment.png'
-      }
-    ],
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   navToChilds: function () {
     wx.navigateTo({
