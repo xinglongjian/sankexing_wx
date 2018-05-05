@@ -9,17 +9,17 @@ Page({
     hasUserInfo: false,
     // canIUse: wx.canIUse('button.open-type.getUserInfo'),
     gradeValue: 'XI10',
-    myClasses:[{
-      id:'31',
-      courseName:'中国象棋',
+    myClasses: [{
+      id: '31',
+      courseName: '中国象棋',
       organName: '中国儿童中心',
-      classesName:'31班',
-      classesTime:'9-23(四) 17:00~19:00',
-      teacher:'张三',
-      finished:'3',
-      left:'10',
-      classroom:'第四教师啊沙发上地方'
-    },{
+      classesName: '31班',
+      classesTime: '9-23(四) 17:00~19:00',
+      teacher: '张三',
+      finished: '3',
+      left: '10',
+      classroom: '第四教师啊沙发上地方'
+    }, {
       id: '32',
       courseName: '国际象棋',
       organName: '中国儿童中心',
@@ -30,28 +30,35 @@ Page({
       left: '10',
       classroom: '第四教师啊沙发上地方'
     }],
-    childs:[],
+    childs: [],
     movies: [
       { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
       { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },
       { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
       { url: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg' }
     ],
-    text:'恭喜..........恭喜.................'
+    text: '恭喜..........恭喜.................'
   },
-  navToHabits:function(){
+  navToHabits: function () {
     wx.navigateTo({
       url: '/pages/habits/listhabits'
     })
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
+  // 点击进入孩子页面
+  navToChild: function (e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/childs/index?id='+id,
+    })
+  },
   // 存储到数据库
-  saveTo: function(res) {
+  saveTo: function (res) {
     app.globalData.userInfo = res.userInfo
     wx.setStorageSync("UserInfo", res.userInfo)
     this.setData({
@@ -80,7 +87,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       console.debug('canIuSER');
@@ -98,37 +105,37 @@ Page({
         success: res => {
           this.saveTo(res)
         },
-        fail:res =>{
+        fail: res => {
           wx.showModal({
             title: '提示',
             content: '为了更好的使用小程序，还希望您同意授权',
-            showCancel:false,
-            confirmText:'授权',
-            success:function(res){
+            showCancel: false,
+            confirmText: '授权',
+            success: function (res) {
               console.log(res)
               wx.openSetting({
-                success:function(data){
-                    if(data) {
-                      if(data.authSetting['scope.userInfo']==true) {
-                        wx.getUserInfo({
-                          success: res => {
-                            console.log(res)
-                            that.saveTo(res)
-                          }
-                        })
-                      }
+                success: function (data) {
+                  if (data) {
+                    if (data.authSetting['scope.userInfo'] == true) {
+                      wx.getUserInfo({
+                        success: res => {
+                          console.log(res)
+                          that.saveTo(res)
+                        }
+                      })
                     }
+                  }
                 }
-              })  
-                
-              
+              })
+
+
             }
           })
         }
       })
     }
   },
-  onShow: function() {
+  onShow: function () {
     if (app.globalData.userId) {
       var that = this;
       var userId = app.globalData.userId;
@@ -143,7 +150,7 @@ Page({
       }, function (res) { });
     }
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log("dd:");
     app.globalData.userInfo = e.detail.userInfo
     this.setData({

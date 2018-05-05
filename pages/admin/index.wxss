@@ -1,1 +1,29 @@
 /* pages/admin/index.wxss */
+.configItem {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  padding: 0px 20px 15px;
+  background-color: #fff; 
+}
+.configItem .item {
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin-top: 15px;
+}
+.configItem image{
+  width: 24px;
+  height: 24px;
+}
+.item .title{
+  width: 80%;
+  margin-left:10px;
+
+}
+.more {
+  float: right;
+}

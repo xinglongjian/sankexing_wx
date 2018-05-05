@@ -1,2 +1,30 @@
 <!--pages/admin/index.wxml-->
-<text>pages/admin/index.wxml</text>
+<view class='container'>
+  <view class='configItem'>
+    <view class='item' bindtap='navToAddSchool'>
+      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
+      <view class='title'>添加学校</view>
+      <image class='more' src='/images/more_16.png'></image>
+    </view>
+    <view class='item'>
+      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
+      <view class='title'>添加班级</view>
+      <image class='more' src='/images/more_16.png' bindtap='navToSchool'></image>
+    </view>
+    <view class='item'>
+      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
+      <view class='title'>我的班级</view>
+      <image class='more' src='/images/more_16.png'></image>
+    </view>
+    <view class='item'>
+      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
+      <view class='title'>我的课程</view>
+      <image class='more' src='/images/more_16.png'></image>
+    </view>
+    <view class='item'>
+      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
+      <view class='title'>我的动态</view>
+      <image class='more' src='/images/more_16.png'></image>
+    </view>
+  </view>
+</view>

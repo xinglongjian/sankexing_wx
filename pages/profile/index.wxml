@@ -15,12 +15,12 @@
     <view class="person-line"></view>
     <view class="list-item">
       <image class="item-image" src="/images/default_head.jpg"></image>
-      <text class="item-text">收货地址</text>
+      <text class="item-text" bindtap='navToAdmin'>管理后台</text>
     </view>
     <view class="person-line"></view>
     <view class="list-item">
       <image class="item-image" src="/images/default_head.jpg"></image>
-      <text class="item-text">售后记录</text>
+      <text class="item-text" >售后记录</text>
     </view>
     <view class="person-line"></view>
     <view class="list-item">

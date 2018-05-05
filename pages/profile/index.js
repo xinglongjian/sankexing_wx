@@ -18,6 +18,11 @@ Page({
       url: '/pages/profile/childs/listchild/list',
     })
   },
+  navToAdmin: function() {
+    wx.navigateTo({
+      url: '/pages/admin/index',
+    })
+  },
   // 定义事件
   toOrder: function () {
     wx.navigateTo({

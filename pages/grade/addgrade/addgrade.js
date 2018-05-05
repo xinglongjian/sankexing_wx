@@ -1,4 +1,4 @@
-// pages/admin/index.js
+// pages/grade/addgrade/addgrade.js
 Page({
 
   /**
@@ -62,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  navToAddSchool: function() {
-    wx.navigateTo({
-      url: '/pages/admin/addschool/addschool',
-    })
   }
-
 })

@@ -1,0 +1,3 @@
+/* pages/admin/addschool/addschool.wxss */
+@import "/third/zanui/dist/index.wxss";
+@import "../../../templates/address/index.wxss";

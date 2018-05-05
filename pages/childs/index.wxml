@@ -1,7 +1,7 @@
 <!--pages/childs/index.wxml-->
 <view class='container'>
   <view class='header'>
-    <image src='/images/default_head.jpg'></image>
+    <image src='{{headImageUrl}}'></image>
     <view class='name'>
       <view>郑梓烨</view>
       <view>Anji</view>

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "添加学校",
+  "usingComponents": {
+    "zan-button": "/third/zanui/dist/btn/index",
+    "zan-button-group": "/third/zanui/dist/btn-group/index",
+    "zan-field": "/third/zanui/dist/field/index",
+    "zan-select": "/third/zanui/dist/select/index",
+    "zan-panel": "/third/zanui/dist/panel/index"
+  }
+}

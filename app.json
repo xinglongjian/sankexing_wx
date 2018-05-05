@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/childs/index",
+    "pages/admin/addschool/addschool",
     "pages/index/index",
+    "pages/childs/index",
     "pages/find/index",
     "pages/grade/index",
     "pages/teacher/index",
@@ -23,7 +24,8 @@
     "pages/childs/myschool/index",
     "pages/childs/mygrade/index",
     "pages/school/index",
-    "pages/school/search_school/search_school"
+    "pages/school/search_school/search_school",
+    "pages/grade/addgrade/addgrade"
   ],
   "window": {
     "backgroundTextStyle": "light",
