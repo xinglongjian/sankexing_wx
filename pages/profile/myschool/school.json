@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "添加学校",
+  "navigationBarTitleText": "我的学校",
   "usingComponents": {
     "zan-button-group": "/third/zanui/dist/btn-group/index",
     "zan-panel": "/third/zanui/dist/panel/index"

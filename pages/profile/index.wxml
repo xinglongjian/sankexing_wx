@@ -20,7 +20,7 @@
     <view class="person-line"></view>
     <view class="list-item">
       <image class="item-image" src="/images/default_head.jpg"></image>
-      <text class="item-text" >售后记录</text>
+      <text class="item-text" bindtap='navToSchool'>我的学校(教师专用)</text>
     </view>
     <view class="person-line"></view>
     <view class="list-item">

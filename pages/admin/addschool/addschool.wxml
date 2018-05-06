@@ -1,43 +1,62 @@
 <!--pages/admin/addschool/addschool.wxml-->
-<import src="/templates/address/index.wxml"/>
+<!-- <import src="/templates/address/index.wxml"/> -->
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <zan-panel title="基本信息">
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>学校名称：</view>
+      <input type='text' name="name" placeholder="名称" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>英文名称：</view>
+      <input type='text' name="enName" placeholder="英文名" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>学校代码：</view>
+      <input type='text' name="code" placeholder="学校代码" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>创建年份：</view>
+      <input type='text' name="buildYear" placeholder="创建年份" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class="zan-cell zan-field" style='height:35px;'>
+      <view class="zan-cell__hd zan-field__title">选择性质：</view>
+      <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ schoolType }}" range-key='name' value="{{ checkedType }}" bindchange="handleSelectChange">
+        {{ schoolType[checkedType].name }}
+      </picker>
+    </view>
 
-<zan-panel title="基本信息">
-  <zan-field title="学校名称：" placeholder="名称" focus="true" value="">
-  </zan-field>
-  <zan-field title="英文名称：" placeholder="英文名">
-  </zan-field>
-  <zan-field title="学校代码：" placeholder="学校代码">
-  </zan-field>
-  <zan-field title="创建年份：" placeholder="创建年份" inputType="number">
-  </zan-field>
-  <view class="zan-cell zan-field" style='height:35px;'>
-    <view class="zan-cell__hd zan-field__title">选择性质：</view>
-    <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ schoolType }}" range-key='name' value="{{ checkedType }}" bindchange="handleSelectChange">
-      {{ schoolType[checkedType].name }}
-    </picker>
-  </view>
+    <view class="zan-cell zan-field" style='height:35px;'>
+      <view class="zan-cell__hd zan-field__title">学校区域：</view>
+      <view class="zan-field__input zan-cell__bd" bindtap='open'>{{province}}-- {{city}}--- {{area}} </view>
 
-  <view class="zan-cell zan-field" style='height:35px;'>
-    <view class="zan-cell__hd zan-field__title">学校地址：</view>
-    <view class="zan-field__input zan-cell__bd" bindtap='translate'>{{province}} {{city}} {{area}}</view>
-    <template is="areaData" data="{{...item}}"></template>
-  </view>
-  <zan-field title="详细地址：" placeholder="详细地址">
-  </zan-field>
-  <zan-field title="邮政编码：" placeholder=" 邮政编码" inputType="number">
-  </zan-field>
-  <zan-field title="联系电话：" placeholder="联系电话" inputType="number">
-  </zan-field>
-  <zan-field title="学校简介：" type="textarea" placeholder="请输入学校介绍(最多50字)" maxlength="50">
-  </zan-field>
+      <import src="../../../templates/address/index.wxml" />
+      <template is="areaData" data="{{animationData:animationData,provinces:provinces,citys:citys,areas:areas}}" />
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>详细地址：</view>
+      <input type='text' name="address" placeholder="详细地址" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>邮政编码：</view>
+      <input type='text' name="zipCode" placeholder="邮政编码" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <!-- <zan-field title="邮政编码：" placeholder=" 邮政编码" inputType="number">
+    </zan-field> -->
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>联系电话：</view>
+      <input type='text' name="telephone" placeholder="联系电话" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <!-- <zan-field title="学校简介：" type="textarea" placeholder="请输入学校介绍(最多50字)" maxlength="50">
+    </zan-field> -->
 
-</zan-panel>
+  </zan-panel>
 
-<zan-panel title="其他信息">
-  <zan-field title="上级集团：" placeholder="多分校时有用" inputType="number">
-  </zan-field>
-</zan-panel>
+  <!-- <zan-panel title="其他信息">
+    <zan-field title="上级集团：" placeholder="多分校时有用" inputType="number">
+    </zan-field>
+  </zan-panel> -->
 
-<zan-button-group>
-  <zan-button type="primary" bind:btnclick="clearInput">保存</zan-button>
-</zan-button-group>
+  <zan-button-group>
+    <button type="primary" form-type="submit">提交表单</button>
+  </zan-button-group>
+</form>

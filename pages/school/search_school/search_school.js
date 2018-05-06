@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    userType: ''
   },
 
   /**
@@ -15,9 +15,13 @@ Page({
   onLoad: function (options) {
     // 2 搜索栏初始化
     var that = this;
+    // 用于标识加入到学校的类型，老师和学生
+    that.setData({
+      userType: options.type
+    });
     WxSearch.init(
       that,  // 本页面一个引用
-      ['杭州', '嘉兴', "海宁", "桐乡", '宁波', '金华'], // 热点搜索推荐，[]表示不使用
+      [], // 热点搜索推荐，[]表示不使用
       ['湖北', '湖南', '北京', "南京"],// 搜索匹配，[]表示不使用
       that.mySearchFunction, // 提供一个搜索回调函数
       that.myGobackFunction //提供一个返回回调函数
@@ -33,8 +37,9 @@ Page({
   mySearchFunction: function (value) {
     // do your job here
     // 示例：跳转
+    console.log('search:'+value)
     wx.redirectTo({
-      url: '../index/index?searchValue=' + value
+      url: '../school_list/school_list?searchValue=' + value + '&userType=' + this.data.userType
     })
   },
   // 5 返回回调函数

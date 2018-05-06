@@ -1,5 +1,4 @@
-<!--pages/childs/myschool/index.wxml-->
-
+<!--pages/profile/school/school.wxml-->
 <zan-button-group>
 <button type="primary"  bindtap='navToSearchSchool'>添加学校</button>
 </zan-button-group>

@@ -1,13 +1,13 @@
 {
   "pages": [
-    "pages/admin/addschool/addschool",
+    "pages/profile/index",
     "pages/index/index",
+    "pages/admin/addschool/addschool",
     "pages/childs/index",
     "pages/find/index",
     "pages/grade/index",
     "pages/teacher/index",
     "pages/classes/index",
-    "pages/profile/index",
     "pages/logs/logs",
     "pages/trends/index",
     "pages/trends/hot/index",
@@ -17,6 +17,7 @@
     "pages/profile/childs/listchild/list",
     "pages/profile/childs/addchild/addchild",
     "pages/profile/childs/upload/upload",
+    "pages/profile/myschool/school",
     "pages/habits/listhabits",
     "pages/habits/addhabit/addhabit",
     "pages/habits/addhabittype/addhabittype",
@@ -25,6 +26,7 @@
     "pages/childs/mygrade/index",
     "pages/school/index",
     "pages/school/search_school/search_school",
+    "pages/school/school_list/school_list",
     "pages/grade/addgrade/addgrade"
   ],
   "window": {

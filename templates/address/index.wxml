@@ -1,28 +1,20 @@
 <template name="areaData">
-  <view class="animation-element-wrapper" animation="{{animation}}" style="visibility:{{show ? 'visible':'hidden'}}" bindtap="hiddenFloatView" data-id="444">
-    <view class="animation-element" catchtap="nono">
-      <text class="left-bt" catchtap="hiddenFloatView" data-id="555">取消</text>
-      <text class="right-bt" catchtap="hiddenFloatView" data-id="666">确定</text>
-      <view class="line"></view>
-
-      <picker-view indicator-style="height: 50rpx;" value="{{value}}" bindchange="bindChange" catchtap="nono">
-        <!--省-->
+  <view class="cascade_box" animation="{{animationData}}">
+    <view class="cascade_hei" catchtap="quxiao"></view>
+    <view class="cascade_find">
+      <view class="cascade_header">
+        <text class='quxiao' catchtap="cancel">取消</text>
+        <text class="queren" catchtap="confirm">确认</text>
+      </view>
+      <picker-view indicator-style="height: 80rpx;" style="width: 100%; height: 400rpx;" bindchange="citychange">
         <picker-view-column>
-          <view wx:for="{{provinces}}" wx:for-item="sheng" wx:key="id">
-            {{sheng.name}}
-          </view>
+          <view wx:for="{{provinces}}" wx:key='id' wx:for-index="{{provinceIndex}}" wx:for-item='item' style="line-height: 80rpx;text-align:center;">{{item.name}}</view>
         </picker-view-column>
-        <!--地级市-->
         <picker-view-column>
-          <view wx:for="{{citys}}" wx:for-item="shi" wx:key="id">
-            {{shi.name}}
-          </view>
+          <view wx:for="{{citys}}" wx:key='id' wx:for-index="{{cityIndex}}" wx:for-item='item' style="line-height: 80rpx;text-align:center;">{{item.name}}</view>
         </picker-view-column>
-        <!--区县-->
         <picker-view-column>
-          <view wx:for="{{areas}}" wx:for-item="xian" wx:key="id">
-            {{xian.name}}
-          </view>
+          <view wx:for="{{areas}}" wx:key='id' wx:for-index="{{areaIndex}}" wx:for-item='item' style="line-height: 80rpx;text-align:center;">{{item.name}}</view>
         </picker-view-column>
       </picker-view>
     </view>

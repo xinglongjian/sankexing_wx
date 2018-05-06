@@ -1,4 +1,4 @@
-// pages/childs/myschool/index.js
+// pages/profile/school/school.js
 Page({
 
   /**
@@ -63,9 +63,9 @@ Page({
   onShareAppMessage: function () {
   
   },
-  navToSearchSchool: function() {
+  navToSearchSchool: function () {
     wx.navigateTo({
-      url: '/pages/school/search_school/search_school?type=student',
+      url: '/pages/school/search_school/search_school?type=teacher',
     })
   }
 })

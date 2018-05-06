@@ -23,6 +23,11 @@ Page({
       url: '/pages/admin/index',
     })
   },
+  navToSchool: function () {
+    wx.navigateTo({
+      url: '/pages/profile/myschool/school',
+    })
+  },
   // 定义事件
   toOrder: function () {
     wx.navigateTo({

@@ -1,18 +1,36 @@
-// pages/childs/myschool/index.js
+// pages/school/school_list/school_list.js
+const school = require('../../../request/school.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    schools: [],
+    userType:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    that.setData({
+      userType: options.userType
+    });
+
+    if (options.searchValue) {
+      var data={}
+      data.name = options.searchValue;
+      school.querySchool(data, function(res){
+          console.log(res.data)
+          that.setData({
+            schools: res.data
+          });
+      },function(){
+
+      })
+    }
   },
 
   /**
@@ -63,9 +81,8 @@ Page({
   onShareAppMessage: function () {
   
   },
-  navToSearchSchool: function() {
-    wx.navigateTo({
-      url: '/pages/school/search_school/search_school?type=student',
-    })
+  // 添加到学校
+  addToSchool: function() {
+      
   }
 })
