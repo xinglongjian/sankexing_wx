@@ -3,30 +3,30 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
-    if(wx.getStorageSync('LoginSessionKey')) {
+    if (wx.getStorageSync('LoginSessionKey')) {
       this.globalData.openId = wx.getStorageSync('LoginSessionKey').toString().split('--')[0]
       this.globalData.userId = wx.getStorageSync('UserId');
       this.globalData.userInfo = wx.getStorageSync('UserInfo');
       return;
     }
-    
+
     var that = this;
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log('code:'+res.code);
-        if(res.code) {
+        console.log('code:' + res.code);
+        if (res.code) {
           wx.request({
             url: 'https://www.sankexing.net.cn/xingtan/api/login/loginByWx',
             method: 'GET',
-            data: {'code':res.code},
+            data: { 'code': res.code },
             success: function (res) {
               console.info(res);
               if (res.statusCode == 200 && res.data.status == 'OK') {
-                
+
                 if (res.data.data.openid) {
-                  wx.setStorageSync("LoginSessionKey", res.data.data.openid +"--"+ res.data.data.sessionKey);
+                  wx.setStorageSync("LoginSessionKey", res.data.data.openid + "--" + res.data.data.sessionKey);
                   that.globalData.openId = res.data.data.openid;
                   that.globalData.unionId = res.data.data.unionid;
                   that.globalData.userId = res.data.data.userId;
@@ -52,7 +52,7 @@ App({
                                 url: 'https://www.sankexing.net.cn/xingtan/api/user/addByWx',
                                 method: 'POST',
                                 data: userInfo,
-                                success:function(res){
+                                success: function (res) {
                                   wx.setStorageSync("UserId", res.data.data.id);
                                 }
                               })
@@ -73,19 +73,20 @@ App({
                 console.log('请求异常', res);
             },
             error: function (res) {
-              console.log("app.error:"+res);
+              console.log("app.error:" + res);
             }
           })
         }
       }
     })
   },
-  
+
 
   globalData: {
     userInfo: null,
-    openId:null,
-    unionId:null,
-    userId:null
+    openId: null,
+    unionId: null,
+    userId: null,
+    studentId: null
   }
 })

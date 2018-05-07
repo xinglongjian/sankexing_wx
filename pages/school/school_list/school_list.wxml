@@ -12,7 +12,7 @@
           <view wx:else>其他</view>
         </view>
         <view class='address'>地址：{{item.province}}{{item.city}}{{item.district}}</view>
-        <zan-button type='primary' size="small" plain="true" bindtap='addToSchool'>加入学校</zan-button>
+        <zan-button type='primary' size="small" plain="true" data-id="{{item.id}}" bindtap='addToSchool'>加入学校</zan-button>
       </view>
     </view>
     <zan-button-group>
