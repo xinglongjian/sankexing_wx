@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/school/index",
     "pages/profile/index",
     "pages/index/index",
     "pages/admin/addschool/addschool",
@@ -24,7 +25,6 @@
     "pages/admin/index",
     "pages/childs/myschool/index",
     "pages/childs/mygrade/index",
-    "pages/school/index",
     "pages/school/search_school/search_school",
     "pages/school/school_list/school_list",
     "pages/grade/addgrade/addgrade"

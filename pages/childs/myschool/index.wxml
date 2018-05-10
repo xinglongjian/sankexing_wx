@@ -1,5 +1,23 @@
 <!--pages/childs/myschool/index.wxml-->
 
+<block wx:for="{{schools}}" wx:key="id" wx:for-item="item">
+  <view>
+    <view class='schoolItem'>
+      <image class='schoolHead' src='/images/default_head.jpg'></image>
+      <view class='info'>
+        <view class='name'>名称：{{item.name}}</view>
+        <view class='baseinfo'>
+          <view>类型：</view>
+          <view wx:if="{{item.type == 'SCHOOL'}}">学校</view>
+          <view wx:elif="{{item.type == 'ORGAN'}}">机构</view>
+          <view wx:else>其他</view>
+        </view>
+        <view class='address'>地址：{{item.province}}{{item.city}}{{item.district}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+
 <zan-button-group>
 <button type="primary"  bindtap='navToSearchSchool'>添加学校</button>
 </zan-button-group>

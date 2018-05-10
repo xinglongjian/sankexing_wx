@@ -1,6 +1,8 @@
 // pages/school/school_list/school_list.js
 const student = require('../../../request/student.js')
 const teacher = require('../../../request/teacher.js')
+const school = require('../../../request/school.js')
+var app = getApp();
 Page({
 
   /**
@@ -84,10 +86,18 @@ Page({
   },
   // 
   addToSchool: function (options) {
-    console.log(options)
+    var schoolId = options.target.dataset.id
+    var data = {}
+    data.schoolId = schoolId;
 
     if (this.data.userType == 'teacher') {
+      data.teacherId = app.globalData.userId;
+      teacher.addToSchool(data,function(res){
+          console.log("Success"+res);
+          wx.navigateBack()
+      },function(){
 
+      });
     } else if (this.data.userType == 'student') {
 
       student.addToSchool()

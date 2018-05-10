@@ -1,2 +1,31 @@
 /* pages/profile/school/school.wxss */
 @import "/third/zanui/dist/index.wxss";
+
+.schoolItem {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 250rpx;
+  margin-top: 25rpx;
+  background-color: #fff;
+  padding: 25rpx;
+}
+
+.schoolHead{
+  width: 250rpx;
+  height: 250rpx;
+  
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  margin-left: 25rpx;
+}
+.baseinfo {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+.info view{
+  padding-bottom: 10rpx;
+}

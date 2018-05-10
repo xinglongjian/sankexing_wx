@@ -9,11 +9,11 @@ function querySchool(data, successCb, errorCb, completeCb) {
   api.request(SCHOOL_QUERY_API, 'GET',data , successCb, errorCb, completeCb);
 }
 
-function addSchool(data,successCb, errorCb, completeCb) {
-  api.request(SCHOOL_ADD_API, 'POST', data, successCb, errorCb, completeCb);
-}
+// function addSchool(data,successCb, errorCb, completeCb) {
+//   api.request(SCHOOL_ADD_API, 'POST', data, successCb, errorCb, completeCb);
+// }
 
 module.exports = {
-  querySchool: querySchool,
-  addSchool: addSchool
+  querySchool: querySchool
+  // addSchool: addSchool
 }
