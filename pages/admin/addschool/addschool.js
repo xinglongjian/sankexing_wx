@@ -11,19 +11,41 @@ Page({
   data: {
     config,
     checkedType: 0,
+    checkedLevel: 0,
     schoolType: [
       {
-        value: '0',
-        // 选项文案
+        code: 'SCHOOL',
         name: '学校'
       },
       {
-        value: '1',
+        code: 'ORGAN',
         name: '机构'
       },
       {
-        value: '2',
+        code: 'OTHER',
         name: '其他'
+      }
+    ],
+    schoolLevel: [
+      {
+        code: 'INFANT',
+        name: '幼儿园'
+      },
+      {
+        code: 'PRIMARY',
+        name: '小学'
+      },
+      {
+        code: 'SECONDARY',
+        name: '中学'
+      },
+      {
+        code: 'HIGH',
+        name: '高中'
+      },
+      {
+        code: 'COLLEGE',
+        name: '大学'
       }
     ],
     provinces: [],
@@ -45,6 +67,12 @@ Page({
     console.log(e.detail.value)
     this.setData({
       checkedType: e.detail.value
+    })
+  },
+  handleLevelChange:function(e) {
+    console.log(e.detail.value)
+    this.setData({
+      checkedLevel: e.detail.value
     })
   },
   open: function () {
@@ -159,7 +187,8 @@ Page({
   formSubmit: function (e) {
     var that = this;
     var formData = e.detail.value;
-    formData.type = that.data.checkedType;
+    formData.type = that.data.schoolType[that.data.checkedType].code;
+    formData.level = that.data.schoolLevel[that.data.checkedLevel].code;
     formData.province = that.data.province;
     formData.city = that.data.city;
     formData.district = that.data.area;

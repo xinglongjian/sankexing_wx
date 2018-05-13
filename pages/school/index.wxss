@@ -1,9 +1,51 @@
 /* pages/school/index.wxss */
+
 .swiper {
   height: 400rpx;
   width: 100%;
 }
+
 .swiper image {
   height: 100%;
   width: 100%;
+}
+
+.schoolinfo {
+  margin-top: 10px;
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.gradelist {
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 10px;
+}
+.title{
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid #efefef;
+}
+.grades {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 5px;
+}
+.grades .item{
+  width: 100px;
+  height: 100px;
+  border: 1px solid #efefef;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.add {
+  width: 100px;
+  height: 100px;
 }

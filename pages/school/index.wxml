@@ -1,7 +1,7 @@
 <!--pages/school/index.wxml-->
 <view> 
   <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
-        <block wx:for="{{movies}}" wx:for-index="index">    
+        <block wx:for="{{movies}}" wx:for-index="index" wx:key="url">    
           <swiper-item>    
             <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
           </swiper-item>    
@@ -9,6 +9,32 @@
   </swiper> 
 </view> 
 <!--学校信息-->
-<view class='info'>
-
+<view class='schoolinfo'>
+  <view class='title'>基本信息</view>
+  <view class='name'>九一幼儿园</view>
+  <view class='item'>建于 1990</view>
+  <view class='address'>北京市海淀区花园路</view>
+</view>
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: {{view.Height}}px;"></map>
+<!--班级信息-->
+<view class='gradelist'>
+ <view class='title'>今年年级</view>
+ <view class='grades'> 
+   <view class='item'>
+      <view>小一班</view>
+   </view>
+   <view class='item'>
+      <view>小二班</view>
+   </view>
+   <view class='item'>
+      <view>小三班</view>
+   </view>
+   <view class='item'>
+      <view>小三班</view>
+   </view>
+   <view class='item' bindtap='addToGrade'>
+      <image class='add' src='/images/add.png'></image>
+   </view>
+ </view>
+<button type='primary'>查看历史年级</button>
 </view>

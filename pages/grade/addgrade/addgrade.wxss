@@ -1,6 +1,6 @@
 /* pages/grade/addgrade/addgrade.wxss */
 @import "/third/zanui/dist/index.wxss";
-
+@import "../../../templates/address/index.wxss";
 .picker-view {
   width: 100%;
   display: flex;
