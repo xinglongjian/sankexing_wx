@@ -1,0 +1,10 @@
+<!--pages/grade/apps/app.wxml-->
+<view class='title'>基础应用</view>
+<view class='func'>
+  <block wx:for="{{funcs}}" wx:for-index="index" wx:key="name">
+    <view class='item' bindtap='navToFunc' data-page="{{item.page}}">
+      <image class='icon' src='{{item.icon}}'></image>
+      <view>{{item.name}}</view>
+    </view>
+  </block>
+</view>

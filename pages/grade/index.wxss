@@ -7,6 +7,41 @@
   height: 100%;
   width: 100%;
 }
+/*---班级信息--*/
+.gradeinfo{
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  color: #fff;
+}
+.gradeinfo .name{
+  font-size: 32px;
+}
+
+/*------------功能-------*/
+.func{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+.func .item{
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.func .icon{
+  width: 32px;
+  height: 32px;
+}
+
 /*--------------基本信息------------*/
 .baseinfo{
   background: #fff;
@@ -91,36 +126,6 @@
 
 .teacher .info {
   margin-top: 10px;
-}
-
-/*--------------其他项目------------*/
-.otheritem{
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 200rpt;
-  margin-top: 15px;
-}
-
-.otheritem .body{
-  display: flex;
-  flex-direction: row;
-  padding: 5px 0px 5px; 
-  justify-content: space-around;
-}
-
-.otheritem .body .item{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-.otheritem .body .item view {
-  margin-bottom: 5px;
-}
-.otheritem .body .item .bigger {
-  font-size: 26px;
 }
 
 

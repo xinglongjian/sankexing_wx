@@ -5,7 +5,13 @@
       <view class='info'>
         <view class='name'>名称：{{item.name}}</view>
         <view class='name'>年份：{{item.year}}</view>
-        <view class=''></view>
+        <view class='name' wx:if="{{item.level == 'EARLY'}}">级别：早教班</view>
+        <view class='name' wx:elif="{{item.level == 'HALFDAY'}}">级别：半日班</view>
+        <view class='name' wx:elif="{{item.level == 'BOTTOM'}}">级别：小班</view>
+        <view class='name' wx:elif="{{item.level == 'MIDDLE'}}">级别：中班</view>
+        <view class='name' wx:elif="{{item.level == 'TOP'}}">级别：大班</view>
+        <view class='name' wx:elif="{{item.level == 'PRESCHOOL'}}">级别：学前班</view>
+        <view class=''>学校：{{item.schoolName}}</view>
       </view>
     </view>
   </view>

@@ -1,0 +1,42 @@
+/* pages/grade/apps/app.wxss */
+
+page {
+  background-color: #fff;
+  font-size: 18px;
+}
+
+/*--------标题-------*/
+
+.title {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px dotted #ededed;
+}
+
+/*------------功能-------*/
+
+.func {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.func .item {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.func .icon {
+  width: 32px;
+  height: 32px;
+}

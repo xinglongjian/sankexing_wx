@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/grade/index",
     "pages/profile/index",
     "pages/grade/addgrade/addgrade",
     "pages/school/index",
@@ -7,7 +8,6 @@
     "pages/admin/addschool/addschool",
     "pages/childs/index",
     "pages/find/index",
-    "pages/grade/index",
     "pages/teacher/index",
     "pages/classes/index",
     "pages/logs/logs",
@@ -28,7 +28,11 @@
     "pages/childs/mygrade/index",
     "pages/school/search_school/search_school",
     "pages/school/school_list/school_list",
-    "pages/profile/mygrade/grade"
+    "pages/profile/mygrade/grade",
+    "pages/grade/apps/app",
+    "pages/grade/photos/photo",
+    "pages/grade/homework/homework",
+    "pages/grade/notice/notice"
   ],
   "window": {
     "backgroundTextStyle": "light",

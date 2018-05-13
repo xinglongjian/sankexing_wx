@@ -1,43 +1,38 @@
 <!--pages/grade/index.wxml-->
 <!--班级-->
 <view class='container'>
-  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
-        <block wx:for="{{movies}}" wx:for-index="index">    
-          <swiper-item>    
-            <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
-          </swiper-item>    
-        </block>    
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{movies}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
   </swiper>
 
-  <!--操作按钮-->
-  <view class='operation'>
-     <view>加入</view>
-     <view class='line'></view>
-     <view>退学</view>
-     <view class='line'></view>
-     <view>转让</view>
+  <view class='gradeinfo'>
+    <view class='name'>小一班</view>
+    <view class='school'>九一幼儿园</view>
   </view>
 
-  <!--基本信息-->
-  <view class='baseinfo'>
-    <view class='title'>
-      <text>基本信息</text>
-      <image src='/images/more_16_.png'></image>
+
+  <!--功能区-->
+
+  <view class='func'>
+   <block wx:for="{{funcs}}" wx:for-index="index" wx:key="name">
+      <view class='item' bindtap='navToFunc' data-page="{{item.page}}">
+        <image class='icon' src='{{item.icon}}'></image>
+        <view>{{item.name}}</view>
     </view>
-    <view class='body'>
-      <view class='item'>
-        <view>班级名称:{{grade.name}}</view>
-        <view>学校名称:{{grade.organ}}</view>
-        <view>课程名称:{{grade.course}}</view>
-        <view>开课时间:{{grade.openDate}}</view>
-      </view>
-      <view class='item'>
-        <view>结课时间:{{grade.closeDate}}</view>
-        <view>教室名称:{{grade.classRoom}}</view>
-        <view>已上课次:{{grade.finishedNum}}</view>
-        <view>剩余课次:{{grade.leftNum}}</view>
-      </view>
-    </view>
+    </block>
+    
+  </view>
+  <!--操作按钮-->
+  <view class='operation'>
+    <view>加入</view>
+    <view class='line'></view>
+    <view>退学</view>
+    <view class='line'></view>
+    <view>转让</view>
   </view>
 
   <!--任课老师-->
@@ -45,30 +40,16 @@
     <view class='title'>任课教师</view>
     <view class='body'>
       <view class='item'>
-       <image src='/images/default_head.jpg'></image>
-       <view class='info'>
+        <image src='/images/default_head.jpg'></image>
+        <view class='info'>
           <text>张老师(主教)</text>
-       </view>
-    </view>
-    <view class='item'>
-       <image src='/images/default_head.jpg'></image>
-       <view class='info'>
-          <text>李老师(辅导)</text>
-       </view>
-    </view>
-    </view>
-  </view>
-
-  <!--其他项目-->
-  <view class='otheritem'>
-    <view class='body'>
-      <view class='item'>
-        <view class='bigger'>22</view>
-        <view>相册</view>
+        </view>
       </view>
       <view class='item'>
-        <view class='bigger'>5</view>
-        <view>作业</view>
+        <image src='/images/default_head.jpg'></image>
+        <view class='info'>
+          <text>李老师(辅导)</text>
+        </view>
       </view>
     </view>
   </view>
@@ -85,17 +66,17 @@
       </view>
       <!--message-->
       <view class='content'>
-         <view class='message'>
-         我李IU作用了
-         </view>
-         <view class='photo'>
-           <image src='/images/default_head.jpg'></image>
-           <image src='/images/default_head.jpg'></image>
-           <image src='/images/default_head.jpg'></image>
-           <image src='/images/default_head.jpg'></image>
-           <image src='/images/default_head.jpg'></image>
-           <image src='/images/default_head.jpg'></image>
-         </view>
+        <view class='message'>
+          我李IU作用了
+        </view>
+        <view class='photo'>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+          <image src='/images/default_head.jpg'></image>
+        </view>
       </view>
       <!--评论按钮-->
       <view class='button'>
@@ -109,7 +90,7 @@
           <view>赞</view>
           <view>1</view>
         </view>
-        
+
       </view>
       <!--点赞-->
       <view class='zan'>

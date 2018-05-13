@@ -9,7 +9,7 @@ Page({
   data: {
     schoolId: 0,
     schoolName: '',
-    checkedLevel:2,
+    checkedLevel: 2,
     level: [{
       code: 'EARLY',
       name: '早教班'
@@ -17,7 +17,7 @@ Page({
       code: 'HALFDAY',
       name: '半日班'
     }, {
-      code: 'BUTTON',
+      code: 'BOTTOM',
       name: '小班'
     }, {
       code: 'MIDDLE',
@@ -29,9 +29,9 @@ Page({
       code: 'PRESCHOOL',
       name: '学前班'
     }],
-    isNeedValidate:false
+    isNeedValidate: false
   },
-  handleFieldChange:function(e) {
+  handleFieldChange: function (e) {
     this.setData({
       isNeedValidate: e.detail.value
     })
@@ -106,7 +106,7 @@ Page({
     var formData = e.detail.value;
     formData.schoolId = that.data.schoolId;
     formData.code = that.data.level[that.data.checkedLevel].code;
-    formData.isNeedValidate = that.data.isNeedValidate == true? 1:0;
+    formData.isNeedValidate = that.data.isNeedValidate == true ? 1 : 0;
     formData.createdUserId = app.globalData.userId;
     console.log(formData);
     grade.addGrade(formData, function (e) {
