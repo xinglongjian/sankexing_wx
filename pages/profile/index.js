@@ -28,6 +28,11 @@ Page({
       url: '/pages/profile/myschool/school',
     })
   },
+  navToGrade: function () {
+    wx.navigateTo({
+      url: '/pages/profile/mygrade/grade',
+    })
+  },
   // 定义事件
   toOrder: function () {
     wx.navigateTo({

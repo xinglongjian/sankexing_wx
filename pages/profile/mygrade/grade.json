@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的班级",
+  "usingComponents": {
+    "zan-button-group": "/third/zanui/dist/btn-group/index",
+    "zan-panel": "/third/zanui/dist/panel/index"
+  }
+}

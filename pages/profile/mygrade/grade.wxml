@@ -1,0 +1,16 @@
+<block wx:for="{{grades}}" wx:key="id" wx:for-item="item">
+  <view>
+    <view class='schoolItem' bindtap='navToGrade' data-id='{{item.id}}'>
+      <image class='schoolHead' src='/images/default_head.jpg'></image>
+      <view class='info'>
+        <view class='name'>名称：{{item.name}}</view>
+        <view class='name'>年份：{{item.year}}</view>
+        <view class=''></view>
+      </view>
+    </view>
+  </view>
+</block>
+
+<zan-button-group>
+<button type="primary"  bindtap='navToSearchSchool'>添加班级</button>
+</zan-button-group>

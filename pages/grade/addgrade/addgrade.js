@@ -1,4 +1,6 @@
 // pages/grade/addgrade/addgrade.js
+var grade = require('../../../request/grade.js')
+var app = getApp();
 Page({
 
   /**
@@ -30,13 +32,11 @@ Page({
     isNeedValidate:false
   },
   handleFieldChange:function(e) {
-    console.log(e)
     this.setData({
       isNeedValidate: e.detail.value
     })
   },
   handleLevelChange: function (e) {
-    console.log(e.detail.value)
     this.setData({
       checkedLevel: e.detail.value
     })
@@ -51,9 +51,6 @@ Page({
       schoolId: 1,
       schoolName: '九一幼儿园'
     })
-
-
-
   },
 
   /**
@@ -103,5 +100,22 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  formSubmit: function (e) {
+    var that = this;
+    var formData = e.detail.value;
+    formData.schoolId = that.data.schoolId;
+    formData.code = that.data.level[that.data.checkedLevel].code;
+    formData.isNeedValidate = that.data.isNeedValidate == true? 1:0;
+    formData.createdUserId = app.globalData.userId;
+    console.log(formData);
+    grade.addGrade(formData, function (e) {
+      wx.navigateBack();
+    }, function () {
+      console.log("add grade fail");
+    });
+  },
+  formReset: function (event) {
+    console.log('[zan:field:reset]', event);
+  },
 })

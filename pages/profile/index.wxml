@@ -25,7 +25,7 @@
     <view class="person-line"></view>
     <view class="list-item">
       <image class="item-image" src="/images/default_head.jpg"></image>
-      <text class="item-text" bindtap='navToSchool'>我的班级(教师专用)</text>
+      <text class="item-text" bindtap='navToGrade'>我的班级(教师专用)</text>
     </view>
     <view class="person-line"></view>
     <view class="list-item">
