@@ -8,34 +8,48 @@ Page({
     funcs: [{
       icon: '/images/common/photo.png',
       name: '相册',
-      page: ''
+      page: '/pages/grade/photos/photo'
     }, {
       icon: '/images/grade/homework.png',
       name: '作业',
-      page: ''
+      page: '/pages/grade/homework/homework'
     }, {
       icon: '/images/common/notice.png',
       name: '通知',
-      page: ''
+      page: '/pages/grade/notice/notice'
     }, {
       icon: '/images/common/file.png',
       name: '文件',
-      page: ''
+      page: '/pages/grade/files/files'
+    }, {
+      icon: '/images/grade/teachers.png',
+      name: '教师',
+      page: '/pages/grade/teacher/teacher'
+    }, {
+      icon: '/images/grade/students.png',
+      name: '学生',
+      page: '/pages/grade/student/student'
     }, {
       icon: '/images/common/vote.png',
       name: '投票',
-      page: ''
+      page: '/pages/grade/vote/vote'
     },{
       icon: '/images/common/activity.png',
       name: '活动',
-      page: ''
+      page: '/pages/grade/activity/activity'
     }, {
       icon: '/images/common/stat.png',
       name: '统计',
-      page: ''
+      page: '/pages/grade/stat/stat'
     }]
   },
-
+  navToFunc: function (e) {
+    console.log(e)
+    var curpage = e.currentTarget.dataset.page;
+    wx.navigateTo({
+      url: curpage,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

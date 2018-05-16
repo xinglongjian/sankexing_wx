@@ -56,6 +56,11 @@ Page({
       url: curpage,
     })
   },
+  navToConfig: function(e) {
+    wx.navigateTo({
+      url: '/pages/grade/config/config',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

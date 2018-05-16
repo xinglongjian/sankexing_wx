@@ -1,0 +1,41 @@
+/* pages/grade/teacher/teacher.wxss */
+
+/*------教师------*/
+.teacher {
+  margin-top: 15px;
+  background: #fff;
+  width: 100%;
+}
+
+.teacher .title {
+  height: 30px;
+  padding: 10px;
+  font-size: 28;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.teacher .body{
+  display: flex;
+  flex-direction: row;
+  height: 120px;
+  justify-content: space-around;
+}
+.teacher .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacher .item image {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top:15px;
+}
+
+.teacher .info {
+  margin-top: 10px;
+}

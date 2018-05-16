@@ -32,7 +32,14 @@
     "pages/grade/apps/app",
     "pages/grade/photos/photo",
     "pages/grade/homework/homework",
-    "pages/grade/notice/notice"
+    "pages/grade/notice/notice",
+    "pages/grade/config/config",
+    "pages/grade/teacher/teacher",
+    "pages/grade/student/student",
+    "pages/grade/files/files",
+    "pages/grade/activity/activity",
+    "pages/grade/vote/vote",
+    "pages/grade/stat/stat"
   ],
   "window": {
     "backgroundTextStyle": "light",

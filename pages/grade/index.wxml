@@ -14,6 +14,9 @@
     <view class='school'>九一幼儿园</view>
   </view>
 
+  <view class='config' bindtap='navToConfig'>
+    <image src='/images/common/config.png'></image>
+  </view>
 
   <!--功能区-->
 
@@ -35,24 +38,7 @@
     <view>转让</view>
   </view>
 
-  <!--任课老师-->
-  <view class='teacher'>
-    <view class='title'>任课教师</view>
-    <view class='body'>
-      <view class='item'>
-        <image src='/images/default_head.jpg'></image>
-        <view class='info'>
-          <text>张老师(主教)</text>
-        </view>
-      </view>
-      <view class='item'>
-        <image src='/images/default_head.jpg'></image>
-        <view class='info'>
-          <text>李老师(辅导)</text>
-        </view>
-      </view>
-    </view>
-  </view>
+  
 
   <!--最新动态-->
   <view class='newmessage'>
