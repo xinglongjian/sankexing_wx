@@ -1,2 +1,23 @@
 <!--pages/grade/photo/photo.wxml-->
-<text>pages/grade/photo/photo.wxml</text>
+<view class="navbar"> 
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+</view>
+
+<view class='upload' bindtap='imageFun'>
+<image src='{{currentImage}}'></image>
+</view>
+
+<!--最新照片--> 
+<view hidden="{{currentTab!==0}}" class='tabpage'> 
+<view class='nodata'>没有数据</view>
+</view>
+
+<!--全部相册--> 
+<view hidden="{{currentTab!==1}}" class='tabpage'> 
+<view class='nodata'>没有数据</view>
+</view>
+
+<!--我的照片-->
+<view hidden="{{currentTab!==2}}" class='tabpage'> 
+<view class='nodata'>没有数据</view>
+</view>

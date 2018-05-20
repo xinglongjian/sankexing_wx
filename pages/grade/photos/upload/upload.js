@@ -1,48 +1,54 @@
-// pages/grade/photo/photo.js
+// pages/grade/photos/upload/upload.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navbar: ['最新上传', '全部相册', '我的照片'],
-    currentTab: 0,
-    currentImage: '/images/common/upload.png',
-    images: ['/images/common/upload.png', '/images/common/new.png', '']
+    photos: [
+      '/images/default_head.jpg',
+      '/images/default_head.jpg',
+      '/images/default_head.jpg'
+    ],
+    isHiddenDelete: true,
+    isHiddenSelect: false
   },
-  navbarTap: function (e) {
+  //显示删除按钮
+  showDelete: function (e) {
     this.setData({
-      currentTab: e.currentTarget.dataset.idx,
-      currentImage: this.data.images[e.currentTarget.dataset.idx]
+      isHiddenDelete:!this.data.isHiddenDelete
     })
   },
-  //上传照片
-  uploadImage: function () {
+  //删除图片
+  deleteImage:function(e) {
+    var i = e.currentTarget.dataset.index;
+    this.data.photos.splice(i, 1)
+    this.setData({
+      photos: this.data.photos
+    })
+  },
+  selectImage:function(e) {
     var that = this;
+    var left = 9-this.data.photos.length
     wx.chooseImage({
-      count: 9,
+      count: left,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
         console.log(res)
-        const src = res.tempFilePaths[0]
-        console.log('src:' + src)
-
+        const images = res.tempFilePaths
+        that.setData({
+          photos:that.data.photos.concat(images)
+        })
+        //如果到达9个就不再添加
+        if(that.data.photos.length == 9) {
+          that.setData({
+            isHiddenSelect:true
+          })
+        }
       }
     })
   },
-  //新建相册
-  newAlbum: function () {
-
-  }, 
-  imageFun: function (e) {
-    if (this.data.currentTab == 0) {
-      this.uploadImage();
-    } else {
-      newAlbum();
-    }
-  },
-  
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,0 +1,36 @@
+/* pages/grade/photos/album/album.wxss */
+
+.albums {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  flex-wrap: wrap;
+}
+
+.album {
+  width: 220rpx;
+  height: 320rpx;
+  display: flex;
+  flex-direction: column;
+  margin-right: 15rpx;
+  position: relative;
+}
+
+.album .imageview {
+  width: 220rpx;
+  height: 220rpx;
+  border: 1rpx solid #ededed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageview image {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.info {
+  margin-top: 10rpx;
+}

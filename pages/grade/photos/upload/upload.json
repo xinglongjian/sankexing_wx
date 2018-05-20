@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "图片上传",
+  "usingComponents": {
+    "zan-cell": "/third/zanui/dist/cell/index",
+    "zan-cell-group": "/third/zanui/dist/cell-group/index",
+    "zan-panel": "/third/zanui/dist/panel/index",
+    "zan-field": "/third/zanui/dist/field/index",
+    "zan-button": "/third/zanui/dist/btn/index",
+    "zan-button-group": "/third/zanui/dist/btn-group/index"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择相册",
+  "usingComponents": {
+    "zan-panel": "/third/zanui/dist/panel/index"
+  }
+}
