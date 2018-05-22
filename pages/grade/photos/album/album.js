@@ -1,4 +1,5 @@
 // pages/grade/photos/album/album.js
+var album = require('../../../../request/album.js')
 Page({
 
   /**
@@ -6,19 +7,12 @@ Page({
    */
   data: {
     albums: [
-      {
-        image: '/images/default_head.jpg',
-        name: '班级相册',
-        count: 1
-      }, {
-        image: '/images/default_head.jpg',
-        name: '班级相册1',
-        count: 2
-      }
-    ]
+    ],
+    gradeId: 0
   },
 
   addAlbum: function (e) {
+    console.log('dddd')
     wx.navigateTo({
       url: '/pages/grade/photos/newalbum/newalbum',
     })
@@ -27,14 +21,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var gradeId = options.gradeId;
+    var that = this;
+    that.setData({
+      gradeId: gradeId
+    })
 
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var that = this;
+    album.getSimpleAlbum(that.data.gradeId, function (res) {
+      console.log(res)
+      that.setData({
+        albums: res.data
+      })
+    }, function () { })
   },
 
   /**

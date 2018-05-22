@@ -1,4 +1,5 @@
 // pages/grade/photos/upload/upload.js
+var album = require('../../../../request/album.js')
 Page({
 
   /**
@@ -6,30 +7,29 @@ Page({
    */
   data: {
     photos: [
-      '/images/default_head.jpg',
-      '/images/default_head.jpg',
-      '/images/default_head.jpg'
     ],
     isHiddenDelete: true,
-    isHiddenSelect: false
+    isHiddenSelect: false,
+    gradeId: 0,
+    albumUrl: ''
   },
   //显示删除按钮
   showDelete: function (e) {
     this.setData({
-      isHiddenDelete:!this.data.isHiddenDelete
+      isHiddenDelete: !this.data.isHiddenDelete
     })
   },
   //删除图片
-  deleteImage:function(e) {
+  deleteImage: function (e) {
     var i = e.currentTarget.dataset.index;
     this.data.photos.splice(i, 1)
     this.setData({
       photos: this.data.photos
     })
   },
-  selectImage:function(e) {
+  selectImage: function (e) {
     var that = this;
-    var left = 9-this.data.photos.length
+    var left = 9 - this.data.photos.length
     wx.chooseImage({
       count: left,
       sizeType: ['original', 'compressed'],
@@ -38,22 +38,33 @@ Page({
         console.log(res)
         const images = res.tempFilePaths
         that.setData({
-          photos:that.data.photos.concat(images)
+          photos: that.data.photos.concat(images)
         })
         //如果到达9个就不再添加
-        if(that.data.photos.length == 9) {
+        if (that.data.photos.length == 9) {
           that.setData({
-            isHiddenSelect:true
+            isHiddenSelect: true
           })
         }
       }
     })
   },
+  uploadImage: function (e) {
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var srcs = options.srcs;
+    var gradeId = options.gradeId;
 
+    console.log(srcs);
+    this.setData({
+      gradeId: gradeId,
+      albumUrl: '/pages/grade/photos/album/album?gradeId=' + gradeId,
+      photos: srcs.split(',')
+    })
   },
 
   /**

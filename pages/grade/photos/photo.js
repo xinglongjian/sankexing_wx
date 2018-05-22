@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    gradeId:0,
     navbar: ['最新上传', '全部相册', '我的照片'],
     currentTab: 0,
     currentImage: '/images/common/upload.png',
@@ -25,9 +26,11 @@ Page({
       sourceType: ['album', 'camera'],
       success: function (res) {
         console.log(res)
-        const src = res.tempFilePaths[0]
-        console.log('src:' + src)
-
+        const srcs = res.tempFilePaths
+        console.log('src:' + srcs)
+        wx.redirectTo({
+          url: './upload/upload?gradeId='+that.data.gradeId+'&srcs=' + srcs.join(","),
+        })
       }
     })
   },
@@ -47,7 +50,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var gradeId= options.gradeId;
+    console.log('photo,'+gradeId)
+    this.setData({
+      gradeId: gradeId
+    })
   },
 
   /**

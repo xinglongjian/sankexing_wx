@@ -1,7 +1,7 @@
 <!--pages/grade/photos/upload/upload.wxml-->
 <zan-panel class="cell-panel-demo">
   <zan-cell-group>
-    <zan-cell title="相册：" value="班级相册" is-link url="/pages/grade/photos/album/album"></zan-cell>
+    <zan-cell title="相册：" value="班级相册" is-link url="{{albumUrl}}"></zan-cell>
     <view class='zan-cell zan-field'>
       <view class='zan-cell__hd zan-field__title'>位置：</view>
       <input type='text' name="name" placeholder="摄像的位置" class='zan-field__input zan-cell__bd'></input>
@@ -28,5 +28,5 @@
 </zan-panel>
 
 <zan-button-group>
-  <zan-button type='primary'>上传</zan-button>
+  <zan-button type='primary' bindtap='uploadImage'>上传</zan-button>
 </zan-button-group>

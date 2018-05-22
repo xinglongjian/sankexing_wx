@@ -15,7 +15,7 @@ Page({
       { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
       { url: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg' }
     ],
-    gradeId: 0,
+    gradeId: 1,
     grade: {},
     funcs: [{
       icon: '/images/common/photo.png',
@@ -50,10 +50,11 @@ Page({
     // }
   },
   navToFunc: function (e) {
-    console.log(e)
     var curpage = e.currentTarget.dataset.page;
+    var url = curpage + "?gradeId=" + this.data.gradeId;
+    console.log(url)
     wx.navigateTo({
-      url: curpage,
+      url: url,
     })
   },
   navToConfig: function(e) {
@@ -66,18 +67,18 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var gradeId = options.gradeId;
-    that.setData({
-      gradeId: gradeId
-    });
+    // var gradeId = options.gradeId;
+    // that.setData({
+    //   gradeId: gradeId
+    // });
 
-    grade.getGrade(that.data.gradeId, function (res) {
-      that.setData({
-        grade: res.grade
-      });
-    }, function () {
+    // grade.getGrade(that.data.gradeId, function (res) {
+    //   that.setData({
+    //     grade: res.grade
+    //   });
+    // }, function () {
 
-    });
+    // });
 
     wx.setNavigationBarTitle({
       title: '班级主页',

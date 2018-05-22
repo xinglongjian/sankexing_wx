@@ -1,7 +1,7 @@
 <!--pages/grade/photos/album/album.wxml-->
 <zan-panel class="cell-panel-demo">
   <view class='albums'>
-    <view class='album' bindlongpress='addAlbum'>
+    <view class='album' bindtap='addAlbum'>
       <view class='imageview'>
         <image class='addicon' src="/images/common/add_2.png" style='width:110rpx;height:110rpx'/>
       </view>
