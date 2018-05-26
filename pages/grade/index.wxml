@@ -2,7 +2,7 @@
 <!--班级-->
 <view class='container'>
   <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-    <block wx:for="{{movies}}" wx:for-index="index">
+    <block wx:for="{{movies}}" wx:for-index="index" wx:key="item.url">
       <swiper-item>
         <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
       </swiper-item>

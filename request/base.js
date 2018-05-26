@@ -27,13 +27,13 @@ function request(url, method, data, successCb, errorCb, completeCb) {
 }
 //上传文件
 function uploadFile(url, tempFilePaths, name, formdata, successCb, errorCb, completeCb) {
-  console.log('path='+tempFilePaths)
+  console.log('url='+url)
   wx.uploadFile({
     url: url,
     filePath: tempFilePaths,
     name: name,
     header:{
-      'content-type':'application/x-www-form-urlencoded'
+      'content-type': 'application/x-www-form-urlencoded'
     },
     formData:formdata, //http请求的其他额外data
     success: function (res) {

@@ -11,9 +11,9 @@
     </view>
 
     <block wx:for="{{albums}}" wx:for-index="index" wx:key="name">
-      <view class='album' bindlongpress='showDelete'>
+      <view class='album' bindtap='selectAlbum' data-name="{{item.name}}">
         <view class='imageview'>
-          <image  src="{{item.image}}" mode="scaleToFill" />
+          <image  src="{{item.count==0?'/images/common/photo.png':item.image}}" mode="scaleToFill" />
         </view>
         <view class='info'>
           <view>{{item.name}}</view>

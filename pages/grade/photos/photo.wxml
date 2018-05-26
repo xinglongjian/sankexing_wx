@@ -9,7 +9,20 @@
 
 <!--最新照片--> 
 <view hidden="{{currentTab!==0}}" class='tabpage'> 
-<view class='nodata'>没有数据</view>
+<view wx:if="{{newUploads.length !=0}}">
+  <block wx:for="{{newUploads}}" wx:for-index="index" wx:key="name">
+      <view class='album' bindtap='selectAlbum' data-name="{{item.name}}">
+        <view class='imageview'>
+          <image  src="{{item.count==0?'/images/common/photo.png':item.image}}" mode="scaleToFill" />
+        </view>
+        <view class='info'>
+          <view>{{item.name}}</view>
+          <view>{{item.count}}张</view>
+        </view>
+      </view>
+    </block>
+</view>
+<view wx:else class='nodata'>没有数据</view>
 </view>
 
 <!--全部相册--> 

@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/grade/index",
+    "pages/profile/index",
     "pages/grade/photos/photo",
     "pages/grade/photos/upload/upload",
     "pages/grade/photos/newalbum/newalbum",
     "pages/grade/photos/album/album",
-    "pages/profile/index",
     "pages/grade/addgrade/addgrade",
     "pages/school/index",
     "pages/index/index",

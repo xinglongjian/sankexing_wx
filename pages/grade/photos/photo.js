@@ -1,4 +1,5 @@
 // pages/grade/photo/photo.js
+var album = require('../../../request/album.js')
 Page({
 
   /**
@@ -9,7 +10,9 @@ Page({
     navbar: ['最新上传', '全部相册', '我的照片'],
     currentTab: 0,
     currentImage: '/images/common/upload.png',
-    images: ['/images/common/upload.png', '/images/common/new.png', '']
+    images: ['/images/common/upload.png', '/images/common/new.png', ''],
+    newUploads:[]
+
   },
   navbarTap: function (e) {
     this.setData({
@@ -55,6 +58,15 @@ Page({
     this.setData({
       gradeId: gradeId
     })
+    //最新上传
+    var that = this;
+    album.getNewUpload(gradeId,
+    function(res){
+      console.log(res)
+      that.setData({
+        newUploads:res.data
+      })
+    },function(){});
   },
 
   /**

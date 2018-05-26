@@ -1,5 +1,6 @@
 // pages/grade/photos/upload/upload.js
 var album = require('../../../../request/album.js')
+var app = getApp();
 Page({
 
   /**
@@ -11,7 +12,11 @@ Page({
     isHiddenDelete: true,
     isHiddenSelect: false,
     gradeId: 0,
-    albumUrl: ''
+    albumUrl: '',
+    albumName: '班级相册',
+    position: '',
+    info: '',
+    formData: {}
   },
   //显示删除按钮
   showDelete: function (e) {
@@ -50,7 +55,66 @@ Page({
     })
   },
   uploadImage: function (e) {
+    console.log(e)
+    var that = this;
+    var formData = {};
+    formData.name = that.data.albumName;
+    formData.position = that.data.position;
+    formData.info = that.data.info;
+    formData.gradeId = that.data.gradeId;
+    formData.userId = app.globalData.userId;
+    that.setData({
+      formData: formData
+    })
+    that.uploadSingleImage({})
+    console.log(formData)
+  },
 
+  uploadSingleImage: function (data) {
+    var that = this;
+    console.log(data);
+    console.log(that.data.formData);
+
+    var i = data.i ? data.i : 0,//当前上传的哪张图片
+    success = data.success ? data.success : 0,//上传成功的个数
+    fail = data.fail ? data.fail : 0;//上传失败的个数
+    var imagePath = that.data.photos[i];
+    console.log(imagePath);
+    album.uploadAlbum(imagePath, 'imgFile', that.data.formData,
+      function (res) {
+        success++;
+      },
+      function (res) {
+        fail++;
+      },
+      function (e) {
+        i++;
+        if (i == that.data.photos.length) {
+          console.log("完成")
+          wx.navigateBack();
+        } else {
+          data.i = i;
+          data.success = success;
+          data.fail = fail;
+          that.uploadSingleImage(data);
+        }
+      });
+  },
+
+
+
+
+
+
+  bindPosition: function (e) {
+    this.setData({
+      position: e.detail.value
+    })
+  },
+  bindInfo: function (e) {
+    this.setData({
+      info: e.detail.value
+    })
   },
   /**
    * 生命周期函数--监听页面加载
