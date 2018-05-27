@@ -1,36 +1,51 @@
 <!--pages/grade/photo/photo.wxml-->
-<view class="navbar"> 
- <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
 </view>
 
 <view class='upload' bindtap='imageFun'>
-<image src='{{currentImage}}'></image>
+  <image src='{{currentImage}}'></image>
 </view>
 
-<!--最新照片--> 
-<view hidden="{{currentTab!==0}}" class='tabpage'> 
-<view wx:if="{{newUploads.length !=0}}">
-  <block wx:for="{{newUploads}}" wx:for-index="index" wx:key="name">
-      <view class='album' bindtap='selectAlbum' data-name="{{item.name}}">
-        <view class='imageview'>
-          <image  src="{{item.count==0?'/images/common/photo.png':item.image}}" mode="scaleToFill" />
+<!--最新照片-->
+<view hidden="{{currentTab!==0}}" class='tabpage'>
+  <view wx:if="{{newUploads.length !=0}}">
+    <block wx:for="{{newUploads}}" wx:for-index="index" wx:key="uploadDate">
+      <view class='uploadView'>
+        <!--上传者-->
+        <view class='uploader'>
+          <image class='headimage' src='https://www.sankexing.net.cn/xingtan/api/user/getHeadImage/{{item.uploadUserId}}/100'></image>
+          <view class='author'>
+            <view class='name'>{{item.uploadNickName}}</view>
+            <view class='date'>{{item.uploadDate}}</view>
+          </view>
         </view>
-        <view class='info'>
-          <view>{{item.name}}</view>
-          <view>{{item.count}}张</view>
+        <!--图片-->
+        <view class='photos'>
+          <block wx:for="{{item.fileList}}" wx:for-index="index" wx:for-item="file" wx:key="file">
+            <view class='photo'>
+              <image src="https://www.sankexing.net.cn/xingtan/api/album/getAlbumImage/{{item.gradeId}}/{{item.albumSimple.id}}/{{item.uploadId}}/{{file}}/100" mode="scaleToFill" />
+            </view>
+          </block>
+        </view>
+        <!--相册-->
+        <view class='album'>
+          <image src='https://www.sankexing.net.cn/xingtan/api/album/getAlbumImage/{{item.albumSimple.gradeId}}/{{item.albumSimple.id}}/{{item.albumSimple.uploadId}}/{{item.albumSimple.fileName}}/100'></image>
+          <view>上传至相册《{{item.albumSimple.name}}》</view>
+          <view class='count'>(共{{item.albumSimple.count}}张)</view>
         </view>
       </view>
     </block>
-</view>
-<view wx:else class='nodata'>没有数据</view>
+  </view>
+  <view wx:else class='nodata'>没有数据</view>
 </view>
 
-<!--全部相册--> 
-<view hidden="{{currentTab!==1}}" class='tabpage'> 
-<view class='nodata'>没有数据</view>
+<!--全部相册-->
+<view hidden="{{currentTab!==1}}" class='tabpage'>
+  <view class='nodata'>没有数据</view>
 </view>
 
 <!--我的照片-->
-<view hidden="{{currentTab!==2}}" class='tabpage'> 
-<view class='nodata'>没有数据</view>
+<view hidden="{{currentTab!==2}}" class='tabpage'>
+  <view class='nodata'>没有数据</view>
 </view>

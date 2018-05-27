@@ -16,7 +16,7 @@ Page({
     albumName: '班级相册',
     position: '',
     info: '',
-    formData: {}
+    newUploadId: {}
   },
   //显示删除按钮
   showDelete: function (e) {
@@ -40,7 +40,6 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
-        console.log(res)
         const images = res.tempFilePaths
         that.setData({
           photos: that.data.photos.concat(images)
@@ -55,7 +54,6 @@ Page({
     })
   },
   uploadImage: function (e) {
-    console.log(e)
     var that = this;
     var formData = {};
     formData.name = that.data.albumName;
@@ -63,24 +61,26 @@ Page({
     formData.info = that.data.info;
     formData.gradeId = that.data.gradeId;
     formData.userId = app.globalData.userId;
-    that.setData({
-      formData: formData
-    })
-    that.uploadSingleImage({})
-    console.log(formData)
+
+    album.addUpload(formData,function(res){
+      var newupload={}
+      newupload.uploadId = res.data;
+      that.setData({
+        newUploadId: newupload
+      })
+    },function(){},function(){
+      that.uploadSingleImage({})
+    });
   },
 
   uploadSingleImage: function (data) {
     var that = this;
-    console.log(data);
-    console.log(that.data.formData);
 
     var i = data.i ? data.i : 0,//当前上传的哪张图片
     success = data.success ? data.success : 0,//上传成功的个数
     fail = data.fail ? data.fail : 0;//上传失败的个数
     var imagePath = that.data.photos[i];
-    console.log(imagePath);
-    album.uploadAlbum(imagePath, 'imgFile', that.data.formData,
+    album.uploadAlbum(imagePath, 'imgFile', that.data.newUploadId,
       function (res) {
         success++;
       },
@@ -122,8 +122,6 @@ Page({
   onLoad: function (options) {
     var srcs = options.srcs;
     var gradeId = options.gradeId;
-
-    console.log(srcs);
     this.setData({
       gradeId: gradeId,
       albumUrl: '/pages/grade/photos/album/album?gradeId=' + gradeId,

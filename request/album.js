@@ -4,14 +4,20 @@ var api = require('./base.js');
 var util = require('../utils/util.js')
 
 var ALBUM_API = api.API_BASE + "/api/album"
-var ALBUM_ADD_API = ALBUM_API + "/add"
+var ALBUM_ADD_API = ALBUM_API + "/add"  
+var UPLOAD_ADD_API = ALBUM_API + "/addUpload"
 var ALBUM_UPLOAD_API = ALBUM_API + "/uploadAlbum"
 var ALBUM_NEWUPLOAD_API = ALBUM_API + "/newUpload/{0}"
 var ALBUM_GET_API = ALBUM_API + "/{0}"
 var GET_SIMPLE_ALBUM_API = ALBUM_API + "/all/simple/{0}"
+var GET_100_IMAGE_API = ALBUM_API + "/getAlbumImage/{0}}/{1}/{2}/{3}/{4}"
 
 function addAlbum(data, successCb, errorCb, completeCb) {
   api.request(ALBUM_ADD_API, 'POST', data, successCb, errorCb, completeCb);
+}
+
+function addUpload(data, successCb, errorCb, completeCb) {
+  api.request(UPLOAD_ADD_API, 'POST', data, successCb, errorCb, completeCb);
 }
 // function uploadAlbum(tempFilePath, name, formdata, successCb, errorCb, completeCb) { 
 //   api.uploadFile(ALBUM_UPLOAD_API, tempFilePath, name, formdata, successCb, errorCb, completeCb);
@@ -34,6 +40,7 @@ function getSimpleAlbum(id, successCb, errorCb, completeCb) {
 
 module.exports = {
   addAlbum: addAlbum,
+  addUpload: addUpload,
   uploadAlbum: uploadAlbum,
   getAlbum: getAlbum,
   getSimpleAlbum: getSimpleAlbum,
