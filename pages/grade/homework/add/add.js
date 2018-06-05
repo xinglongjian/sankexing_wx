@@ -1,11 +1,41 @@
-// pages/grade/activity/activity.js
+// pages/grade/homework/add/add.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    classType: [
+      {
+        code: 'PINYIN',
+        name: '拼音'
+      },
+      {
+        code: 'SHUXUE',
+        name: '数学'
+      },
+      {
+        code: 'YINGYU',
+        name: '英语'
+      },
+      {
+        code: 'SHOUGONG',
+        name: '手工'
+      },
+      {
+        code: 'MEISHU',
+        name: '美术'
+      },
+      {
+        code: 'TIYU',
+        name: '体育'
+      },
+      {
+        code: 'QITA',
+        name: '其他'
+      }
+    ],
+    classChecked:0
   },
 
   /**

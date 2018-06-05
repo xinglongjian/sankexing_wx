@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/grade/homework/add/add",
     "pages/grade/index",
     "pages/profile/index",
     "pages/grade/photos/photo",
@@ -35,14 +36,8 @@
     "pages/profile/mygrade/grade",
     "pages/grade/apps/app",
     "pages/grade/homework/homework",
-    "pages/grade/notice/notice",
-    "pages/grade/config/config",
     "pages/grade/teacher/teacher",
-    "pages/grade/student/student",
-    "pages/grade/files/files",
-    "pages/grade/activity/activity",
-    "pages/grade/vote/vote",
-    "pages/grade/stat/stat"
+    "pages/grade/student/student"
   ],
   "window": {
     "backgroundTextStyle": "light",

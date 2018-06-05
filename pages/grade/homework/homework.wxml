@@ -1,2 +1,5 @@
 <!--pages/grade/homework/homework.wxml-->
-<text>pages/grade/homework/homework.wxml</text>
+<view class='add' bindtap='addHomeWork'>
+ <image src='/images/common/new.png'></image>
+</view>
+

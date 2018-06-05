@@ -1,0 +1,24 @@
+<!--pages/grade/homework/add/add.wxml-->
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <zan-panel title="基本信息">
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>作业名称：</view>
+      <input type='text' name="name" placeholder="名称" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class="zan-cell zan-field" style='height:35px;'>
+      <view class="zan-cell__hd zan-field__title">选择课程：</view>
+      <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ classType }}" range-key='name' value="{{ classChecked }}" bindchange="handleSelectChange">
+        {{ classType[classChecked].name }}
+      </picker>
+    </view>
+    <view class="zan-cell zan-field" style='height:70px;'>
+      <view class="zan-cell__hd zan-field__title">作业内容：</view>
+      <textarea name="info" bindblur='bindInfo' value='{{info}}' class='zan-field__input zan-cell__bd' placeholder="说点什么吧" />
+    </view>
+  
+  </zan-panel>
+
+  <zan-button-group>
+    <button type="primary" form-type="submit">提交表单</button>
+  </zan-button-group>
+</form>

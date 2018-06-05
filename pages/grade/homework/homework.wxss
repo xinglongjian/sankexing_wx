@@ -1,1 +1,11 @@
 /* pages/grade/homework/homework.wxss */
+
+.add {
+  position: absolute;
+  top: 50rpx;
+  right: 50rpx;
+}
+.add image{
+  width: 100rpx;
+  height: 100rpx;
+}

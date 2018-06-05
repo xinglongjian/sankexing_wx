@@ -7,7 +7,11 @@ Page({
   data: {
   
   },
-
+  addHomeWork:function(e){
+    wx.navigateTo({
+      url: '/pages/grade/homework/add/add',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
