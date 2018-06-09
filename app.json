@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/grade/homework/add/add",
     "pages/grade/index",
     "pages/profile/index",
@@ -9,7 +10,6 @@
     "pages/grade/photos/album/album",
     "pages/grade/addgrade/addgrade",
     "pages/school/index",
-    "pages/index/index",
     "pages/admin/addschool/addschool",
     "pages/childs/index",
     "pages/find/index",

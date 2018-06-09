@@ -23,7 +23,7 @@
     <button>添加小孩</button>
   </view>
   <!--最新的活动-->
-  <view class='course-area'>
+  <!-- <view class='course-area'>
     <view class='title'>
       <text>最新活动</text>
       <image src='/images/more_16_.png'></image>
@@ -37,10 +37,10 @@
           <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
       </scroll-view>
     </view>
-  </view>
+  </view> -->
 
   <!--最新的活动-->
-  <view class='course-area'>
+  <!-- <view class='course-area'>
     <view class='title'>
       <text>最新上架</text>
       <image src='/images/more_16_.png'></image>
@@ -54,10 +54,10 @@
           <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
       </scroll-view>
     </view>
-  </view>
+  </view> -->
 
   <!--最新的活动-->
-  <view class='course-area'>
+  <!-- <view class='course-area'>
     <view class='title'>
       <text>好友推荐</text>
       <image src='/images/more_16_.png'></image>
@@ -71,15 +71,15 @@
           <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
       </scroll-view>
     </view>
-  </view>
+  </view> -->
 
-  <view class='userinfo'>
+  <!-- <view class='userinfo'>
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo">获取头像昵称</button>
     <block wx:else>
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
     </block>
-  </view>
+  </view> -->
 
   <view>
     <button bindtap='navToHabits'>所有习惯</button>
