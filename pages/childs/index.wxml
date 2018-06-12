@@ -17,7 +17,7 @@
     <view class='item'>
       <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
       <view class='title'>我的习惯</view>
-       <image class='more' src='/images/more_16.png'></image> 
+       <image class='more' src='/images/more_16.png' bindtap='navToHabit'></image> 
     </view>
     <view class='item'>
       <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>

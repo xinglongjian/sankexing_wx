@@ -1,0 +1,11 @@
+<!--pages/childs/myhabit/index.wxml-->
+<zan-panel title="做作业">
+  <view class='items'>
+   <view>取消</view>
+   <view>取消</view>
+   <view>取消</view>
+  </view>
+</zan-panel>
+<zan-button-group>
+    <button type="primary" bindtap='navToAllHabits'>添加习惯</button>
+</zan-button-group>

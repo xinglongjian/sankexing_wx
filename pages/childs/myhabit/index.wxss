@@ -1,0 +1,17 @@
+/* pages/childs/myhabit/index.wxss */
+
+zan-panel .items{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.items view {
+  margin: 10rpx;
+  height: 100rpx;
+  width: 200rpx;
+  margin-bottom: 30rpx;
+  border: 1px solid #efefef;
+  text-align: center;
+  line-height: 100rpx;
+}

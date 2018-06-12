@@ -1,29 +1,36 @@
 <!--pages/habits/index.wxml-->
+<view class="container">
+  <zan-card card-class="test-card" thumb="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg" useThumbSlot="{{ true }}" useDetailSlot="{{ true }}">
+    <!-- 右侧详情 -->
+    <view slot="detail-slot" class="zan-card__detail">
+      <view class='title'>按时写作业</view>
+      <view class='status'>
+       <view>进行中[4]</view>
+       <view>已完成[54]</view>       
+      </view>
+      <view class='tag'>
+       <view>学习</view>
+       <view>3-4岁</view>
+       <button size='mini' class='addbutton'>我要培养</button>
+      </view>
+      
+    </view>
+  </zan-card>
 
-<view class="container">  
-  <!--左侧栏-->  
-  <view class="nav_left">  
-    <block wx:for="{{navLeftItems}}" wx:for-item="item" wx:key="id">  
-      <!--当前项的id等于item项的id，那个就是当前状态-->  
-      <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->  
-      <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</view>  
-    </block>  
-  </view>  
-  <!--右侧栏-->  
-  <view class="nav_right">  
-    <!--如果有数据，才遍历项-->  
-    <view wx:if="{{navRightItems}}">  
-      <block wx:for="{{navRightItems}}" wx:key="id" wx:for-item="item">  
-        <view class="nav_right_items">  
-            <view>{{index}}</view>
-            <view>{{item.name}}</view>
-        </view>  
-      </block>  
-    </view>  
-    <!--如果无数据，则显示数据-->  
-    <view wx:else>暂无数据</view>  
-  </view>  
-</view>  
-<view class='footer'>
-<button bindtap='navToAddHabit'>添加习惯</button>
+   <zan-card card-class="test-card" thumb="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg" useThumbSlot="{{ true }}" useDetailSlot="{{ true }}">
+    <!-- 右侧详情 -->
+    <view slot="detail-slot" class="zan-card__detail">
+      <view class='title'>【学习方面】--按时写作业</view>
+      <view class='status'>
+       <view>进行中[4]</view>
+       <view>已完成[54]</view>       
+      </view>
+      <view class='tag'>
+       <view>学习</view>
+       <view>3-4岁</view>
+       <button size='mini' class='addbutton'>我要培养</button>
+      </view>
+      
+    </view>
+  </zan-card>
 </view>
