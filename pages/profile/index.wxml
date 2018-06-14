@@ -1,11 +1,22 @@
 <!--pages/profile/index.wxml-->
 <view class='container'>
-  <view class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <view class='userinfo'>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
 
-  <view class="separate"></view>
+  <view class='function-list'>
+    <block wx:for="{{functions}}" wx:for-index="index" wx:key="name">
+      <view class='list-item' bindtap='navToFunc' data-index='{{index}}'>{{item.name}}</view>
+    </block>
+  </view>
+
+  <!-- <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view> -->
+
+  <!-- <view class="separate"></view>
   
   <view class="person-list">
     <view class="list-item">
@@ -33,6 +44,6 @@
       <text class="item-text">推广邀请</text>
     </view>
   </view>
-  <view class="separate"></view>
+  <view class="separate"></view> -->
 
 </view>

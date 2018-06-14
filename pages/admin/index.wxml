@@ -1,30 +1,12 @@
 <!--pages/admin/index.wxml-->
 <view class='container'>
   <view class='configItem'>
-    <view class='item' bindtap='navToAddSchool'>
+  <block wx:for="{{functions}}" wx:for-index="index" wx:key="name">
+    <view class='item' bindtap='navToFunc' data-index='{{index}}'>
       <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
-      <view class='title'>添加学校</view>
+      <view class='title'>{{item.name}}</view>
       <image class='more' src='/images/more_16.png'></image>
     </view>
-    <view class='item'>
-      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
-      <view class='title'>添加班级</view>
-      <image class='more' src='/images/more_16.png' bindtap='navToSchool'></image>
-    </view>
-    <view class='item'>
-      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
-      <view class='title'>我的班级</view>
-      <image class='more' src='/images/more_16.png'></image>
-    </view>
-    <view class='item'>
-      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
-      <view class='title'>我的课程</view>
-      <image class='more' src='/images/more_16.png'></image>
-    </view>
-    <view class='item'>
-      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
-      <view class='title'>我的动态</view>
-      <image class='more' src='/images/more_16.png'></image>
-    </view>
+    </block>
   </view>
 </view>

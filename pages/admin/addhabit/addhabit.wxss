@@ -51,3 +51,6 @@
     padding: 13px;  
     background-color: #FFFFFF;  
 }
+.snap{
+  padding-right:20rpx; 
+}

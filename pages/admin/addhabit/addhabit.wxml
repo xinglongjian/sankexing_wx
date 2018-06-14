@@ -1,5 +1,51 @@
 <!--pages/habits/addhabit/addhabit.wxml-->
-<view id='addchild'>
+
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <zan-panel title="基本信息">
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>分类：</view>
+      <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ habittypes }}" range-key='name' value="{{ checkedType }}" bindchange="handleSelectChange">
+        {{ habittypes[checkedType].name }}
+      </picker>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>名称：</view>
+      <input type='text' name="name" placeholder="名称" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>编码：</view>
+      <input type='text' name="code" placeholder="编码" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>年龄范围：</view>
+      <input type='text' name="start" placeholder="最小" class='zan-field__input zan-cell__bd' style='width:60rpx'></input>
+      <label class='snap'>--</label>
+      <input type='text' name="start" placeholder="最大" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>标签：</view>
+      <view></view> 
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>是否启用：</view>
+       <switch name="status" checked='true'/> 
+    </view>
+
+  </zan-panel>
+
+  <zan-panel title="描述信息">
+     <view class='zan-cell zan-field'>
+       <textarea name="description" maxlength='140' style='width:100%;height:100px'/>
+    </view>
+  </zan-panel>
+  <zan-button-group>
+    <button type="primary" form-type="submit">提交表单</button>
+  </zan-button-group>
+</form>
+
+
+
+<!-- <view id='addchild'>
   <form bindsubmit='formSubmit' bindreset='formReset'>
         <view class="section">  
             <view class="section__title">分类:</view>  
@@ -42,4 +88,4 @@
             <button formType="reset">清空</button>  
         </view> 
   </form>
-</view>
+</view> -->

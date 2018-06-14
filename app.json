@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/childs/myhabit/index",
+    "pages/admin/addhabit/addhabit",
+    "pages/admin/addhabittype/addhabittype",
+    "pages/profile/index",
     "pages/index/index",
+    "pages/childs/myhabit/index",
     "pages/grade/homework/add/add",
     "pages/grade/index",
-    "pages/profile/index",
     "pages/grade/photos/photo",
     "pages/grade/photos/upload/upload",
     "pages/grade/photos/newalbum/newalbum",
@@ -27,8 +29,6 @@
     "pages/profile/childs/upload/upload",
     "pages/profile/myschool/school",
     "pages/habits/listhabits",
-    "pages/habits/addhabit/addhabit",
-    "pages/habits/addhabittype/addhabittype",
     "pages/admin/index",
     "pages/childs/myschool/index",
     "pages/childs/mygrade/index",
@@ -42,8 +42,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "backgroundColor": "#1296db",
-    "navigationBarBackgroundColor": "#1296db",
+    "backgroundColor": "#1AAD19",
+    "navigationBarBackgroundColor": "#1AAD19",
     "navigationBarTitleText": "三客行",
     "navigationBarTextStyle": "light",
     "enablePullDownRefresh": true

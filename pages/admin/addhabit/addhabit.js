@@ -8,7 +8,7 @@ Page({
    */
   data: {
     habittypes:null,
-    index:0,
+    checkedType:0,
     habitTypeName:''
   },
   navToAddHabitType:function(){
@@ -16,9 +16,9 @@ Page({
         url: '/pages/habits/addhabittype/addhabittype',
       })
   },
-  bindPickerChange: function (e) {
+  handleSelectChange: function (e) {
     this.setData({
-      index: e.detail.value,
+      checkedType: e.detail.value,
       habitTypeName: this.data.habittypes[e.detail.value].name
     })
   },
