@@ -1,77 +1,58 @@
 <!--pages/find/index.wxml-->
-<view class="navbar"> 
- <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
 </view>
 
-<!--课程--> 
-<view hidden="{{currentTab!==0}}" class='tabpage'> 
-  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
-          <block wx:for="{{movies}}" wx:for-index="index">    
-            <swiper-item>    
-              <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
-            </swiper-item>    
-          </block>    
-  </swiper>
-
+<!--习惯-->
+<view hidden="{{currentTab!==0}}" class='tabpage'>
   <!--最新上架-->
   <view class='course-area'>
-    <view class='title'>
-      <text>最新上架</text>
-      <image src='/images/more_16_.png'></image>
-    </view>
-    <view class='body'>
-      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
-          <view style="background: red; width: 200px; height: 100px; display: inline-block" bindtap='navToClasses'></view>
-          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
-      </scroll-view>
-    </view>
-  </view>
-  <!--为你推荐-->
-  <view class='course-area'>
-    <view class='title'>
-      <text>为你推荐</text>
-      <image src='/images/more_16_.png'></image>
-    </view>
-    <view class='body'>
-      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
-          <view style="background: red; width: 200px; height: 100px; display: inline-block" ></view>
-          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
-      </scroll-view>
-    </view>
-  </view>
-  <!--大家都在上-->
-  <view class='course-area'>
-    <view class='title'>
-      <text>同学也都在上</text>
-      <image src='/images/more_16_.png'></image>
-    </view>
-    <view class='body'>
-      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
-          <view style="background: red; width: 200px; height: 100px; display: inline-block" ></view>
-          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
-      </scroll-view>
-    </view>
-  </view>
-</view> 
+    <zan-card card-class="test-card" thumb="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg" useThumbSlot="{{ true }}" useDetailSlot="{{ true }}">
+      <!-- 右侧详情 -->
+      <view slot="detail-slot" class="zan-card__detail">
+        <view class='title'>按时写作业</view>
+        <view class='status'>
+          <view>进行中[4]</view>
+          <view>已完成[54]</view>
+        </view>
+        <view class='tag'>
+          <view>学习</view>
+          <view>3-4岁</view>
+          <button size='mini' class='addbutton'>我要培养</button>
+        </view>
 
-<!--活动--> 
-<view hidden="{{currentTab!==1}}" class='tabpage'> 
-  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
-          <block wx:for="{{movies}}" wx:for-index="index">    
-            <swiper-item>    
-              <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
-            </swiper-item>    
-          </block>    
-  </swiper> 
+      </view>
+    </zan-card>
+
+    <zan-card card-class="test-card" thumb="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg" useThumbSlot="{{ true }}" useDetailSlot="{{ true }}">
+      <!-- 右侧详情 -->
+      <view slot="detail-slot" class="zan-card__detail">
+        <view class='title'>【学习方面】--按时写作业</view>
+        <view class='status'>
+          <view>进行中[4]</view>
+          <view>已完成[54]</view>
+        </view>
+        <view class='tag'>
+          <view>学习</view>
+          <view>3-4岁</view>
+          <button size='mini' class='addbutton'>我要培养</button>
+        </view>
+
+      </view>
+    </zan-card>
+  </view>
+
+</view>
+
+<!--活动-->
+<view hidden="{{currentTab!==1}}" class='tabpage'>
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{movies}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
   <!--训练营-->
   <view class='train-list'>
     <view class='title'>
@@ -86,8 +67,8 @@
           <view class='joinNum'>共有111参加</view>
           <view class=''>10期</view>
           <view>|5人参加</view>
-          <view >
-          
+          <view>
+
           </view>
         </view>
       </view>
@@ -105,25 +86,25 @@
     </view>
     <view class='body'>
       <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
-          <view style="background: red; width: 200px; height: 100px; display: inline-block" ></view>
-          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: red; width: 200px; height: 100px; display: inline-block"></view>
+        <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
       </scroll-view>
     </view>
   </view>
-</view> 
+</view>
 
-<!--赛事--> 
-<view hidden="{{currentTab!==2}}" class='tabpage'> 
-  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
-          <block wx:for="{{movies}}" wx:for-index="index">    
-            <swiper-item>    
-              <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
-            </swiper-item>    
-          </block>    
-  </swiper> 
+<!--赛事-->
+<view hidden="{{currentTab!==2}}" class='tabpage'>
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{movies}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
   <!--当前赛事-->
   <view class='contest-list'>
     <view class='title'>
@@ -131,7 +112,7 @@
       <image src='/images/more_16_.png'></image>
     </view>
     <view class='body'>
-      <view style="background: red; width: 100%; height: 150px;" ></view>
+      <view style="background: red; width: 100%; height: 150px;"></view>
       <view style="background: green; width: 100%; height: 150px;"></view>
       <view style="background: blue; width: 100%; height: 150px;"></view>
       <view style="background: yellow; width: 100%; height: 150px;"></view>
@@ -146,44 +127,44 @@
     </view>
     <view class='body'>
       <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
-          <view style="background: red; width: 200px; height: 100px; display: inline-block" ></view>
-          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: red; width: 200px; height: 100px; display: inline-block"></view>
+        <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
       </scroll-view>
     </view>
   </view>
-</view> 
+</view>
 
-<!--商城--> 
-<view hidden="{{currentTab!==3}}" class='tabpage'> 
-  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
-          <block wx:for="{{movies}}" wx:for-index="index">    
-            <swiper-item>    
-              <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
-            </swiper-item>    
-          </block>    
-  </swiper> 
+<!--商城-->
+<view hidden="{{currentTab!==3}}" class='tabpage'>
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{movies}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
 
   <!--商品类目-->
   <view class='goods-class'>
-      <view class='item'>
-          <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
-          <text>兑换券</text>
-      </view>
-      <view class='item'>
-          <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
-          <text>衣服</text>
-      </view>
-      <view class='item'>
-          <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
-          <text>文具</text>
-      </view>
-      <view class='item'>
-          <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
-          <text>玩具</text>
-      </view>
+    <view class='item'>
+      <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
+      <text>兑换券</text>
+    </view>
+    <view class='item'>
+      <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
+      <text>衣服</text>
+    </view>
+    <view class='item'>
+      <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
+      <text>文具</text>
+    </view>
+    <view class='item'>
+      <view style="background: red; width: 60px; height: 60px;border-radius: 50%;"></view>
+      <text>玩具</text>
+    </view>
   </view>
 
   <!--热门兑换-->
@@ -194,10 +175,10 @@
     </view>
     <view class='body'>
       <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
-          <view style="background: red; width: 200px; height: 100px; display: inline-block" ></view>
-          <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
-          <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: red; width: 200px; height: 100px; display: inline-block"></view>
+        <view style="background: green; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: blue; width: 200px; height: 100px;display: inline-block"></view>
+        <view style="background: yellow; width: 200px; height: 100px;display: inline-block"></view>
       </scroll-view>
     </view>
   </view>

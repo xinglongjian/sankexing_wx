@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/profile/index",
     "pages/admin/addhabit/addhabit",
     "pages/admin/addhabittype/addhabittype",
-    "pages/profile/index",
-    "pages/index/index",
     "pages/childs/myhabit/index",
     "pages/grade/homework/add/add",
     "pages/grade/index",

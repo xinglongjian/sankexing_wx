@@ -41,36 +41,41 @@ page{
   height: 100%;
   width: 100%;
 }
-/*课程-----------------------------------------------*/
+/*习惯-----------------------------------------------*/
 .course-area {
-  margin-top: 15px;
-  border: 1px;
-  width: 100%;
-  height: 200rpt;
-  display: flex;
+  margin-top: 10rpx;
+  display: flex; 
+  background-color: #fff;  
+  color: #939393;  
   flex-direction: column;
-  background: #fff;
 }
-.course-area .title{
+
+.zan-card__detail {
+  margin-left: 0rpx;
+}
+.zan-card__detail view {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.zan-card__detail .status {
   display: flex;
   flex-direction: row;
-  height: 50px;
-  align-items: center;
-  justify-content: space-between; 
-  padding-left: 10px;
-  padding-right: 10px;
 }
-.course-area .title text {
-  width: 50%;
-}
-.course-area .title image {
-  width: 16px;
-  height: 16px;
-}
-.course-area .body{
+
+.zan-card__detail .tag {
   display: flex;
   flex-direction: row;
-  height: 100rpt;
+}
+
+.tag view{
+  width: auto;
+  padding: 5rpx;
+  color: red;
+  margin-left: 5rpx;
+}
+.addbutton{
+  float: right;
 }
 /*训练---------------------------------------------*/
 .train-list {

@@ -7,7 +7,7 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    // canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     gradeValue: 'XI10',
     myClasses: [{
       id: '31',
@@ -151,8 +151,9 @@ Page({
     }
   },
   getUserInfo: function (e) {
-    console.log("dd:");
+    console.log(e);
     app.globalData.userInfo = e.detail.userInfo
+    wx.setStorageSync("UserInfo", e.detail.userInfo)
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true

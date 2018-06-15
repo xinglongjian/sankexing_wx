@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navbar: ['课程', '训练','赛事','商城'],
-    currentTab: 1,
+    navbar: ['习惯', '训练','赛事','商城'],
+    currentTab: 0,
     movies: [
       { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
       { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },

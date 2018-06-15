@@ -63,15 +63,15 @@
     </view>
   </view> -->
 
-  <!-- <view class='userinfo'>
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo">获取头像昵称</button>
+  <view class='userinfo'>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo='getUserInfo'>获取头像昵称</button>
     <block wx:else>
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
     </block>
-  </view> -->
-
-  <view>
-    <button bindtap='navToHabits'>所有习惯</button>
   </view>
+
+  <!-- <view>
+    <button bindtap='navToHabits'>所有习惯</button>
+  </view> -->
 </view>

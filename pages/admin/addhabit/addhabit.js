@@ -9,7 +9,23 @@ Page({
   data: {
     habittypes:null,
     checkedType:0,
-    habitTypeName:''
+    habitTypeName:'',
+    sexs:[
+      {
+        code: 0,
+        name: '都适用'
+      },
+      {
+        code:1,
+        name:'男孩'
+      },
+      {
+        code:2,
+        name:'女孩',
+      }
+    ],
+    sexCheckedIndex:0,
+    sexName:''
   },
   navToAddHabitType:function(){
       wx.navigateTo({
@@ -20,6 +36,12 @@ Page({
     this.setData({
       checkedType: e.detail.value,
       habitTypeName: this.data.habittypes[e.detail.value].name
+    })
+  },
+  handleSexSelectChange: function (e) {
+    this.setData({
+      sexCheckedIndex: e.detail.value,
+      sexName: this.data.sexs[e.detail.value].name
     })
   },
   /**
@@ -46,7 +68,7 @@ Page({
         habittypes: res.data
       });
       that.setData({
-        habitTypeName: that.data.habittypes[that.data.index].name
+        habitTypeName: that.data.habittypes[that.data.checkedType].name
       })
     },function(res){
         console.log('fail');
@@ -93,6 +115,8 @@ Page({
     console.log(formData);
     formData.status = formData.status == true ? 1 : 0;
     console.log(formData)
+    formData.habitTypeId = that.data.habittypes[that.data.checkedType].id;
+    formData.sexScope = that.data.sexs[that.data.sexCheckedIndex].code
     habit.habitAdd(formData, function (e) {
       console.log(e)
       wx.navigateBack();
