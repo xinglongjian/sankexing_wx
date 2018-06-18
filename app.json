@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/habits/habit/index",
+    "pages/find/index",
     "pages/profile/index",
     "pages/admin/addhabit/addhabit",
     "pages/admin/addhabittype/addhabittype",
@@ -15,7 +17,6 @@
     "pages/school/index",
     "pages/admin/addschool/addschool",
     "pages/childs/index",
-    "pages/find/index",
     "pages/teacher/index",
     "pages/classes/index",
     "pages/logs/logs",
@@ -46,7 +47,7 @@
     "navigationBarBackgroundColor": "#1AAD19",
     "navigationBarTitleText": "三客行",
     "navigationBarTextStyle": "light",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "list": [

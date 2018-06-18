@@ -8,57 +8,17 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    gradeValue: 'XI10',
-    myClasses: [{
-      id: '31',
-      courseName: '中国象棋',
-      organName: '中国儿童中心',
-      classesName: '31班',
-      classesTime: '9-23(四) 17:00~19:00',
-      teacher: '张三',
-      finished: '3',
-      left: '10',
-      classroom: '第四教师啊沙发上地方'
-    }, {
-      id: '32',
-      courseName: '国际象棋',
-      organName: '中国儿童中心',
-      classesName: '31班',
-      classesTime: '9-25(六) 17:00~19:00',
-      teacher: '张三',
-      finished: '3',
-      left: '10',
-      classroom: '第四教师啊沙发上地方'
-    }],
     childs: [],
-    movies: [
-      { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
-      { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },
-      { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
-      { url: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg' }
-    ],
-    text: '恭喜..........恭喜.................'
-  },
-  navToHabits: function () {
-    wx.navigateTo({
-      url: '/pages/habits/listhabits'
-    })
-  },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   // 点击进入孩子页面
-  navToChild: function (e) {
+  navToChild: function(e) {
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/childs/index?id='+id,
+      url: '/pages/childs/index?id=' + id,
     })
   },
   // 存储到数据库
-  saveTo: function (res) {
+  saveTo: function(res) {
     app.globalData.userInfo = res.userInfo
     wx.setStorageSync("UserInfo", res.userInfo)
     this.setData({
@@ -68,21 +28,18 @@ Page({
     var userInfo = res.userInfo;
     userInfo.openId = app.globalData.openId;
     userInfo.unionId = app.globalData.unionId;
-    account.userAdd(userInfo, function (res) {
+    account.userAdd(userInfo, function(res) {
       console.log(res)
       wx.setStorageSync("UserId", res.data.id);
       app.globalData.userId = res.data.id;
-    }, function () {
+    }, function() {
       console.debug("add user fail");
     });
 
   },
-  onLoad: function () {
+  onLoad: function() {
     var that = this;
-    console.debug('index onLoad');
     if (app.globalData.userInfo) {
-      console.debug('app.globalData.userInfo')
-      console.info(app.globalData.userInfo)
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
@@ -111,10 +68,10 @@ Page({
             content: '为了更好的使用小程序，还希望您同意授权',
             showCancel: false,
             confirmText: '授权',
-            success: function (res) {
+            success: function(res) {
               console.log(res)
               wx.openSetting({
-                success: function (data) {
+                success: function(data) {
                   if (data) {
                     if (data.authSetting['scope.userInfo'] == true) {
                       wx.getUserInfo({
@@ -135,22 +92,20 @@ Page({
       })
     }
   },
-  onShow: function () {
+  onShow: function() {
     if (app.globalData.userId) {
       var that = this;
       var userId = app.globalData.userId;
-      console.log("userId:" + userId);
-      account.childGet(userId, function (res) {
-        console.log(res)
+      account.childGet(userId, function(res) {
         that.setData({
           childs: res.data
         })
-      }, function (e) {
+      }, function(e) {
 
-      }, function (res) { });
+      }, function(res) {});
     }
   },
-  getUserInfo: function (e) {
+  getUserInfo: function(e) {
     console.log(e);
     app.globalData.userInfo = e.detail.userInfo
     wx.setStorageSync("UserInfo", e.detail.userInfo)

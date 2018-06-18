@@ -26,7 +26,7 @@ page{
  left: 0; 
  right: 0; 
  height: 5rpx; 
- background: #1296db; 
+ background: #1AAD19; 
 } 
 
 .tabpage {

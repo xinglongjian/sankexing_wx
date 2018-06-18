@@ -1,0 +1,45 @@
+/* pages/habits/habit/index.wxss */
+.headimage {
+  height: 480rpx;
+}
+.baseinfo{
+  position: absolute;
+  width: 100%;
+  height: 240rpx;
+  top: 140rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.numpart {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  align-items: center;
+}
+.name{
+  line-height: 38rpx;
+  margin-right: 30rpx;
+}
+.count{
+  font-size: 38rpx; 
+}
+
+.otherpart{
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 30rpx;
+}
+
+/* .otherpart .item{
+  display: flex;
+  flex-direction: row;
+} */
+.addbutton{
+  width: 80%;
+}

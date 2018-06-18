@@ -9,6 +9,9 @@ function request(url, method, data, successCb, errorCb, completeCb) {
     url: url,
     method: method,
     data: data,
+    // header: {
+    //   'content-type': method == 'GET' ?'application/json':'application/x-www-form-urlencoded'
+    // },
     success: function (res) {
       
       if (res.statusCode == 200) {

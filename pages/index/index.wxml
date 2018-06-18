@@ -1,17 +1,45 @@
 <view class="container">
+  <view class='baseInfo'>
+    <view class='userinfo'>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo='getUserInfo'>获取头像昵称</button>
+      <block wx:else>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <view class='userinfo-nickname'>{{userInfo.nickName}}</view>
+      </block>
+    </view>
+  </view>
 
   <!--显示孩子-->
   <view wx:if="childs" class='mychilds'>
     <block wx:for="{{childs}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-      <view bindtap='navToChild' data-id="{{item.id}}">
-        <image class='headimage' src='https://www.sankexing.net.cn/xingtan/api/user/getHeadImage/{{item.id}}/100'></image>
+      <view class='child_item'>
+        <view class='header' bindtap='navToChild' data-id="{{item.id}}">
+          <image class='headimage' src='https://www.sankexing.net.cn/xingtan/api/user/getHeadImage/{{item.id}}/100'></image>
+          <view class='name'>{{item.realName}}</view>
+        </view>
+         
+        <view class='habit_item'>
+          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+             <block wx:for="{{item.habits}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+            <view >
+            <view>{{item.name}}</view>
+            </view>
+             </block>
+             <view class='addhabit'>
+             <image class='add' src='/images/add.png'></image>
+             <view>添加习惯</view>
+             </view>
+            
+          </scroll-view>
+        </view>
       </view>
-      <view>{{item.realName}}</view>
+
     </block>
   </view>
   <view wx:else>
     <button>添加小孩</button>
   </view>
+
   <!--最新的活动-->
   <!-- <view class='course-area'>
     <view class='title'>
@@ -63,13 +91,7 @@
     </view>
   </view> -->
 
-  <view class='userinfo'>
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo='getUserInfo'>获取头像昵称</button>
-    <block wx:else>
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
-    </block>
-  </view>
+
 
   <!-- <view>
     <button bindtap='navToHabits'>所有习惯</button>

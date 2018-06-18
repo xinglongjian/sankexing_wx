@@ -1,0 +1,54 @@
+<!--pages/habits/habit/index.wxml-->
+<view class='container'>
+  <view class='header'>
+    <image class="headimage" src="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg" />
+  </view>
+  <view class='baseinfo'>
+    <view class='numpart'>
+      <view class='name'>已参加:</view>
+      <view class='count'>{{habit.count}}</view>
+    </view>
+
+    <view class='otherpart'>
+      <view class='item'>
+        <view>类型:</view>
+        <view>{{habit.habitTypeName}}</view>
+      </view>
+      <view class='item'>
+        <view>年龄:</view>
+        <view>{{habit.ageStart}}-{{habit.ageEnd}}</view>
+      </view>
+      <view class='item'>
+        <view>性别:</view>
+        <view wx:if="{{habit.sexScope == 0}}">都适用</view>
+        <view wx:if="{{habit.sexScope == 1}}">男孩</view>
+        <view wx:if="{{habit.sexScope == 2}}">女孩</view>
+      </view>
+    </view>
+
+  </view>
+  <!--点我参加-->
+  <!-- <view class='addbutton'>
+    <button type='primary'>点我参加</button>
+  </view> -->
+  <!--rr-->
+  <button class='addbutton' type='primary' bindtap='addHabit'>点我参加</button>
+  <modal hidden="{{hiddenmodalput}}" title="请选择哪个宝贝" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    <view class="weui-cells weui-cells_after-title">
+      <checkbox-group name="assistance" bindchange="checkboxChange">
+        <label class="weui-cell weui-check__label" wx:for="{{childs}}" wx:key="id">
+          <checkbox class="weui-check" value="{{ item.id }}" checked="{{ item.checked }}" />
+          <view class="weui-cell__hd weui-check__hd_in-checkbox">
+            <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{ !item.checked }}"></icon>
+            <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{ item.checked }}"></icon>
+          </view>
+          <view class="weui-cell__bd">{{ item.name }}</view>
+        </label>
+      </checkbox-group>
+    </view>
+  </modal>
+  <view>注意事项:</view>
+  <view>小故事:</view>
+  <view>动态:</view>
+
+</view>
