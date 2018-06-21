@@ -1,6 +1,7 @@
 /* pages/habits/habit/index.wxss */
 .headimage {
   height: 480rpx;
+  width: 100%;
 }
 .baseinfo{
   position: absolute;

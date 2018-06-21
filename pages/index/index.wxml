@@ -17,19 +17,21 @@
           <image class='headimage' src='https://www.sankexing.net.cn/xingtan/api/user/getHeadImage/{{item.id}}/100'></image>
           <view class='name'>{{item.realName}}</view>
         </view>
-         
+
         <view class='habit_item'>
-          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
-             <block wx:for="{{item.habits}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-            <view >
-            <view>{{item.name}}</view>
+          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;flex-direction: row">
+
+            <block wx:for="{{item.habits}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+              <view class='habit'>
+                <image src="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg" />
+                <view>{{item.name}}</view>
+              </view>
+            </block>
+            <view class='habit addhabit'>
+               <image class='add' src='/images/add.png'></image> 
+               <view>添加习惯</view> 
             </view>
-             </block>
-             <view class='addhabit'>
-             <image class='add' src='/images/add.png'></image>
-             <view>添加习惯</view>
-             </view>
-            
+
           </scroll-view>
         </view>
       </view>
