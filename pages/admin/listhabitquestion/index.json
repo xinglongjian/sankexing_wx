@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "问题列表",
+  "usingComponents": {
+    "zan-button": "/third/zanui/dist/btn/index",
+    "zan-button-group": "/third/zanui/dist/btn-group/index",
+    "zan-field": "/third/zanui/dist/field/index",
+    "zan-panel": "/third/zanui/dist/panel/index"
+  }
+}

@@ -17,6 +17,13 @@ Page({
       url: '/pages/childs/index?id=' + id,
     })
   },
+  navToHabit:function(e){
+    var childId = e.currentTarget.dataset.childid;
+    var habitId = e.currentTarget.dataset.habitid;
+    wx.navigateTo({
+      url: '/pages/habits/habit/index?habitId='+ habitId +'&childId=' +childId,
+    })
+  },
   // 存储到数据库
   saveTo: function(res) {
     app.globalData.userInfo = res.userInfo
@@ -29,7 +36,6 @@ Page({
     userInfo.openId = app.globalData.openId;
     userInfo.unionId = app.globalData.unionId;
     account.userAdd(userInfo, function(res) {
-      console.log(res)
       wx.setStorageSync("UserId", res.data.id);
       app.globalData.userId = res.data.id;
     }, function() {

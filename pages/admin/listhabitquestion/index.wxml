@@ -1,0 +1,19 @@
+<!--pages/admin/listhabitquestion/index.wxml-->
+<import src="/third/zanui/dist/field/index.wxml" />
+<view class='search'>
+  <zan-field style="width:80%" placeholder="模糊搜索" mode="wrapped" bind:blur="handleSearchBlur">
+  </zan-field>
+</view>
+<!--问题列表-->
+<view class='question_list'>
+  <block wx:for="{{questions}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+    <view class='question'>
+      <view>{{item.title}}</view>
+      <view>{{item.weight}}</view>
+    </view>
+  </block>
+</view>
+
+<view class='footer'>
+<button bindtap='navToAddQuestion'>添加问题</button>
+</view>

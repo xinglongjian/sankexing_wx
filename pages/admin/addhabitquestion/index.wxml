@@ -1,0 +1,43 @@
+<!--pages/admin/addhabitquestion/index.wxml-->
+
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <zan-panel title="题目:">
+    <view class="section">
+      <textarea name="title" bindblur='bindTitle' value='{{title}}' class='content' style='padding:10px;' placeholder="问题描述" />
+    </view>
+  </zan-panel>
+
+  <zan-panel title="基本信息">
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>问题类型：</view>
+      <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ questionTypes }}" range-key='name' value="{{ questionTypeChecked }}" bindchange="handleSelectChange">
+        {{ questionTypes[questionTypeChecked].name }}
+      </picker>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>权重：</view>
+      <zan-stepper stepper="{{ stepper.stepper }}" min="{{ stepper.min }}" max="{{ stepper.max }}" bind:change="handleZanStepperChange" step="{{stepper.step}}" data-component-id="stepper3">
+      </zan-stepper>
+    </view>
+  </zan-panel>
+
+  <zan-panel title="介绍:">
+    <view class="section">
+      <textarea name="introduce" bindblur='bindIntroduce' value='{{introduce}}' class='content' style='padding:10px;' placeholder="问题描述" />
+    </view>
+  </zan-panel>
+   <zan-panel title="好处:">
+    <view class="section">
+      <textarea name="good" bindblur='bindGood' value='{{good}}' class='content' style='padding:10px;' placeholder="描述该问题做好带来的好处" />
+    </view>
+  </zan-panel>
+   <zan-panel title="坏处:">
+    <view class="section">
+      <textarea name="bad" bindblur='bindBad' value='{{bad}}' class='content' style='padding:10px;' placeholder="描述该问题做不好带来的坏处" />
+    </view>
+  </zan-panel>
+
+  <zan-button-group>
+    <button type="primary" form-type="submit">提交表单</button>
+  </zan-button-group>
+</form>

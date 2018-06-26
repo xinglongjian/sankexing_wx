@@ -14,6 +14,9 @@ Page({
     habitId: 0,
     habit: {},
     childs: [],
+    //是否已加入
+    isPartIn:false,
+    partInChild:{},
     hiddenmodalput: true
   },
   // 给哪个孩子添加
@@ -116,11 +119,27 @@ Page({
         childs: [child]
       });
     }
+    
+   
 
     this.setData({
       habitId: habitId
     })
     var that = this;
+
+    if (childId != undefined) {
+      //判断孩子是否已添加
+      habitapi.isHabitContainUser(that.data.habitId, childId,function(res){
+          if(res.data) {
+            that.setData({
+              isPartIn:true,
+              partInChild:res.data
+            })
+          }
+      })
+    }
+    
+
     habitapi.getHabitById(this.data.habitId, function (res) {
       that.setData({
         habit: res.data

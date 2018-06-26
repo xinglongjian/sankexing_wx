@@ -32,7 +32,14 @@
     <button type='primary'>点我参加</button>
   </view> -->
   <!--rr-->
+  <view wx:if="{{isPartIn}}">
+  <button class='addbutton' disabled='true' type='primary' bindtap='addHabit'>点我参加</button>
+  </view>
+   <view wx:else>
   <button class='addbutton' type='primary' bindtap='addHabit'>点我参加</button>
+  </view>
+  
+
   <modal hidden="{{hiddenmodalput}}" title="请选择哪个宝贝" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
     <view class="weui-cells weui-cells_after-title">
       <checkbox-group name="assistance" bindchange="checkboxChange">

@@ -1,0 +1,7 @@
+/* pages/admin/addhabitquestion/index.wxss */
+.content {
+  width: 95%;
+  padding: 30rpx;
+  font-size: 14px;
+  height: 160rpx;
+}
