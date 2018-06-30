@@ -65,11 +65,23 @@ String.format = function () {
   }
   return str;
 }
+/**
+ * 查找该value在数组中的索引，通过code判断一致性
+ */
+function indexOf(arr,code,value) {
+  var len = arr.length;
+  for(var i = 0;i<len;i++){
+    if(arr[i][code] == value) {
+      return i;
+    }
+  }
+}
 
 
 module.exports = {
   formatTime: formatTime,
   isFunction: isFunction,
   parseInteger: parseInteger,
-  formatDate: formatDate
+  formatDate: formatDate,
+  indexOf: indexOf
 }

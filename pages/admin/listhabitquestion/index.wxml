@@ -8,8 +8,15 @@
 <view class='question_list'>
   <block wx:for="{{questions}}" wx:for-index="index" wx:for-item="item" wx:key="id">
     <view class='question'>
-      <view>{{item.title}}</view>
-      <view>{{item.weight}}</view>
+      <view>{{index+1}}、{{item.title}}</view>
+      <view><b>权重:</b>{{item.weight}}</view>
+      <view>介绍:{{item.introduce}}</view>
+      <view>好处:{{item.good}}</view>
+      <view>坏处:{{item.bad}}</view>
+       <view class='buttons'>
+        <zan-button size="small" type="primary" bindtap='navToQuestionItem' data-id='{{item.id}}'>查看选项</zan-button>
+        <zan-button size="small" type="primary" bindtap='navToEditQuestion' data-id='{{item.id}}'>编辑</zan-button>
+      </view>
     </view>
   </block>
 </view>

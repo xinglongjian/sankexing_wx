@@ -1,0 +1,32 @@
+<!--pages/admin/editquestionitem/index.wxml-->
+<view class='continar'>
+  <view class='title'>
+    题目：{{title}}
+  </view>
+
+  <view class='itemview'>
+    <block wx:for="{{items}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+      <view class='item'>
+        <view class='baseInfo'>
+          <view>顺序:{{item.seq}}</view>
+          <view>序号:{{item.seqNo}}</view>
+          <view>分数:{{item.score}}</view>
+        </view>
+        <view>内容:{{item.content}}</view>
+        <view>影响:{{item.affect}}</view>
+        <view class='buttons'>
+          <zan-button size="small" type="primary" bindtap='navToEditQuestionItem' data-id='{{item.id}}'>编辑</zan-button>
+          <zan-button size="small" type="danger" bindtap='deleteQuestionItem' data-id='{{item.id}}'>删除</zan-button>
+        </view>
+
+      </view>
+    </block>
+  </view>
+
+
+  <view class='footer'>
+    <button bindtap='navToAddQuestionItem'>添加选项</button>
+  </view>
+</view>
+
+<zan-dialog id="zan-base-dialog"></zan-dialog>

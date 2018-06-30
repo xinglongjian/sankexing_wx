@@ -1,5 +1,16 @@
 /* pages/admin/listhabitquestion/index.wxss */
-
+.question_list {
+  padding: 5rpx;
+}
+.question {
+  padding: 30rpx;
+  background-color: #fff;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .footer {
   position: absolute;
   bottom: 0px;

@@ -12,6 +12,11 @@ var addHabitToManyUserApi = HABIT_API + "/{0}/{1}"
 var isHabitContainUserApi = HABIT_API + "/isExist/{0}/{1}"
 var searchHabitQuestionApi = HABIT_API + "/question/search/{0}"
 var addHabitQuestionApi = HABIT_API + "/question/add"
+var getHabitQuestionApi = HABIT_API + "/question/{0}"
+var addHabitQuestionItemApi = HABIT_API + "/question/item/add"
+var getQuestionItemsApi = HABIT_API + "/question/items/{0}"
+var getQuestionItemApi = HABIT_API + "/question/item/{0}"
+var deleteQuestionItemApi = HABIT_API + "/question/item/{0}"
 
 /**
  * 添加习惯大类
@@ -63,6 +68,41 @@ function addHabitQuestion(data, successCb, errorCb, completeCb) {
   api.request(addHabitQuestionApi, 'post', data, successCb, errorCb, completeCb);
 }
 
+/**
+ * 获取习惯问题
+ */
+function getHabitQuestion(id, successCb, errorCb, completeCb) {
+  api.request(getHabitQuestionApi.format(id), 'get', null, successCb, errorCb, completeCb);
+}
+
+/**
+ * 添加习惯选项问题
+ */
+function addHabitQuestionItem(data, successCb, errorCb, completeCb) {
+  api.request(addHabitQuestionItemApi, 'post', data, successCb, errorCb, completeCb);
+}
+
+/**
+ * 用于获取问题列表
+ */
+function getQuestionItems(questionId, successCb, errorCb, completeCb) {
+  api.request(getQuestionItemsApi.format(questionId), 'get', null, successCb, errorCb, completeCb);
+}
+
+/**
+ * 用于获取单个问题选项
+ */
+function getQuestionItem(id, successCb, errorCb, completeCb) {
+  api.request(getQuestionItemApi.format(id), 'get', null, successCb, errorCb, completeCb);
+}
+
+/**
+ * 用于获取单个问题选项
+ */
+function deleteQuestionItem(id, successCb, errorCb, completeCb) {
+  api.request(deleteQuestionItemApi.format(id), 'DELETE', null, successCb, errorCb, completeCb);
+}
+
 module.exports = {
   habitTypeAdd: habitTypeAdd,
   habitAdd: habitAdd,
@@ -73,5 +113,10 @@ module.exports = {
   addHabitToManyUser: addHabitToManyUser,
   isHabitContainUser: isHabitContainUser,
   searchHabitQuestion: searchHabitQuestion,
-  addHabitQuestion: addHabitQuestion
+  addHabitQuestion: addHabitQuestion,
+  getHabitQuestion: getHabitQuestion,
+  addHabitQuestionItem: addHabitQuestionItem,
+  getQuestionItems: getQuestionItems,
+  getQuestionItem: getQuestionItem,
+  deleteQuestionItem: deleteQuestionItem
 }

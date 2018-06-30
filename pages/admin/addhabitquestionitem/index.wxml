@@ -1,2 +1,38 @@
-<!--pages/admin/addhabitquestionitem/index.wxml-->
-<text>pages/admin/addhabitquestionitem/index.wxml</text>
+<!--pages/habits/addhabit/addhabit.wxml-->
+
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <zan-panel title="基本信息">
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>顺序：</view>
+      <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ seqs }}" value="{{ seqChecked }}" bindchange="handleSeqSelectChange">
+        {{ seqs[seqChecked] }}
+      </picker>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>编号：</view>
+      <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ seqNos }}" value="{{ seqNoChecked }}" bindchange="handleSeqNoSelectChange">
+        {{ seqNos[seqNoChecked] }}
+      </picker>
+    </view>
+     <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>分数：</view>
+      <zan-stepper stepper="{{ stepper.stepper }}" min="{{ stepper.min }}" max="{{ stepper.max }}" bind:change="handleZanStepperChange" step="{{stepper.step}}" data-component-id="stepper3">
+      </zan-stepper>
+    </view>
+  </zan-panel>
+
+  <zan-panel title="选项名称">
+     <view class='zan-cell zan-field'>
+       <textarea name="content" maxlength='140' style='width:100%;height:100px'>{{content}}</textarea>
+    </view>
+  </zan-panel>
+  <zan-panel title="影响">
+     <view class='zan-cell zan-field'>
+       <textarea name="affect" maxlength='140' style='width:100%;height:100px'>{{affect}}</textarea>
+    </view>
+  </zan-panel>
+  <zan-button-group>
+    <button type="primary" form-type="submit">提交表单</button>
+  </zan-button-group>
+</form>
+

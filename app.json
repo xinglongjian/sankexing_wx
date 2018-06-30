@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/profile/index",
+    "pages/admin/editquestionitem/index",
     "pages/admin/index",
     "pages/index/index",
     "pages/habits/habit/index",
     "pages/find/index",
-    
     "pages/admin/addhabit/addhabit",
     "pages/admin/addhabittype/addhabittype",
     "pages/childs/myhabit/index",
@@ -32,7 +32,6 @@
     "pages/profile/childs/upload/upload",
     "pages/profile/myschool/school",
     "pages/habits/listhabits",
-   
     "pages/childs/myschool/index",
     "pages/childs/mygrade/index",
     "pages/school/search_school/search_school",
