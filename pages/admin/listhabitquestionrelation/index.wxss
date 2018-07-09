@@ -1,0 +1,47 @@
+/* pages/admin/listhabitquestionrelation/index.wxss */
+
+.items {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  margin-top: 10rpx;
+}
+
+.habitItem {
+  width: 100%;
+  padding: 30rpx;
+}
+
+.header {
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.seq {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  font-weight: bold;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100rpx;
+}
+
+.pageNum{
+  font-size: 38rpx;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

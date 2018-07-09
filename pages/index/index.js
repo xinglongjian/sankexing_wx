@@ -17,11 +17,19 @@ Page({
       url: '/pages/childs/index?id=' + id,
     })
   },
-  navToHabit:function(e){
+  navToHabit: function(e) {
     var childId = e.currentTarget.dataset.childid;
     var habitId = e.currentTarget.dataset.habitid;
     wx.navigateTo({
-      url: '/pages/habits/habit/index?habitId='+ habitId +'&childId=' +childId,
+      url: '/pages/habits/habit/index?habitId=' + habitId + '&childId=' + childId,
+    })
+  },
+  //显示习惯的问题
+  showQuestions: function(e) {
+    var childId = e.currentTarget.dataset.childid;
+    var habitId = e.currentTarget.dataset.habitid;
+    wx.navigateTo({
+      url: '/pages/habits/showquestions/index?habitId=' + habitId + '&childId=' + childId,
     })
   },
   // 存储到数据库

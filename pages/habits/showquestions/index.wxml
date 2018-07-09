@@ -1,0 +1,37 @@
+<!--pages/habits/showquestions/index.wxml-->
+<view class='title'>
+  <view>{{title}}</view>
+</view>
+
+<view class='questions'>
+  <scroll-view class="scroll-view" scroll-x="true" style=" white-space: nowrap; display: flex">
+    <!-- <block wx:for="{{questions}}" wx:for-index="index" wx:for-item="question" wx:key="id">
+       <view class="question">
+        <view class='question_title'>
+          {{question.title}}
+        </view>
+        <view class='question_items'>
+          <block wx:for="{{question.items}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+            <view class='item'>
+              {{item.content}}
+            </view>
+          </block>
+        </view>
+      </view> 
+    </block> -->
+    <block wx:for="{{questions}}" wx:for-index="index" wx:for-item="question" wx:key="id">
+      <view class="question">
+        <view class='question_title'>
+          {{question.title}}
+        </view>
+        <view class='question_items'>
+          <block wx:for="{{question.items}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+            <view>
+             tyytytytyt
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

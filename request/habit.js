@@ -6,6 +6,7 @@ var HABIT_TYPE_ADD_API = HABIT_API + "/addType"
 var HABIT_ADD_API = HABIT_API + "/add"
 var HABIT_TYPE_ALL_API = HABIT_API + "/allType"
 var HABIT_BY_TYPE_API = HABIT_API + "/getHabitsByType/"
+var getHabitPageApi = HABIT_API + "/type/{0}/name/{1}?pageNum={2}"
 var GET_HABITS_API = HABIT_API + "/allByParams"
 var GET_HABIT_By_ID_API = HABIT_API + "/{0}"
 var addHabitToManyUserApi = HABIT_API + "/{0}/{1}"
@@ -17,6 +18,10 @@ var addHabitQuestionItemApi = HABIT_API + "/question/item/add"
 var getQuestionItemsApi = HABIT_API + "/question/items/{0}"
 var getQuestionItemApi = HABIT_API + "/question/item/{0}"
 var deleteQuestionItemApi = HABIT_API + "/question/item/{0}"
+var getHabitQuestionRelationApi = HABIT_API + "/question/relations/{0}"
+var deleteHabitQuestionRelationApi = HABIT_API + "/question/relation/{0}/{1}"
+var addQutestionToHabitApi = HABIT_API + "/question/relation/add/{0}"
+var getHabitQuestionDetailApi = HABIT_API + "/question/details/{0}"
 
 /**
  * 添加习惯大类
@@ -34,7 +39,7 @@ function getAllType(successCb, errorCb, completeCb) {
 }
 
 function getHabitByType(typeId, successCb, errorCb, completeCb) {
-  api.request(HABIT_BY_TYPE_API+typeId, 'GET', null, successCb, errorCb, completeCb);
+  api.request(HABIT_BY_TYPE_API + typeId, 'GET', null, successCb, errorCb, completeCb);
 }
 
 function getHabits(params, successCb, errorCb, completeCb) {
@@ -74,6 +79,12 @@ function addHabitQuestion(data, successCb, errorCb, completeCb) {
 function getHabitQuestion(id, successCb, errorCb, completeCb) {
   api.request(getHabitQuestionApi.format(id), 'get', null, successCb, errorCb, completeCb);
 }
+/**
+ * 分页获取习惯
+ */
+function getHabitPage(typeId, name, pageNum, successCb, errorCb, completeCb) {
+  api.request(getHabitPageApi.format(typeId, name, pageNum), 'get', null, successCb, errorCb, completeCb);
+}
 
 /**
  * 添加习惯选项问题
@@ -95,12 +106,35 @@ function getQuestionItems(questionId, successCb, errorCb, completeCb) {
 function getQuestionItem(id, successCb, errorCb, completeCb) {
   api.request(getQuestionItemApi.format(id), 'get', null, successCb, errorCb, completeCb);
 }
-
 /**
  * 用于获取单个问题选项
  */
 function deleteQuestionItem(id, successCb, errorCb, completeCb) {
   api.request(deleteQuestionItemApi.format(id), 'DELETE', null, successCb, errorCb, completeCb);
+}
+/**
+ * 用于获取单个习惯的问题列表
+ */
+function getHabitQuestionRelationByHabitId(habitId, successCb, errorCb, completeCb) {
+  api.request(getHabitQuestionRelationApi.format(habitId), 'GET', null, successCb, errorCb, completeCb);
+}
+/**
+ * 用于删除单个习惯的问题
+ */
+function deleteHabitQuestionRelation(habitId,questionId, successCb, errorCb, completeCb) {
+  api.request(deleteHabitQuestionRelationApi.format(habitId, questionId), 'DELETE', null, successCb, errorCb, completeCb);
+}
+/**
+ * 用于获取单个习惯的问题列表
+ */
+function addQutestionToHabit(habitId, questionIds,successCb, errorCb, completeCb) {
+  api.request(addQutestionToHabitApi.format(habitId), 'POST', questionIds, successCb, errorCb, completeCb);
+}
+/**
+ * 用于获取单个习惯的问题详情
+ */
+function getHabitQuestionDetail(habitId, successCb, errorCb, completeCb) {
+  api.request(getHabitQuestionDetailApi.format(habitId), 'GET', null, successCb, errorCb, completeCb);
 }
 
 module.exports = {
@@ -109,6 +143,7 @@ module.exports = {
   getAllType: getAllType,
   getHabitByType: getHabitByType,
   getHabits: getHabits,
+  getHabitPage: getHabitPage,
   getHabitById: getHabitById,
   addHabitToManyUser: addHabitToManyUser,
   isHabitContainUser: isHabitContainUser,
@@ -118,5 +153,9 @@ module.exports = {
   addHabitQuestionItem: addHabitQuestionItem,
   getQuestionItems: getQuestionItems,
   getQuestionItem: getQuestionItem,
-  deleteQuestionItem: deleteQuestionItem
+  deleteQuestionItem: deleteQuestionItem,
+  getHabitQuestionRelationByHabitId:getHabitQuestionRelationByHabitId,
+  deleteHabitQuestionRelation:deleteHabitQuestionRelation,
+  addQutestionToHabit: addQutestionToHabit,
+  getHabitQuestionDetail: getHabitQuestionDetail
 }

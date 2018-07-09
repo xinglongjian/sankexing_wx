@@ -1,0 +1,44 @@
+<!--pages/admin/listhabitquestionrelation/index.wxml-->
+<zan-panel>
+  <view class='zan-cell zan-field'>
+    <view class='zan-cell__hd zan-field__title'>分类：</view>
+    <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ habittypes }}" range-key='name' value="{{ checkedType }}" bindchange="handleSelectChange">
+      {{ habittypes[checkedType].name }}
+    </picker>
+  </view>
+  <view class='zan-cell zan-field'>
+    <view class='zan-cell__hd zan-field__title'>名称：</view>
+    <input type='text' name="name" placeholder="模糊匹配" class='zan-field__input zan-cell__bd' value='{{habitName}}' bindblur='habitNameBlur'></input>
+    <zan-button size="small" type="primary" bindtap='queryHabitQuestions'  data-id='{{item.id}}'>搜索</zan-button>
+  </view>
+</zan-panel>
+
+<view class='items'>
+  <block wx:for="{{habits}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+    <view class='habitItem' bindtap='navToHabitQuesRelation' data-id="{{item.habit.id}}">
+      <view class='header'>
+        <view class='seq'>{{index+1}}</view>
+        <view class='title'>{{item.habit.name}}</view>
+      </view>
+      <view class='body'>
+        <view>年龄:{{item.habit.ageStart}}-{{item.habit.ageEnd}}</view>
+        <view wx:if="{{item.habit.sexScope == 0}}">性别:都适用</view>
+        <view wx:if="{{item.habit.sexScope == 1}}">性别:男孩</view>
+        <view wx:if="{{item.habit.sexScope == 2}}">性别:女孩</view>
+        <view>问题数:{{item.relationCount}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='page'>
+ <view>
+ <zan-button disabled='{{lastPageDisabled}}' size="small" type="primary" bindtap='queryHabitQuestions' data-id='{{item.id}}'>上一页</zan-button>
+ </view>
+ <view class='pageNum'>
+{{pageNum}}/{{allPageNum}}
+ </view>
+  <view>
+ <zan-button disabled='{{nextPageDisabled}}' size="small" type="primary" bindtap='queryHabitQuestions' data-id='{{item.id}}'>下一页</zan-button>
+ </view>
+</view>

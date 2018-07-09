@@ -23,12 +23,12 @@
 
   <zan-panel title="选项名称">
      <view class='zan-cell zan-field'>
-       <textarea name="content" maxlength='140' style='width:100%;height:100px'>{{content}}</textarea>
+       <textarea name="content" maxlength='140' style='width:100%;height:100px' value='{{content}}'/>
     </view>
   </zan-panel>
   <zan-panel title="影响">
      <view class='zan-cell zan-field'>
-       <textarea name="affect" maxlength='140' style='width:100%;height:100px'>{{affect}}</textarea>
+       <textarea name="affect" maxlength='140' style='width:100%;height:100px' value='{{affect}}'/>
     </view>
   </zan-panel>
   <zan-button-group>

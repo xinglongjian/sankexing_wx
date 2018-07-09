@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    questionId: 1,
+    questionId: 0,
     title: '',
     items: []
   },
@@ -27,10 +27,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var id = options.questionId;
-    // this.setData({
-    //   questionId:id
-    // })
+    var id = options.questionId;
+    this.setData({
+      questionId:id
+    })
     var that = this;
     that.getData(that);
   },

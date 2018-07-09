@@ -54,7 +54,7 @@ Page({
       itemId:itemId==undefined?0:itemId
     })
     
-    if(itemId != 0 ){
+    if(itemId != 0 && itemId != undefined){
       var that = this
       habitapi.getQuestionItem(itemId,function(res){
         var seqChecked = that.data.seqs.indexOf(res.data.seq);

@@ -48,6 +48,7 @@ Page({
     })
   },
   navToQuestionItem: function (e) {
+    console.log(e)
     var id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: '/pages/admin/editquestionitem/index?questionId=' + id,

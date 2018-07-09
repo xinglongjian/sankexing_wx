@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/profile/index",
     "pages/admin/editquestionitem/index",
     "pages/admin/index",
-    "pages/index/index",
     "pages/habits/habit/index",
     "pages/find/index",
     "pages/admin/addhabit/addhabit",
@@ -44,7 +44,11 @@
     "pages/admin/addhabitquestion/index",
     "pages/admin/addhabitquestionitem/index",
     "pages/admin/addhabitquestionrelation/index",
-    "pages/admin/listhabitquestion/index"
+    "pages/admin/listhabitquestion/index",
+    "pages/admin/listhabitquestionrelation/index",
+    "pages/admin/habitquestionrelation/index",
+    "pages/admin/selecthabitquestion/index",
+    "pages/habits/showquestions/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

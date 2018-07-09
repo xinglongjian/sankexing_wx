@@ -1,0 +1,17 @@
+<!--pages/admin/habitquestionrelation/index.wxml-->
+<view class='title'>
+  名称: {{title}}
+</view>
+<view class='questions'>
+  <block wx:for="{{questions}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+    <view class='question_title' bindlongpress='deleteQuestion' data-id="{{item.id}}">
+     {{index + 1}}, {{item.title}}
+    </view>
+  </block>
+</view>
+
+<view class='footer'>
+<button bindtap='navToAddQuestion'>选择问题</button>
+</view>
+
+<zan-dialog id="zan-base-dialog"></zan-dialog>

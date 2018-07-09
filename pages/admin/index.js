@@ -23,7 +23,7 @@ Page({
         url: '/pages/admin/listhabitquestion/index'
       }, {
         name: '添加习惯关系',
-        url: '/pages/admin/addhabitquestionrelation/index'
+        url: '/pages/admin/listhabitquestionrelation/index'
       }
     ]
   },

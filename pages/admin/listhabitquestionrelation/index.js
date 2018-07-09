@@ -1,36 +1,20 @@
-// pages/habits/addhabit/addhabit.js
+// pages/admin/listhabitquestionrelation/index.js
 var habit = require('../../../request/habit.js')
-var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    habittypes:[],
-    checkedType:0,
-    habitTypeName:'',
-    sexs:[
-      {
-        code: 0,
-        name: '都适用'
-      },
-      {
-        code:1,
-        name:'男孩'
-      },
-      {
-        code:2,
-        name:'女孩',
-      }
-    ],
-    sexCheckedIndex:0,
-    sexName:''
-  },
-  navToAddHabitType:function(){
-      wx.navigateTo({
-        url: '/pages/habits/addhabittype/addhabittype',
-      })
+    habittypes: [],
+    checkedType: 0,
+    habitTypeName: '',
+    habitName:'',
+    habits:[],
+    pageNum:1,
+    allPageNum:1,
+    lastPageDisabled:true,
+    nextPageDisabled:true
   },
   handleSelectChange: function (e) {
     this.setData({
@@ -38,16 +22,36 @@ Page({
       habitTypeName: this.data.habittypes[e.detail.value].name
     })
   },
-  handleSexSelectChange: function (e) {
+  habitNameBlur:function(e) {
     this.setData({
-      sexCheckedIndex: e.detail.value,
-      sexName: this.data.sexs[e.detail.value].name
+      habitName:e.detail.value
+    })
+  },
+  queryHabitQuestions:function(e) {
+    var typeId = this.data.habittypes[this.data.checkedType].id;
+    var that =this;
+    var habitName = that.data.habitName == ""?"all":that.data.habitName
+
+    habit.getHabitPage(typeId, habitName,that.data.pageNum,function(res){
+      console.log(res)
+      that.setData({
+        habits:res.data.datas,
+        lastPageDisabled: res.data.pageNum <= 1,
+        nextPageDisabled: res.data.pageNum >= res.data.allPageNum
+      })
+    })
+  },
+  navToHabitQuesRelation:function(e){
+    var habitId = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/admin/habitquestionrelation/index?habitId=' + habitId,
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+  
   },
 
   /**
@@ -62,7 +66,7 @@ Page({
    */
   onShow: function () {
     var that = this;
-    habit.getAllType(function(res){
+    habit.getAllType(function (res) {
       console.log(res);
       that.setData({
         habittypes: res.data
@@ -70,8 +74,8 @@ Page({
       that.setData({
         habitTypeName: that.data.habittypes[that.data.checkedType].name
       })
-    },function(res){
-        console.log('fail');
+    }, function (res) {
+      console.log('fail');
     });
   },
 
@@ -108,18 +112,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  formSubmit: function (e) {
-    var that = this;
-    var formData = e.detail.value;
-    console.log(formData);
-    formData.status = formData.status == true ? 1 : 0;
-    console.log(formData)
-    formData.habitTypeId = that.data.habittypes[that.data.checkedType].id;
-    formData.sexScope = that.data.sexs[that.data.sexCheckedIndex].code
-    habit.habitAdd(formData, function (e) {
-      console.log(e)
-      wx.navigateBack();
-    });
-  },
+  }
 })

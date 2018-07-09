@@ -1,10 +1,11 @@
 var api = require('./base.js');
-// var utils = require('../utils/util.js')
+var utils = require('../utils/util.js')
 
 var USER_API = api.API_BASE + "/api/user"
 var USER_ADD_URL = USER_API + "/addByWx" //添加用户
 var CHILD_ADD_URL = USER_API + "/addByParent" //添加孩子
 var CHILD_GET_URL = USER_API + "/getByParent/" //获取孩子
+var getUserByIdApi = USER_API + "/{0}" //获取用户
 
 /**
  * 添加用户
@@ -23,8 +24,16 @@ function childGet(userId, successCb, errorCb, completeCb) {
   api.request(CHILD_GET_URL+userId, 'GET', null, successCb, errorCb, completeCb);
 }
 
+/**
+ * 获取用户
+ */
+function getUserById(userId, successCb, errorCb, completeCb) {
+  api.request(getUserByIdApi.format(userId), 'GET', null, successCb, errorCb, completeCb);
+}
+
 module.exports = {
   userAdd: userAdd,
   childAdd: childAdd,
-  childGet: childGet
+  childGet: childGet,
+  getUserById: getUserById
 }

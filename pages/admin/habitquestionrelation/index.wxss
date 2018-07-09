@@ -1,0 +1,24 @@
+/* pages/admin/habitquestionrelation/index.wxss */
+.title{
+  background-color: #fff;
+  font-weight: bold;
+  height: 50rpx;
+  padding: 30rpx;
+}
+.question_title{
+  background-color: #fff;
+  height: 50rpx;
+  padding: 30rpx;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  font-size: 30rpx;
+}
+
+.footer button {
+  background-color: #1aad19;
+}
