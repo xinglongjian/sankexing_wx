@@ -22,6 +22,7 @@ var getHabitQuestionRelationApi = HABIT_API + "/question/relations/{0}"
 var deleteHabitQuestionRelationApi = HABIT_API + "/question/relation/{0}/{1}"
 var addQutestionToHabitApi = HABIT_API + "/question/relation/add/{0}"
 var getHabitQuestionDetailApi = HABIT_API + "/question/details/{0}"
+var sumbitHabitRecordApi = HABIT_API + "/{0}/{1}/{2}"
 
 /**
  * 添加习惯大类
@@ -137,6 +138,14 @@ function getHabitQuestionDetail(habitId, successCb, errorCb, completeCb) {
   api.request(getHabitQuestionDetailApi.format(habitId), 'GET', null, successCb, errorCb, completeCb);
 }
 
+/**
+ * 提交记录
+ */
+function sumbitHabitRecord(userId,byUserId,habitId, jsonData, successCb, errorCb, completeCb) {
+  api.request(sumbitHabitRecordApi.format(userId,byUserId,habitId), 'POST', jsonData, successCb, errorCb, completeCb);
+}
+
+
 module.exports = {
   habitTypeAdd: habitTypeAdd,
   habitAdd: habitAdd,
@@ -157,5 +166,6 @@ module.exports = {
   getHabitQuestionRelationByHabitId:getHabitQuestionRelationByHabitId,
   deleteHabitQuestionRelation:deleteHabitQuestionRelation,
   addQutestionToHabit: addQutestionToHabit,
-  getHabitQuestionDetail: getHabitQuestionDetail
+  getHabitQuestionDetail: getHabitQuestionDetail,
+  sumbitHabitRecord: sumbitHabitRecord
 }

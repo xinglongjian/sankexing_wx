@@ -7,15 +7,34 @@
   background-color: #fff;
   padding: 30rpx;
 }
-.scroll-view {
-  padding: 30rpx;
-  margin-top: 10rpx;
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-}
+
 .question{
   width: 100%;
+  padding: 30rpx;
+  margin-top: 10rpx;
   display: inline-block;
-  min-height: 500rpx;
+  min-height: 600rpx;
+  background-color: #fff;
+}
+
+.question_title{
+  font-weight: bold;
+  margin-bottom: 20rpx;
+
+}
+
+.radio-group{
+ display: flex;
+  flex-direction: column;
+}
+.radio{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20rpx;
 }

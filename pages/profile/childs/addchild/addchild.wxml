@@ -1,79 +1,54 @@
 <!--pages/profile/childs/addchild.wxml-->
-<view id='addchild'>
-  <form bindsubmit='formSubmit' bindreset='formReset'>
-        <view class="section" style='height:100px;'>  
-            <view class="section__title">
-                <text>头像:</text>
-            </view>  
-            <view class='form-group'>  
-                <image class="headImage" src='{{headImageSrc}}'></image>
-            </view>
-            <view>
-              <image class='more' src='/images/more_16_.png' bindtap='changeImage'></image>
-            </view> 
-        </view> 
-        <view class="section">  
-            <view class="section__title">姓名:</view>  
-            <view class='form-group'>  
-                <input type="text" class="input-text" name="realName" placeholder="请输入姓名" />  
-            </view>      
-        </view> 
-        <view class="section">  
-            <view class="section__title">昵称:</view>  
-            <view class='form-group'>  
-                <input type="text" class="input-text" name="nickName" placeholder="请输入昵称" />  
-            </view>      
-        </view>  
-        <view class="section">  
-            <view class="section__title">英文:</view>  
-            <view class='form-group'>  
-                <input type="text" class="input-text" name="enName" placeholder="请输入英文" />  
-            </view>      
-        </view>  
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <zan-panel title="基本信息">
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title' style='height:160rpx'>头像：</view>
+      <view class='form-group' bindtap='changeImage'>
+        <image class="headImage" src='{{headImageSrc}}'></image>
+      </view>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>中文名：</view>
+      <input type='text' name="realName" placeholder="请输入姓名" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>昵称：</view>
+      <input type='text' name="nickName" placeholder="请输入昵称" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class='zan-cell zan-field'>
+      <view class='zan-cell__hd zan-field__title'>英文名：</view>
+      <input type='text' name="enName" placeholder="请输入英文名" class='zan-field__input zan-cell__bd'></input>
+    </view>
+    <view class="zan-cell zan-field" style='height:70rpx;'>
+      <view class="zan-cell__hd zan-field__title">生日：</view>
+      <picker mode="date" value='{{date}}' start="2010-01-01" end="2020-12-31" bindchange='listenerDatePickerSelected'>
+        <input type="text" class="input-text" name="birthday" value='{{date}}' placeholder="请输入日期" />
+      </picker>
+      <picker mode="time" value='{{time}}' start="00:00" end="23:59" bindchange='listenerTimePickerSelected'>
+        <input type="text" class="input-text" name="birthday" value='{{time}}' placeholder="请输入时间" />
+      </picker>
+    </view>
+    <view class="zan-cell zan-field" style='height:70rpx;'>
+      <view class="zan-cell__hd zan-field__title">性别：</view>
+      <radio-group name="sex">
+        <label>
+          <radio value="1" />男</label>
+        <label>
+          <radio value="2" />女</label>
+      </radio-group>
+    </view>
+    <view class="zan-cell zan-field" style='height:70rpx;'>
+      <view class="zan-cell__hd zan-field__title">我是：</view>
+      <picker value="{{index}}" bindchange="bindPickerChange" range="{{relationArray}}" range-key='name'>
+        <input hidden="true" name="relation" value="{{relationArray[index].code}}" />
+        <view>{{relationName}}</view>
+      </picker>
+    </view>
 
-        <view class="section section_gap">  
-            <view class="section__title">生日:</view>  
-            <view class='form-group'>  
-                <picker mode="date" value='{{date}}' start="2016-01-01" end="2020-12-31" bindchange='listenerDatePickerSelected'>
-                <input type="text" class="input-text" name="birthday" value='{{date}}' placeholder="请输入生日" />
-                </picker>  
-            </view>      
-        </view>  
-        <view class="section section_gap">  
-            <view class="section__title">性别:</view>  
-            <view class='form-group'>  
-                <radio-group name="sex">  
-                  <label><radio value="1"/>男</label>  
-                  <label><radio value="2"/>女</label>  
-                </radio-group>  
-            </view>      
-        </view> 
-        <view class="section section_gap">  
-            <view class="section__title">我是:</view>  
-            <view class='form-group'>  
-                <picker value="{{index}}"  bindchange="bindPickerChange" range="{{relationArray}}" range-key='name'>
-                  <input hidden="true" name="relation" value="{{relationArray[index].code}}" />
-                  <view>{{relationName}}</view>
-                </picker>  
-            </view>      
-        </view> 
-        <view class="section btn-area">  
-            <button formType="submit">提交</button>  
-            <button formType="reset">清空</button>  
-        </view> 
-  </form>
-</view>
-<!-- 黑框提示并消失 -->  
-    <toast hidden="{{toast1Hidden}}" bindchange="toast1Change">  
-        {{notice_str}}  
-    </toast>  
-    <!-- 确认框 及 提示框 -->  
-    <view class="page__bd">  
-        <modal title="确认" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="confirm_one" bindcancel="cancel_one">  
-            确认提交么？  
-        </modal>  
-        <modal class="modal" hidden="{{modalHidden2}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">  
-            <view> 提示 </view>  
-            <view> 清空成功 </view>  
-        </modal>  
-    </view> 
+
+  </zan-panel>
+
+  <zan-button-group>
+    <button type="primary" form-type="submit">提交表单</button>
+  </zan-button-group>
+</form>

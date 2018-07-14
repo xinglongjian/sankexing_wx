@@ -33,14 +33,14 @@ Page({
     })
   },
   // 存储到数据库
-  saveTo: function(res) {
-    app.globalData.userInfo = res.userInfo
-    wx.setStorageSync("UserInfo", res.userInfo)
+  saveTo: function (userInfo) {
+    app.globalData.userInfo = userInfo
+    wx.setStorageSync("UserInfo",userInfo)
     this.setData({
-      userInfo: res.userInfo,
+      userInfo: userInfo,
       hasUserInfo: true
     });
-    var userInfo = res.userInfo;
+    var userInfo = userInfo;
     userInfo.openId = app.globalData.openId;
     userInfo.unionId = app.globalData.unionId;
     account.userAdd(userInfo, function(res) {
@@ -74,7 +74,7 @@ Page({
       var that = this;
       wx.getUserInfo({
         success: res => {
-          this.saveTo(res)
+          this.saveTo(res.userInfo)
         },
         fail: res => {
           wx.showModal({
@@ -91,7 +91,7 @@ Page({
                       wx.getUserInfo({
                         success: res => {
                           console.log(res)
-                          that.saveTo(res)
+                          that.saveTo(res.userInfo)
                         }
                       })
                     }
@@ -123,9 +123,74 @@ Page({
     console.log(e);
     app.globalData.userInfo = e.detail.userInfo
     wx.setStorageSync("UserInfo", e.detail.userInfo)
+    this.loginByWx()
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+
+  //通过微信接口登录
+  loginByWx: function (res) {
+    wx.request({
+      url: 'https://www.sankexing.net.cn/xingtan/api/login/loginByWx',
+      method: 'GET',
+      data: { 'code': res.code },
+      success: function (res) {
+        console.info(res);
+        if (res.statusCode == 200 && res.data.status == 'OK') {
+          if (res.data.data.openid) {
+            wx.setStorageSync("LoginSessionKey", res.data.data.openid + "--" + res.data.data.sessionKey);
+            app.globalData.openId = res.data.data.openid;
+            app.globalData.unionId = res.data.data.unionid;
+            app.globalData.userId = res.data.data.userId;
+            wx.setStorageSync("UserId", res.data.data.userId);
+            wx.getUserInfo({
+              success: res => {
+                // 可以将 res 发送给后台解码出 unionId
+                app.globalData.userInfo = res.userInfo
+                wx.setStorageSync("UserInfo", res.userInfo)
+                if (app.globalData.userId) {
+                  wx.setStorageSync("UserId", userId);
+                } else {
+                  var userInfo = res.userInfo;
+                  userInfo.openId = app.globalData.openId;
+                  userInfo.unionId = app.globalData.unionId;
+                  //存储到DB
+                  wx.request({
+                    url: 'https://www.sankexing.net.cn/xingtan/api/user/addByWx',
+                    method: 'POST',
+                    data: userInfo,
+                    success: function (res) {
+                      wx.setStorageSync("UserId", res.data.data.id);
+                      wx.setStorageSync("token", res.data.data.token);
+                    }
+                  })
+                }
+                // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+                // 所以此处加入 callback 以防止这种情况
+                if (this.userInfoReadyCallback) {
+                  this.userInfoReadyCallback(res)
+                }
+              }
+            })
+            //获取用户
+            // wx.getSetting({
+            //   success: res => {
+            //     console.log("auth:" + res.authSetting['scope.userInfo'])
+            //     if (res.authSetting['scope.userInfo']) {
+            //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+
+            //     }
+            //   }
+            // })
+          }
+        } else
+          console.log('请求异常', res);
+      },
+      error: function (res) {
+        console.log("app.error:" + res);
+      }
+    })
+  },
 })

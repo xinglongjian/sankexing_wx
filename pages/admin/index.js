@@ -34,6 +34,9 @@ Page({
       url: url,
     })
   },
+  clearStorage:function(e) {
+     wx.clearStorageSync();
+  },
   /**
    * 生命周期函数--监听页面加载
    */

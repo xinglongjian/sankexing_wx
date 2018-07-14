@@ -1,12 +1,13 @@
 <!--pages/admin/index.wxml-->
 <view class='container'>
   <view class='configItem'>
-  <block wx:for="{{functions}}" wx:for-index="index" wx:key="name">
-    <view class='item' bindtap='navToFunc' data-index='{{index}}'>
-      <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
-      <view class='title'>{{item.name}}</view>
-      <image class='more' src='/images/more_16.png'></image>
-    </view>
+    <block wx:for="{{functions}}" wx:for-index="index" wx:key="name">
+      <view class='item' bindtap='navToFunc' data-index='{{index}}'>
+        <image class='icon' src='/images/tabbar/home_unselect_64.png'></image>
+        <view class='title'>{{item.name}}</view>
+        <image class='more' src='/images/more_16.png'></image>
+      </view>
     </block>
   </view>
+  <button type='primary' bindtap='clearStorage'>清缓存</button>
 </view>

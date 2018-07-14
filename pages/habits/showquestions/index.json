@@ -4,6 +4,7 @@
     "zan-button-group": "/third/zanui/dist/btn-group/index",
     "zan-button": "/third/zanui/dist/btn/index",
     "zan-panel": "/third/zanui/dist/panel/index",
-    "zan-card": "/third/zanui/dist/card/index"
+    "zan-card": "/third/zanui/dist/card/index",
+    "zan-select": "/third/zanui/dist/select/index"
   }
 }

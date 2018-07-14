@@ -3,35 +3,30 @@
   <view>{{title}}</view>
 </view>
 
-<view class='questions'>
-  <scroll-view class="scroll-view" scroll-x="true" style=" white-space: nowrap; display: flex">
-    <!-- <block wx:for="{{questions}}" wx:for-index="index" wx:for-item="question" wx:key="id">
-       <view class="question">
-        <view class='question_title'>
-          {{question.title}}
-        </view>
-        <view class='question_items'>
-          <block wx:for="{{question.items}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-            <view class='item'>
-              {{item.content}}
-            </view>
-          </block>
-        </view>
-      </view> 
-    </block> -->
-    <block wx:for="{{questions}}" wx:for-index="index" wx:for-item="question" wx:key="id">
-      <view class="question">
-        <view class='question_title'>
-          {{question.title}}
-        </view>
-        <view class='question_items'>
-          <block wx:for="{{question.items}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-            <view>
-             tyytytytyt
-            </view>
-          </block>
-        </view>
-      </view>
-    </block>
-  </scroll-view>
+<view class="question">
+  <view class='question_title'>
+    问题({{currIndex +1}}):{{currQuestion.title}}
+  </view>
+  <view class='question_items'>
+    <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{currQuestion.items}}" wx:key="id">
+          <radio value="{{item.id}}" checked="{{item.checked}}" />{{item.seqNo}}.{{item.content}}({{item.score}}分)
+        </label>
+    </radio-group>
+  </view>
+</view>
+
+<view class='buttons'>
+ <view>
+ <zan-button disabled='{{lastDisabled}}' size="small" type="primary" bindtap='lastQuestion' >上一个</zan-button>
+ </view>
+ <view class='pageNum'>
+{{currIndex +1}}/{{questions.length}}
+ </view>
+  <view wx:if="{{currIndex+1 != questions.length}}">
+ <zan-button disabled='{{nextDisabled}}' size="small" type="primary" bindtap='nextQuestion' >下一个</zan-button>
+ </view>
+ <view wx:else>
+ <zan-button  size="small" type="primary" bindtap='formSubmit' >提交</zan-button>
+ </view>
 </view>

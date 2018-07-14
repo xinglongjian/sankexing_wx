@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/profile/childs/addchild/addchild",
     "pages/profile/index",
     "pages/admin/editquestionitem/index",
     "pages/admin/index",
@@ -28,7 +29,6 @@
     "pages/student/index",
     "pages/teacher/space/index",
     "pages/profile/childs/listchild/list",
-    "pages/profile/childs/addchild/addchild",
     "pages/profile/childs/upload/upload",
     "pages/profile/myschool/school",
     "pages/habits/listhabits",

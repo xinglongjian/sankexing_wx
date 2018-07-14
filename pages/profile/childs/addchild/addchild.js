@@ -10,6 +10,7 @@ Page({
     modalHidden2: true,
     notice_str: '',
     date:null,
+    time:null,
     headImageSrc:'/images/default_head.jpg',
     relationArray: [
       {
@@ -50,6 +51,11 @@ Page({
   listenerDatePickerSelected: function (e) {
     this.setData({
       date: e.detail.value
+    })
+  },
+  listenerTimePickerSelected: function (e) {
+    this.setData({
+      time: e.detail.value
     })
   },
   toast1Change: function (e) {
@@ -112,7 +118,8 @@ Page({
   onShow: function () {
     // 页面显示  
     this.setData({
-      date:util.formatDate(new Date())
+      date:util.formatDate(new Date()),
+      time: util.formatHM(new Date())
     })
   },
   onHide: function () {

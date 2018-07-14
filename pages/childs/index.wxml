@@ -12,6 +12,14 @@
     </view>
   </view>
 
+  <zan-panel title="常用功能">
+   
+  </zan-panel>
+
+   <zan-panel title="学习相关">
+   
+  </zan-panel>
+
   <!--config-->
   <view class='configItem'>
     <view class='item'>
