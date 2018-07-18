@@ -150,7 +150,14 @@ Page({
     formData.createdUserId = app.globalData.userId;
     console.log(formData)
     account.childAdd(that.data.headImageSrc, 'imgFile', formData, function(e){
+      wx.showToast({
+        title: '添加成功',
+      })
       wx.navigateBack();
+    },function(){
+      wx.showToast({
+        title: '添加失败',
+      })
     });
   },
   formReset: function () {

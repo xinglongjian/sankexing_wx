@@ -24,9 +24,6 @@
       <picker mode="date" value='{{date}}' start="2010-01-01" end="2020-12-31" bindchange='listenerDatePickerSelected'>
         <input type="text" class="input-text" name="birthday" value='{{date}}' placeholder="请输入日期" />
       </picker>
-      <picker mode="time" value='{{time}}' start="00:00" end="23:59" bindchange='listenerTimePickerSelected'>
-        <input type="text" class="input-text" name="birthday" value='{{time}}' placeholder="请输入时间" />
-      </picker>
     </view>
     <view class="zan-cell zan-field" style='height:70rpx;'>
       <view class="zan-cell__hd zan-field__title">性别：</view>
